@@ -1038,20 +1038,222 @@
     transform: translateY(0);
   }
 
-  /* ===================== RESPONSIVE ===================== */
-  @media (max-width: 900px) {
-    nav { padding: 0 24px; }
-    .nav-links { display: none; }
-    section { padding: 80px 24px; }
-    .game-grid { grid-template-columns: 1fr; gap: 48px; }
-    .mechanic-grid { grid-template-columns: 1fr; }
-    .about-grid { grid-template-columns: 1fr; gap: 48px; }
-    .gallery-grid { grid-template-columns: 1fr 1fr; }
-    .card-showcase { grid-template-columns: 1fr 1fr; }
-    .footer-grid { grid-template-columns: 1fr; gap: 32px; }
-    .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
-    .funded-banner { gap: 30px; }
+/* ===================== MOBILE FIXES ===================== */
+@media (max-width: 768px) {
+
+  /* NAV */
+  nav {
+    padding: 0 16px;
   }
+
+  /* HERO */
+  .hero-content {
+    padding: 100px 20px 60px;
+  }
+
+  .hero-eyebrow {
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin-top: 0;
+    gap: 8px;
+  }
+
+  .hero-eyebrow::before,
+  .hero-eyebrow::after {
+    width: 20px;
+  }
+
+  .hero-logo-img {
+    width: 140px;
+  }
+
+  .hero-game-title-img {
+    width: min(340px, 92vw);
+  }
+
+  .hero-subtitle {
+    font-size: 11px;
+    letter-spacing: 4px;
+  }
+
+  .hero-box-wrap {
+    width: min(320px, 88vw);
+  }
+
+  .hero-funded {
+    top: 80px;
+    right: -6px;
+    font-size: 10px;
+    padding: 8px 12px;
+  }
+
+  .hero-funded strong {
+    font-size: 13px;
+  }
+
+  /* Stats — 2x2 grid instead of single row */
+  .hero-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px 0;
+    max-width: 280px;
+    margin: 0 auto 40px;
+  }
+
+  .hero-stat-divider {
+    display: none;
+  }
+
+  .hero-stat {
+    padding: 12px 0;
+    border: 1px solid rgba(200,162,52,0.1);
+  }
+
+  /* Buttons — full width stacked */
+  .hero-buttons {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    padding: 0 20px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    text-align: center;
+    padding: 16px 20px;
+    clip-path: none;
+  }
+
+  /* FUNDED BANNER */
+  .funded-banner {
+    padding: 20px 16px;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr;
+    display: grid;
+  }
+
+  /* SECTIONS */
+  section {
+    padding: 60px 20px;
+  }
+
+  .gallery-section {
+    padding: 60px 0;
+  }
+
+  .gallery-section .container {
+    padding: 0 20px;
+  }
+
+  /* GAME SECTION */
+  .game-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+
+  /* Swap order so image comes first on mobile */
+  .game-image-frame {
+    order: -1;
+  }
+
+  .mechanic-grid {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+
+  /* GALLERY */
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-item.wide {
+    grid-column: span 1;
+  }
+
+  .gallery-item img {
+    min-height: 220px;
+  }
+
+  .card-showcase {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* ABOUT */
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .about-logo {
+    width: 160px;
+  }
+
+  .about-facts {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* EMAIL SIGNUP */
+  .signup-section {
+    padding: 60px 20px;
+  }
+
+  .signup-form {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .signup-input {
+    border-right: 1px solid rgba(200,162,52,0.3);
+    border-bottom: none;
+  }
+
+  .signup-btn {
+    padding: 14px 20px;
+  }
+
+  /* FOOTER */
+  footer {
+    padding: 40px 20px 24px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    text-align: center;
+    margin-bottom: 32px;
+  }
+
+  .footer-brand img {
+    margin: 0 auto 16px;
+    display: block;
+  }
+
+  .footer-brand p {
+    max-width: 100%;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+
+  .footer-social {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* SECTION TITLES */
+  .section-title {
+    font-size: clamp(26px, 7vw, 42px);
+  }
+
+  .section-intro {
+    font-size: 16px;
+    margin-bottom: 40px;
+  }
+}
 </style>
 </head>
 <body>
