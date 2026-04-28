@@ -1037,6 +1037,26 @@
     opacity: 1;
     transform: translateY(0);
   }
+ /* ===================== HAMBURGER ===================== */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    z-index: 1100;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--gold);
+    transition: transform 0.3s, opacity 0.3s;
+  }
 
 /* ===================== MOBILE FIXES ===================== */
 @media (max-width: 768px) {
@@ -1044,6 +1064,14 @@
   /* NAV */
   nav {
     padding: 0 16px;
+  }
+
+  .hamburger {
+    display: flex !important;
+  }
+
+  .nav-links {
+    display: none !important;
   }
 
   /* HERO */
@@ -1255,26 +1283,7 @@
   }
 }
 
-  /* ===================== HAMBURGER ===================== */
-  .hamburger {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    gap: 5px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 4px;
-    z-index: 1100;
-  }
-
-  .hamburger span {
-    display: block;
-    width: 24px;
-    height: 2px;
-    background: var(--gold);
-    transition: transform 0.3s, opacity 0.3s;
-  }
+ 
 
   .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
   .hamburger.open span:nth-child(2) { opacity: 0; }
@@ -1357,11 +1366,7 @@
 
   .mobile-overlay.open { display: block; }
 
-  @media (max-width: 900px) {
-    .hamburger { display: flex; }
-    .nav-links { display: none !important; }
-    nav { padding: 0 20px; }
-  }
+
 
 </style>
 </head>
@@ -1378,7 +1383,24 @@
     <li><a href="#about">About</a></li>
     <li><a href="#signup" class="nav-cta">Stay Updated</a></li>
   </ul>
+<button id="hamburger" class="hamburger" aria-label="Toggle navigation menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 </nav>
+<!-- ===================== MOBILE MENU ===================== -->
+<div id="mobile-menu" class="mobile-menu">
+  <button id="mobile-menu-close" class="mobile-menu-close" aria-label="Close menu">✕</button>
+  <ul>
+    <li><a href="#game" class="mobile-nav-link">The Game</a></li>
+    <li><a href="#gallery" class="mobile-nav-link">Gallery</a></li>
+    <li><a href="#about" class="mobile-nav-link">About</a></li>
+    <li><a href="#signup" class="mobile-nav-link mobile-cta">Stay Updated</a></li>
+  </ul>
+</div>
+
+<div id="mobile-overlay" class="mobile-overlay"></div>
 
 <!-- HERO -->
 <section class="hero">
