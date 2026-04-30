@@ -1642,9 +1642,16 @@ src="https://www.facebook.com/tr?id=2085516798873588&ev=PageView&noscript=1"
   </div>
   <h2>The Horde is Growing</h2>
   <p>Be the first to hear about new games, expansions, and what Rising Warrior builds next.</p>
-  <div class="signup-form">
-    <input type="email" class="signup-input" placeholder="Enter your email address">
-    <button class="signup-btn">Join</button>
+  <form action="https://risingwarriorgames.us4.list-manage.com/subscribe/post?u=3edf41f5a60eff1da81bae6a0&amp;id=17c463ecea&amp;f_id=000ee2e0f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" class="signup-form">
+    <input type="email" name="EMAIL" class="signup-input" id="signup-email" placeholder="Enter your email address" required>
+    <input type="hidden" name="tags" value="6874067">
+    <div style="position: absolute; left: -5000px;" aria-hidden="true">
+      <input type="text" name="b_3edf41f5a60eff1da81bae6a0_17c463ecea" tabindex="-1" value="">
+    </div>
+    <button type="submit" name="subscribe" class="signup-btn">Join</button>
+  </form>
+  <div id="signup-success" style="display:none; margin-top: 16px;">
+    <p style="color: var(--gold); font-family: 'Cinzel', serif; font-size: 13px; letter-spacing: 2px;">✦ YOU'RE IN. WELCOME TO THE HORDE. ✦</p>
   </div>
   <p class="signup-note">No spam. Just games.</p>
 </div>
@@ -1670,7 +1677,7 @@ src="https://www.facebook.com/tr?id=2085516798873588&ev=PageView&noscript=1"
       <ul>
         <li><a href="/latepledge.html">Pledge on Kickstarter</a></li>
         <li><a href="https://www.kickstarter.com/projects/zombieoverlord/zombie-overlord?ref=1epnvj">View on Kickstarter</a></li>
-        <li><a href="https://www.kickstarter.com/projects/zombieoverlord/zombie-overlord?ref=1epnvj">BoardGameGeek</a></li>
+        <li><a href="https://boardgamegeek.com/boardgame/467950/zombie-overlord">BoardGameGeek</a></li>
         <li><a href="#">Contact Us</a></li>
       </ul>
     </div>
@@ -1682,7 +1689,7 @@ src="https://www.facebook.com/tr?id=2085516798873588&ev=PageView&noscript=1"
       <a href="https://www.instagram.com/risingwarriorgames">Instagram</a>
       <a href="https://www.facebook.com/RisingWarriorGames">Facebook</a>
       <a href="https://www.tiktok.com/@risingwarriorgames">TikTok</a>
-      <a href="https://boardgamegeek.com/boardgame/467950/zombie-overlord">BGG</a>
+      <a href="https://boardgamegeek.com/boardgamepublisher/62694/rising-warrior-games">BGG</a>
     </div>
   </div>
 </footer>
@@ -1752,6 +1759,22 @@ src="https://www.facebook.com/tr?id=2085516798873588&ev=PageView&noscript=1"
   mobileClose.addEventListener('click', closeMenu);
   mobileOverlay.addEventListener('click', closeMenu);
   mobileLinks.forEach(link => link.addEventListener('click', closeMenu));
+
+
+  // Email signup thank you message
+  const signupForm = document.getElementById('mc-embedded-subscribe-form');
+  if (signupForm) {
+    signupForm.addEventListener('submit', function(e) {
+      const emailInput = document.getElementById('signup-email');
+      const successMsg = document.getElementById('signup-success');
+      if (emailInput && emailInput.value) {
+        setTimeout(function() {
+          signupForm.style.display = 'none';
+          if (successMsg) successMsg.style.display = 'block';
+        }, 500);
+      }
+    });
+  }
 
 </script>
 </body>
