@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Redirecting to Zombie Overlord Late Pledge...</title>
+  <title>Redirecting to Zombie Overlord...</title>
 
   <!-- Meta Pixel Code -->
   <script>
@@ -18,7 +18,7 @@
   fbq('init', '2085516798873588');
   fbq('track', 'PageView');
   fbq('track', 'ViewContent', {
-    content_name: 'Zombie Overlord Late Pledge',
+    content_name: 'Zombie Overlord BackerKit',
     content_category: 'Tabletop Game',
     content_type: 'product'
   });
@@ -41,15 +41,16 @@
     });
   </script>
 
+  <!-- Instant redirect -->
+  <meta http-equiv="refresh" content="0; url=https://zombie-overlord.backerkit.com/hosted_preorders">
 </head>
 <body>
   <script>
-    // Preserve UTM params and redirect
+    // Redirect to BackerKit preserving any UTM params
     var base = "https://zombie-overlord.backerkit.com/hosted_preorders";
     var params = window.location.search;
     if (params) {
-      // params starts with ?, strip it and append with &
-      base = base + "&" + params.substring(1);
+      base = base + params;
     }
     window.location.replace(base);
   </script>
