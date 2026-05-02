@@ -41,13 +41,17 @@
     });
   </script>
 
-  <!-- Instant redirect -->
-  <meta http-equiv="refresh" content="0; url=https://zombie-overlord.backerkit.com/hosted_preorders">
 </head>
 <body>
   <script>
-    // JS redirect as backup in case meta refresh is blocked
-    window.location.href ="https://zombie-overlord.backerkit.com/hosted_preorders";
+    // Preserve UTM params and redirect
+    var base = "https://zombie-overlord.backerkit.com/hosted_preorders";
+    var params = window.location.search;
+    if (params) {
+      // params starts with ?, strip it and append with &
+      base = base + "&" + params.substring(1);
+    }
+    window.location.replace(base);
   </script>
 </body>
 </html>
