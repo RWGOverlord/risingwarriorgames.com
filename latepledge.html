@@ -367,6 +367,8 @@
       position: relative;
       overflow: hidden;
       transition: border-color 0.3s;
+      display: flex;
+      flex-direction: column;
     }
 
     .feature-card::before {
@@ -395,7 +397,7 @@
 
     .feature-text { font-size: 16px; color: var(--text-muted); line-height: 1.75; }
 
-    .feature-img-wrap { margin-top: 20px; }
+    .feature-img-wrap { margin-top: auto; padding-top: 20px; }
 
     .feature-img-wrap img {
       width: 100%;
@@ -714,14 +716,16 @@
 <!-- HERO -->
 <div class="hero">
   <div class="hero-inner">
+    <p style="font-family:'Cinzel',serif; font-size:18px; letter-spacing:2px; text-transform:uppercase; color:var(--gold-light); line-height:2;">Missed Kickstarter? Late Pledges Are Still Open.</p>
     <img src="images/Video_Cover.png" alt="Zombie Overlord" class="hero-main-img">
     <div class="hero-content">
+	 <img src="images/Zombie_Overlord_Title_Horizontal.png" alt="Zombie Overlord" style="max-width:480px; width:100%; margin:0 auto 20px; display:block;">
       <p class="hero-tagline">"Build your horde. Rule the apocalypse."</p>
 <p style="font-family:'Cinzel',serif; font-size:13px; letter-spacing:2px; text-transform:uppercase; color:var(--gold-light); margin-bottom:28px; line-height:2;">
         Place Traps <span style="color:var(--gold);">→</span> Lure Survivors <span style="color:var(--gold);">→</span> Flip Them Into Zombies <span style="color:var(--gold);">→</span> Build Your Deck <span style="color:var(--gold);">→</span> Crush Your Rivals
       </p>
       <div class="hero-cta-wrap">
-        <a href="https://zombie-overlord.backerkit.com/hosted_preorders" class="btn-green" onclick="fbq('track','InitiateCheckout');">Pre-Order on BackerKit</a>
+        <a href="https://zombie-overlord.backerkit.com/hosted_preorders" class="btn-green" onclick="fbq('track','InitiateCheckout');">Secure Your Copy</a>
         <a href="#tiers" class="btn-outline">View Tiers</a>
       </div>
     </div>
@@ -771,12 +775,15 @@
     <div class="ornament"><div class="ornament-line"></div><div class="ornament-diamond"></div><div class="ornament-line r"></div></div>
     <p class="section-label">About the Game</p>
     <h2 class="section-title reveal">The Dead Rise at <span>Your Command</span></h2>
-    <p class="section-intro reveal">A fast-paced competitive deck-builder where cunning beats strength — and every survivor is just a zombie waiting to happen.</p>
+    <p class="section-intro reveal">You don’t save survivors… you harvest them. Build Your Horde. Destroy Your Friends.</p>
 
     <div class="game-grid reveal">
       <div class="game-text">
-        <p>In Zombie Overlord, you play as the villain. Set cunning traps to lure desperate survivors into your base. Once captured, flip their card — every survivor has a human side and a zombie side. They join your horde and your deck grows deadlier each turn.</p>
-        <p>Outmaneuver rival Overlords, sabotage their plans with action cards, and claim your rotten throne. In the apocalypse, there's only room for one ruler.</p>
+        <p>Most zombie games make you run.</p>
+        <p>Zombie Overlord lets you hunt.</p>
+        <p>Set traps. Lure desperate survivors into your base.<br>Then flip them into zombies and add them to your growing horde.</p>
+        <p>Every turn, your deck gets stronger.<br>Every rival gets closer to being overrun.</p>
+        <p>Outplay your opponents, sabotage their plans, and prove there’s only room for one ruler of the apocalypse.</p>
         <p>2–4 players &nbsp;·&nbsp; 30–40 minutes &nbsp;·&nbsp; Ages 14+</p>
         <br>
         <a href="https://zombie-overlord.backerkit.com/hosted_preorders" class="btn-green" onclick="fbq('track','InitiateCheckout');">Pre-Order Now →</a>
@@ -856,7 +863,7 @@
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:3px;">
         <div style="background:var(--brown); border:1px solid rgba(200,162,52,0.12); padding:20px 24px;">
           <div style="font-family:'Cinzel',serif; font-size:10px; letter-spacing:2px; color:var(--gold); margin-bottom:10px; text-transform:uppercase;">✔ You steal survivors</div>
-          <p style="font-size:15px; color:var(--text-muted); line-height:1.7;">From a shared board — every card you gain was taken from the game or another player</p>
+          <p style="font-size:15px; color:var(--text-muted); line-height:1.7;">From a shared board — every card you gain was taken from the game</p>
         </div>
         <div style="background:var(--brown); border:1px solid rgba(200,162,52,0.12); padding:20px 24px;">
           <div style="font-family:'Cinzel',serif; font-size:10px; letter-spacing:2px; color:var(--gold); margin-bottom:10px; text-transform:uppercase;">✔ Your deck is your weapon</div>
@@ -976,7 +983,7 @@
             <li>All Stretch Goals Included</li>
           </ul>
           <!-- REPLACE 00000 with BackerKit item number for Core Edition -->
-          <a href="https://zombie-overlord.backerkit.com/hosted_preorders/847778"
+          <a href="https://zombie-overlord.backerkit.com/hosted_preorders/847776"
              class="tier-btn"
              onclick="fbq('track','InitiateCheckout',{content_name:'Core Edition'});">
             Pre-Order on BackerKit
@@ -998,7 +1005,7 @@
             <li>All Stretch Goals Included</li>
           </ul>
           <!-- REPLACE 00000 with BackerKit item number for Premium Edition -->
-          <a href="https://zombie-overlord.backerkit.com/hosted_preorders/847776"
+          <a href="https://zombie-overlord.backerkit.com/hosted_preorders/847778"
              class="tier-btn gold"
              onclick="fbq('track','InitiateCheckout',{content_name:'Premium Edition'});">
             Pre-Order on BackerKit
