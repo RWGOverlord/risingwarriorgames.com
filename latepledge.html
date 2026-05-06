@@ -24,14 +24,14 @@
 </head>
 <body>
   <script>
-    // Preserve UTM params and redirect
-    // Redirect to BackerKit preserving any UTM params
+    // Preserve UTM params
     var base = "https://www.kickstarter.com/projects/zombieoverlord/zombie-overlord";
+
     var params = window.location.search;
+
     if (params) {
-      // params starts with ?, strip it and append with &
-      base = base + "&" + params.substring(1);
       base = base + params;
     }
+
     window.location.replace(base);
   </script>
