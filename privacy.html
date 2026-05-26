@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="images/RWG_Favicon.png">
+  <title>Privacy Policy · Rising Warrior Games</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cinzel+Decorative:wght@400;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-J8B76D89RC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-J8B76D89RC');
+  </script>
+
+  <style>
+    :root {
+      --black: #000000;
+      --black2: #0a0806;
+      --black3: #111009;
+      --brown: #1e1608;
+      --brown2: #2a1e0a;
+      --gold: #c8a234;
+      --gold-light: #e8c45a;
+      --gold-dim: #8a6e22;
+      --gold-faint: rgba(200,162,52,0.12);
+      --text: #f0e8d0;
+      --text-muted: #9a8a6a;
+      --text-dim: #5a4e38;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--black);
+      color: var(--text);
+      font-family: 'Crimson Pro', Georgia, serif;
+      font-size: 18px;
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    /* Noise overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.4;
+    }
+
+    /* ===== NAV ===== */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      padding: 0 60px;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(0,0,0,0.97);
+      border-bottom: 1px solid rgba(200,162,52,0.15);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .nav-logo img {
+      height: 44px;
+      width: auto;
+      filter: brightness(1.1);
+    }
+
+    .nav-back {
+      font-family: 'Cinzel', serif;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-back:hover { color: var(--gold); }
+
+    .nav-back::before {
+      content: '←';
+      font-size: 14px;
+    }
+
+    /* ===== PAGE HEADER ===== */
+    .page-header {
+      padding: 140px 40px 60px;
+      text-align: center;
+      position: relative;
+    }
+
+    .page-header::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 1px;
+      background: var(--gold);
+      opacity: 0.4;
+      margin: 40px auto 0;
+    }
+
+    .page-label {
+      font-family: 'Cinzel', serif;
+      font-size: 11px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+
+    .page-title {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: clamp(28px, 5vw, 52px);
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.2;
+    }
+
+    .page-subtitle {
+      font-family: 'Crimson Pro', serif;
+      font-size: 16px;
+      color: var(--text-muted);
+      margin-top: 16px;
+      letter-spacing: 1px;
+    }
+
+    /* ===== CONTENT ===== */
+    .content-wrap {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 60px 40px 100px;
+    }
+
+    .policy-section {
+      margin-bottom: 52px;
+    }
+
+    .policy-section h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(200,162,52,0.2);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .policy-section h2::before {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      background: var(--gold);
+      transform: rotate(45deg);
+      flex-shrink: 0;
+    }
+
+    .policy-section p {
+      color: var(--text);
+      margin-bottom: 16px;
+    }
+
+    .policy-section p:last-child { margin-bottom: 0; }
+
+    .policy-section ul {
+      list-style: none;
+      margin: 12px 0 16px 0;
+    }
+
+    .policy-section ul li {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 10px;
+      color: var(--text);
+    }
+
+    .policy-section ul li::before {
+      content: '✦';
+      position: absolute;
+      left: 0;
+      top: 2px;
+      font-size: 8px;
+      color: var(--gold-dim);
+    }
+
+    .policy-section a {
+      color: var(--gold);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(200,162,52,0.3);
+      transition: border-color 0.2s;
+    }
+
+    .policy-section a:hover {
+      border-color: var(--gold);
+    }
+
+    .effective-date {
+      font-family: 'Cinzel', serif;
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: var(--text-dim);
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    /* Ornament */
+    .ornament {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 52px;
+    }
+    .ornament-line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(200,162,52,0.3));
+    }
+    .ornament-line.right {
+      background: linear-gradient(to left, transparent, rgba(200,162,52,0.3));
+    }
+    .ornament-diamond {
+      width: 8px;
+      height: 8px;
+      background: var(--gold-dim);
+      transform: rotate(45deg);
+    }
+
+    /* Gold divider */
+    .gold-divider {
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(200,162,52,0.3) 30%, rgba(200,162,52,0.3) 70%, transparent);
+      margin: 0 60px;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      padding: 60px 60px 40px;
+      background: var(--black2);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 24px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-bottom p {
+      font-family: 'Cinzel', serif;
+      font-size: 10px;
+      letter-spacing: 2px;
+      color: var(--text-dim);
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer-social a {
+      font-family: 'Cinzel', serif;
+      font-size: 10px;
+      letter-spacing: 2px;
+      color: var(--text-dim);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-social a:hover { color: var(--gold); }
+
+    /* ===== MOBILE ===== */
+    @media (max-width: 768px) {
+      nav { padding: 0 24px; }
+      .page-header { padding: 110px 24px 40px; }
+      .content-wrap { padding: 40px 24px 80px; }
+      footer { padding: 40px 24px 32px; }
+      .gold-divider { margin: 0 24px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo">
+    <img src="images/RISING_LOGO_VECTOR.png" alt="Rising Warrior Games">
+  </a>
+  <a href="/" class="nav-back">Back to Site</a>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <p class="page-label">Legal</p>
+  <h1 class="page-title">Privacy Policy</h1>
+  <p class="page-subtitle">Rising Warrior Games · risingwarriorgames.com</p>
+</div>
+
+<!-- CONTENT -->
+<div class="content-wrap">
+
+  <p class="effective-date">Effective Date: May 26, 2026</p>
+
+  <div class="ornament">
+    <div class="ornament-line"></div>
+    <div class="ornament-diamond"></div>
+    <div class="ornament-line right"></div>
+  </div>
+
+  <div class="policy-section">
+    <h2>Overview</h2>
+    <p>Rising Warrior Games ("we," "us," or "our") operates the website risingwarriorgames.com and associated pages. This Privacy Policy explains what information we collect when you visit our site, how we use it, and your rights regarding that information.</p>
+    <p>By using our website, you agree to the practices described in this policy. If you do not agree, please discontinue use of the site.</p>
+  </div>
+
+  <div class="policy-section">
+    <h2>Information We Collect</h2>
+    <p>We collect two types of information: information you provide directly to us, and information collected automatically through third-party tools.</p>
+    <p><strong style="color: var(--gold-light); font-weight: 500;">Information you provide:</strong></p>
+    <ul>
+      <li><strong>Email address</strong> — collected when you sign up for our mailing list via the "Join the Horde" form on our website. This is voluntary.</li>
+    </ul>
+    <p><strong style="color: var(--gold-light); font-weight: 500;">Information collected automatically:</strong></p>
+    <ul>
+      <li><strong>Usage and analytics data</strong> — including pages visited, time on site, referral source, browser type, and device type, collected via Google Analytics.</li>
+      <li><strong>Advertising and behavioral data</strong> — including page views and content interactions, collected via the Meta (Facebook) Pixel to help us understand and improve our advertising.</li>
+      <li><strong>IP address and general location</strong> — collected passively by the above third-party services.</li>
+    </ul>
+  </div>
+
+  <div class="policy-section">
+    <h2>How We Use Your Information</h2>
+    <ul>
+      <li>To send you updates about Rising Warrior Games, new games, campaigns, and announcements (email list subscribers only).</li>
+      <li>To understand how visitors use our website so we can improve it (Google Analytics).</li>
+      <li>To measure the effectiveness of our advertising and reach potential customers with relevant ads (Meta Pixel).</li>
+      <li>To fulfill any obligations related to Kickstarter or BackerKit campaigns you have participated in (handled through those platforms directly).</li>
+    </ul>
+    <p>We do not sell your personal information to third parties.</p>
+  </div>
+
+  <div class="policy-section">
+    <h2>Third-Party Services</h2>
+    <p>Our website uses the following third-party services, each with their own privacy practices:</p>
+    <ul>
+      <li><strong>Google Analytics</strong> — tracks site usage. You can opt out via the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google Analytics Opt-Out Browser Add-On</a>. Google's privacy policy is at <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>.</li>
+      <li><strong>Meta (Facebook) Pixel</strong> — tracks page views and content interactions for ad measurement. You can manage your ad preferences at <a href="https://www.facebook.com/adpreferences" target="_blank" rel="noopener">facebook.com/adpreferences</a>. Meta's privacy policy is at <a href="https://www.facebook.com/privacy/policy" target="_blank" rel="noopener">facebook.com/privacy/policy</a>.</li>
+      <li><strong>Mailchimp</strong> — manages our email list and newsletter distribution. Mailchimp's privacy policy is at <a href="https://www.intuit.com/privacy/statement/" target="_blank" rel="noopener">intuit.com/privacy/statement</a>.</li>
+      <li><strong>Kickstarter / BackerKit</strong> — if you have backed our campaign or placed a late pledge, those platforms manage their own data collection. Please refer to their respective privacy policies.</li>
+    </ul>
+  </div>
+
+  <div class="policy-section">
+    <h2>Cookies & Tracking Technologies</h2>
+    <p>Our website uses cookies and similar tracking technologies operated by Google and Meta. These tools may set cookies on your browser to recognize you across visits and across other websites.</p>
+    <p>You can control or disable cookies through your browser settings. Please note that disabling cookies may affect the functionality of some features. Most browsers also allow you to clear cookies at any time.</p>
+  </div>
+
+  <div class="policy-section">
+    <h2>Email Communications</h2>
+    <p>If you join our mailing list, we will send you updates about our games, campaigns, and news. We use Mailchimp to manage our list.</p>
+    <p>You can unsubscribe at any time by clicking the unsubscribe link in any email we send, or by contacting us directly. We comply with the CAN-SPAM Act and will honor all opt-out requests promptly.</p>
+  </div>
+
+  <div class="policy-section">
+    <h2>Your Rights</h2>
+    <p>Depending on where you are located, you may have certain rights regarding your personal information:</p>
+    <ul>
+      <li><strong>Access & Portability</strong> — you can request a copy of the personal data we hold about you.</li>
+      <li><strong>Correction</strong> — you can ask us to correct inaccurate data.</li>
+      <li><strong>Deletion</strong> — you can request that we delete your personal data (e.g., removing you from our mailing list and any stored records).</li>
+      <li><strong>Opt-Out of Tracking</strong> — you can opt out of Google Analytics and Meta Pixel tracking using the tools linked in the Third-Party Services section above.</li>
+      <li><strong>California Residents (CCPA)</strong> — you have the right to know what personal information is collected, to request deletion, and to opt out of the sale of personal information. We do not sell personal information.</li>
+      <li><strong>EU/UK Residents (GDPR)</strong> — you have rights to access, rectify, erase, restrict processing, and object to processing of your data. Our lawful basis for processing is legitimate interest (analytics/advertising) and consent (email signup).</li>
+    </ul>
+    <p>To exercise any of these rights, contact us at the address below.</p>
+  </div>
+
+  <div class="policy-section">
+    <h2>Data Retention</h2>
+    <p>We retain email addresses on our mailing list until you unsubscribe or request deletion. Analytics data is retained per the default retention settings of Google Analytics and Meta. We do not store payment or financial data on our servers; such transactions are handled entirely by Kickstarter, BackerKit, or other platforms.</p>
+  </div>
+
+  <div class="policy-section">
+    <h2>Children's Privacy</h2>
+    <p>Our website is not directed at children under the age of 13. We do not knowingly collect personal information from children under 13. If you believe we have inadvertently collected such information, please contact us and we will promptly delete it.</p>
+  </div>
+
+  <div class="policy-section">
+    <h2>Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time. When we do, we will update the effective date at the top of this page. We encourage you to review this policy periodically. Continued use of the website after any changes constitutes your acceptance of the updated policy.</p>
+  </div>
+
+  <div class="policy-section">
+    <h2>Contact Us</h2>
+    <p>If you have questions about this Privacy Policy or want to exercise your data rights, you can reach us at:</p>
+    <ul>
+      <li><strong>Company:</strong> Rising Warrior Games</li>
+      <li><strong>Email:</strong> <a href="mailto:overlord@risingwarriorgames.com">overlord@risingwarriorgames.com</a></li>
+      <li><strong>Location:</strong> Chattanooga, Tennessee, USA</li>
+      <li><strong>Website:</strong> <a href="https://risingwarriorgames.com">risingwarriorgames.com</a></li>
+    </ul>
+    <p>You can also reach us through our social channels linked in the footer below.</p>
+  </div>
+
+</div>
+
+<div class="gold-divider"></div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-bottom">
+    <p>© 2026 Rising Warrior Games · All Rights Reserved</p>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/risingwarriorgames">Instagram</a>
+      <a href="https://www.facebook.com/RisingWarriorGames">Facebook</a>
+      <a href="https://www.tiktok.com/@risingwarriorgames">TikTok</a>
+      <a href="https://boardgamegeek.com/boardgamepublisher/62694/rising-warrior-games">BGG</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
