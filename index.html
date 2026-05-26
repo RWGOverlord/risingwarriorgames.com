@@ -1404,7 +1404,7 @@ src="https://www.facebook.com/tr?id=2085516798873588&ev=PageView&noscript=1"
     <li><a href="#game">The Game</a></li>
     <li><a href="#gallery">Gallery</a></li>
     <li><a href="#about">About</a></li>
-    <li><a href="#signup" class="nav-cta">Stay Updated</a></li>
+    <li><a href="/latepledge.html" class="nav-cta">Order Now</a></li>
   </ul>
 <button id="hamburger" class="hamburger" aria-label="Toggle navigation menu">
     <span></span>
@@ -1419,60 +1419,162 @@ src="https://www.facebook.com/tr?id=2085516798873588&ev=PageView&noscript=1"
     <li><a href="#game" class="mobile-nav-link">The Game</a></li>
     <li><a href="#gallery" class="mobile-nav-link">Gallery</a></li>
     <li><a href="#about" class="mobile-nav-link">About</a></li>
-    <li><a href="#signup" class="mobile-nav-link mobile-cta">Stay Updated</a></li>
+    <li><a href="/latepledge.html" class="mobile-nav-link mobile-cta">Order Now</a></li>
   </ul>
 </div>
 
 <div id="mobile-overlay" class="mobile-overlay"></div>
 
 <!-- HERO -->
-<section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-moon"></div>
+<section class="hero" style="min-height:100vh; display:flex; flex-direction:column; padding:0; align-items:stretch; justify-content:flex-start;">
 
-  <!-- Floating sparks -->
-  <div class="hero-sparks" id="sparks"></div>
-
-  <div class="hero-content">
-    <div class="hero-eyebrow">Rising Warrior Games Presents</div>
-    
-    <img src="images/Zombie_Overlord_Title_Horizontal.png" alt="Zombie Overlord" class="hero-game-title-img">
-    <p class="hero-subtitle">Deck-Building · Strategy · Apocalypse</p>
-
-    <div class="hero-box-wrap">
-      <img src="images/Gold_Trim_Thematic_MockUp_Narrow.png" alt="Zombie Overlord Box" class="hero-box-img">
-    </div>
-
-    <p class="hero-tagline">"Build your horde. Rule the apocalypse."</p>
-
-    <div class="hero-stats">
-      <div class="hero-stat">
-        <span class="hero-stat-value">2–4</span>
-        <span class="hero-stat-label">Players</span>
+  <!-- Urgency Bar -->
+  <div style="background:#1a0e00; border-bottom:1px solid rgba(200,162,52,0.25); padding:10px 24px; display:flex; align-items:center; justify-content:center; gap:20px; flex-wrap:wrap; margin-top:72px;">
+    <span style="font-family:'Cinzel',serif; font-size:11px; letter-spacing:3px; text-transform:uppercase; color:#c8a234;">
+      &#9201; Late pledge window closes June 15th &mdash; then it&rsquo;s gone
+    </span>
+    <div style="display:flex; gap:8px; align-items:center;" id="hero-countdown">
+      <div style="display:flex;flex-direction:column;align-items:center;gap:2px;">
+        <span style="font-family:'Cinzel',serif;font-size:20px;font-weight:700;color:#e8c45a;min-width:38px;text-align:center;background:rgba(200,162,52,0.08);border:1px solid rgba(200,162,52,0.2);padding:3px 6px;" id="hcd-days">--</span>
+        <span style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;color:#5a4e38;text-transform:uppercase;">Days</span>
       </div>
-      <div class="hero-stat-divider"></div>
-      <div class="hero-stat">
-        <span class="hero-stat-value">30–40</span>
-        <span class="hero-stat-label">Minutes</span>
+      <span style="font-family:'Cinzel',serif;font-size:16px;color:#5a4e38;padding-bottom:14px;">:</span>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:2px;">
+        <span style="font-family:'Cinzel',serif;font-size:20px;font-weight:700;color:#e8c45a;min-width:38px;text-align:center;background:rgba(200,162,52,0.08);border:1px solid rgba(200,162,52,0.2);padding:3px 6px;" id="hcd-hours">--</span>
+        <span style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;color:#5a4e38;text-transform:uppercase;">Hrs</span>
       </div>
-      <div class="hero-stat-divider"></div>
-      <div class="hero-stat">
-        <span class="hero-stat-value">14+</span>
-        <span class="hero-stat-label">Ages</span>
+      <span style="font-family:'Cinzel',serif;font-size:16px;color:#5a4e38;padding-bottom:14px;">:</span>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:2px;">
+        <span style="font-family:'Cinzel',serif;font-size:20px;font-weight:700;color:#e8c45a;min-width:38px;text-align:center;background:rgba(200,162,52,0.08);border:1px solid rgba(200,162,52,0.2);padding:3px 6px;" id="hcd-mins">--</span>
+        <span style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;color:#5a4e38;text-transform:uppercase;">Min</span>
       </div>
-    </div>
-
-    <div class="hero-buttons">
-      <a href="/latepledge.html" class="btn-primary">Late Pledges Open</a>
-      <a href="#game" class="btn-secondary">Learn More</a>
+      <span style="font-family:'Cinzel',serif;font-size:16px;color:#5a4e38;padding-bottom:14px;">:</span>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:2px;">
+        <span style="font-family:'Cinzel',serif;font-size:20px;font-weight:700;color:#e8c45a;min-width:38px;text-align:center;background:rgba(200,162,52,0.08);border:1px solid rgba(200,162,52,0.2);padding:3px 6px;" id="hcd-secs">--</span>
+        <span style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;color:#5a4e38;text-transform:uppercase;">Sec</span>
+      </div>
     </div>
   </div>
 
-  <div class="scroll-hint">
-    <span>Scroll</span>
-    <div class="scroll-arrow"></div>
+  <!-- Hero Body: two-column -->
+  <div style="display:grid; grid-template-columns:1fr 1fr; flex:1; min-height:0;">
+
+    <!-- Left: photo -->
+    <div style="position:relative; overflow:hidden; min-height:500px;">
+      <img src="images/Box_with_cards.jpg" alt="Zombie Overlord game laid out on table showing box and cards"
+        style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 30%;">
+      <div style="position:absolute; inset:0; background:linear-gradient(to right, rgba(6,4,0,0.15) 0%, rgba(6,4,0,0.55) 100%);"></div>
+    </div>
+
+    <!-- Right: offer + CTA -->
+    <div style="display:flex; flex-direction:column; justify-content:center; padding:48px 48px 48px 44px; background:var(--black); gap:0;">
+
+      <!-- Eyebrow -->
+      <div style="font-family:'Cinzel',serif; font-size:10px; letter-spacing:4px; text-transform:uppercase; color:var(--gold); margin-bottom:14px; display:flex; align-items:center; gap:10px;">
+        <span style="display:inline-block; width:24px; height:1px; background:var(--gold); opacity:0.5;"></span>
+        Rising Warrior Games
+      </div>
+
+      <!-- Title -->
+      <h1 style="font-family:'Cinzel Decorative',serif; font-size:clamp(28px,3.5vw,44px); font-weight:700; color:var(--text); line-height:1.1; margin-bottom:8px;">
+        Zombie<br><span style="color:#64c832;">Overlord</span>
+      </h1>
+      <p style="font-family:'Cinzel',serif; font-size:11px; letter-spacing:5px; color:var(--text-dim); text-transform:uppercase; margin-bottom:18px;">
+        Deck-Building &middot; Strategy &middot; Apocalypse
+      </p>
+      <p style="font-style:italic; font-size:17px; font-weight:300; color:var(--text-muted); margin-bottom:24px; line-height:1.5;">
+        You&rsquo;re not surviving the apocalypse.<br>You&rsquo;re running it.
+      </p>
+
+      <!-- Social proof -->
+      <div style="display:flex; gap:18px; margin-bottom:24px; flex-wrap:wrap;">
+        <div style="font-family:'Cinzel',serif; font-size:10px; letter-spacing:1px; color:var(--text-dim); text-transform:uppercase;">
+          <span style="color:var(--gold);">&#9670;</span> Funded in <strong style="color:var(--text-muted);">13 hours</strong>
+        </div>
+        <div style="font-family:'Cinzel',serif; font-size:10px; letter-spacing:1px; color:var(--text-dim); text-transform:uppercase;">
+          <span style="color:var(--gold);">&#9670;</span> <strong style="color:var(--text-muted);">150+</strong> backers
+        </div>
+        <div style="font-family:'Cinzel',serif; font-size:10px; letter-spacing:1px; color:var(--text-dim); text-transform:uppercase;">
+          <span style="color:var(--gold);">&#9670;</span> Funded <strong style="color:var(--text-muted);">May 2026</strong>
+        </div>
+      </div>
+
+      <!-- Status strip -->
+      <div style="border-left:2px solid rgba(58,158,34,0.4); background:rgba(58,158,34,0.04); padding:10px 14px; margin-bottom:28px; display:flex; flex-direction:column; gap:6px;">
+        <div style="font-family:'Cinzel',serif; font-size:10px; letter-spacing:2px; text-transform:uppercase; color:#3a9e22;">&#10003; Kickstarter funded</div>
+        <div style="font-family:'Cinzel',serif; font-size:10px; letter-spacing:2px; text-transform:uppercase; color:#c8a234;">&#9654; Sending to manufacturer now</div>
+        <div style="font-family:'Cinzel',serif; font-size:10px; letter-spacing:2px; text-transform:uppercase; color:#3a4028;">&#9675; Est. delivery Q4 2026</div>
+      </div>
+
+      <!-- Featured bundle -->
+      <div style="border:2px solid var(--gold); background:rgba(200,162,52,0.07); padding:20px; margin-bottom:12px; position:relative;">
+        <div style="position:absolute; top:-11px; left:16px; background:var(--gold); color:var(--black); font-family:'Cinzel',serif; font-size:9px; letter-spacing:2px; text-transform:uppercase; padding:3px 10px; font-weight:700;">Most popular</div>
+        <div style="font-family:'Cinzel',serif; font-size:11px; letter-spacing:2px; color:var(--gold); text-transform:uppercase; margin-bottom:6px;">Complete Bundle</div>
+        <div style="font-size:14px; color:var(--text-muted); line-height:1.6; margin-bottom:12px;">
+          <span style="color:var(--text);">Zombie Overlord</span> base game<br>
+          + <span style="color:var(--text);">Mini Expansion</span> (exclusive to bundle)
+        </div>
+        <div style="display:flex; align-items:baseline; gap:10px; margin-bottom:14px;">
+          <span style="font-family:'Cinzel',serif; font-size:28px; font-weight:700; color:var(--gold-light);">$46</span>
+          <span style="font-family:'Cinzel',serif; font-size:11px; color:var(--text-dim); letter-spacing:1px;">+ shipping</span>
+        </div>
+        <a href="/latepledge.html"
+          style="display:block; background:var(--gold); color:var(--black); text-align:center; font-family:'Cinzel',serif; font-size:11px; letter-spacing:3px; text-transform:uppercase; font-weight:700; padding:14px 20px; text-decoration:none; transition:background 0.2s;">
+          Claim Your Copy &rarr;
+        </a>
+      </div>
+
+      <!-- Base game secondary -->
+      <div style="border:1px solid rgba(200,162,52,0.2); background:rgba(200,162,52,0.03); padding:16px 20px; margin-bottom:14px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;">
+        <div>
+          <div style="font-family:'Cinzel',serif; font-size:10px; letter-spacing:2px; color:var(--text-dim); text-transform:uppercase; margin-bottom:4px;">Base Game Only</div>
+          <span style="font-family:'Cinzel',serif; font-size:20px; font-weight:700; color:var(--text-muted);">$34</span>
+          <span style="font-family:'Cinzel',serif; font-size:11px; color:var(--text-dim); letter-spacing:1px; margin-left:6px;">+ shipping</span>
+        </div>
+        <a href="/latepledge.html"
+          style="font-family:'Cinzel',serif; font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--text-muted); border:1px solid rgba(200,162,52,0.25); padding:10px 18px; text-decoration:none; white-space:nowrap; transition:color 0.2s, border-color 0.2s;">
+          Order Base Game
+        </a>
+      </div>
+
+      <!-- Trust line -->
+      <div style="font-family:'Cinzel',serif; font-size:10px; letter-spacing:1px; color:var(--text-dim); display:flex; align-items:center; gap:8px;">
+        <span style="color:#3a9e22; font-size:13px;">&#9679;</span> Secure checkout &middot; Backerkit protected
+      </div>
+
+    </div>
   </div>
+
+  <!-- Mobile stacked layout override -->
+  <style>
+    @media (max-width: 768px) {
+      .hero > div:last-of-type { grid-template-columns: 1fr !important; }
+      .hero > div:last-of-type > div:first-child { min-height: 280px !important; }
+      .hero > div:last-of-type > div:last-child { padding: 32px 24px !important; }
+    }
+  </style>
+
 </section>
+
+<script>
+  (function() {
+    var close = new Date('2026-06-15T23:59:59');
+    function pad(n) { return String(Math.max(0, Math.floor(n))).padStart(2, '0'); }
+    function tick() {
+      var diff = close - Date.now();
+      if (diff <= 0) {
+        ['hcd-days','hcd-hours','hcd-mins','hcd-secs'].forEach(function(id){ document.getElementById(id).textContent = '00'; });
+        return;
+      }
+      document.getElementById('hcd-days').textContent  = pad(diff / 86400000);
+      document.getElementById('hcd-hours').textContent = pad((diff % 86400000) / 3600000);
+      document.getElementById('hcd-mins').textContent  = pad((diff % 3600000) / 60000);
+      document.getElementById('hcd-secs').textContent  = pad((diff % 60000) / 1000);
+    }
+    tick();
+    setInterval(tick, 1000);
+  })();
+</script>
 
 <!-- FUNDED BANNER -->
 <div class="funded-banner">
@@ -1480,21 +1582,21 @@ src="https://www.facebook.com/tr?id=2085516798873588&ev=PageView&noscript=1"
     <span class="funded-icon">&#x2726</span>
     <div class="funded-text">
       <strong>Funded in 13 Hours</strong>
-      <span>Kickstarter Campaign</span>
+      <span>150+ backers believed first</span>
     </div>
   </div>
   <div class="funded-item">
     <span class="funded-icon">&#x2726</span>
     <div class="funded-text">
-      <strong>150+ Backers</strong>
-      <span>And Growing</span>
+      <strong>Going to Manufacturer</strong>
+      <span>This is actually happening</span>
     </div>
   </div>
   <div class="funded-item">
     <span class="funded-icon">&#x2726</span>
     <div class="funded-text">
-      <strong>Late Pledges Open</strong>
-      <span>$10K+ Raised</span>
+      <strong>Last Chance to Order</strong>
+      <span>Window closes June 15th</span>
     </div>
   </div>
   <div class="funded-item">
@@ -1705,22 +1807,6 @@ src="https://www.facebook.com/tr?id=2085516798873588&ev=PageView&noscript=1"
     });
   }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
   reveals.forEach(el => observer.observe(el));
-
-  // Gold sparks in hero
-  const sparksContainer = document.getElementById('sparks');
-  function createSpark() {
-    const spark = document.createElement('div');
-    spark.className = 'spark';
-    spark.style.left = Math.random() * 100 + '%';
-    spark.style.top = (40 + Math.random() * 50) + '%';
-    spark.style.animationDuration = (3 + Math.random() * 4) + 's';
-    spark.style.animationDelay = (Math.random() * 3) + 's';
-    spark.style.width = spark.style.height = (1 + Math.random() * 3) + 'px';
-    sparksContainer.appendChild(spark);
-    setTimeout(() => spark.remove(), 8000);
-  }
-  setInterval(createSpark, 400);
-  for (let i = 0; i < 12; i++) createSpark();
 
   // Smooth nav background on scroll
   const nav = document.querySelector('nav');
