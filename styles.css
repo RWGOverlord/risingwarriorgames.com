@@ -67,10 +67,9 @@ h1,h2,h3,h4{color:var(--ink); margin:0}
   border-bottom:1px solid var(--line); position:sticky; top:0; z-index:50}
 .chrome-in{max-width:var(--shell); margin:0 auto; padding:14px 32px; display:flex; align-items:center; gap:36px}
 .brand{display:flex; align-items:center; gap:12px; text-decoration:none; cursor:pointer}
-.brand img{height:42px; width:auto}
-.brand .txt{font:700 15px/1.05 'Cinzel',serif; letter-spacing:.09em; text-transform:uppercase; color:var(--ink); white-space:nowrap}
-.brand .txt s{display:block; text-decoration:none; font:400 8px/1 'IBM Plex Mono',monospace;
-  letter-spacing:.26em; color:var(--gold); margin-top:6px}
+.brand img{height:54px; width:auto}
+.brand .tag{font:400 8px/1 'IBM Plex Mono',monospace; letter-spacing:.26em;
+  text-transform:uppercase; color:var(--gold); white-space:nowrap}
 .nav{display:flex; gap:28px; margin-left:auto; align-items:center}
 .nav a{font:500 11px/1 'IBM Plex Mono',monospace; letter-spacing:.16em; text-transform:uppercase;
   text-decoration:none; color:var(--muted); padding:5px 0; border-bottom:1px solid transparent; transition:.18s}
