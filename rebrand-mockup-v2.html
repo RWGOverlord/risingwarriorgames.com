@@ -193,8 +193,10 @@ h1,h2,h3,h4{color:var(--ink); margin:0}
 .zo-hero::after{content:""; position:absolute; inset:0; pointer-events:none;
   background:radial-gradient(900px 420px at 78% 42%, rgba(200,162,52,.13), transparent 70%)}
 .zo-grid{display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center; position:relative; z-index:1}
+.zo-grid>*{min-width:0}
 .zo-hero .mono{color:var(--gold-lift)}
-.zo-title{max-width:520px; margin:20px 0 22px}
+/* min() keeps the title from forcing the grid column wider than the viewport */
+.zo-title{max-width:min(100%,520px); margin:20px 0 22px}
 .zo-line{font:500 21px/1.45 'Archivo',sans-serif; color:#E4EBE4; max-width:30ch; margin:0 0 30px}
 .zo-line b{color:var(--gold-lift); font-weight:600}
 .spec{display:flex; flex-wrap:wrap; border-top:1px solid rgba(255,255,255,.14);
@@ -239,6 +241,92 @@ h1,h2,h3,h4{color:var(--ink); margin:0}
   color:var(--muted); font-size:13px}
 .trust b{color:var(--ink); font-weight:600}
 
+/* ---------- premise + flow chain ---------- */
+.premise{padding:88px 0 0}
+.premise-grid{display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center}
+.premise h2{font:600 clamp(28px,3.6vw,42px)/1.12 'Cinzel',serif; margin:0 0 18px}
+.premise .big{font:500 21px/1.5 'Archivo',sans-serif; color:var(--ink); margin:0 0 20px}
+.premise .big b{color:var(--gold); font-weight:600}
+.premise p{margin:0 0 16px}
+.premise figure{margin:0}
+.premise figure img{border-radius:var(--r); border:1px solid var(--line); aspect-ratio:4/3; object-fit:cover}
+.flow{margin:44px 0 0; padding:26px 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+  display:flex; flex-wrap:wrap; align-items:center; gap:14px}
+.flow span{font:500 11px/1 'IBM Plex Mono',monospace; letter-spacing:.14em; text-transform:uppercase; color:var(--ink)}
+.flow i{font-style:normal; color:var(--gold)}
+
+/* ---------- pillars: alternating image / copy ---------- */
+.pillars{padding:88px 0}
+.pillar{display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center; padding:44px 0;
+  border-top:1px solid var(--line)}
+.pillar:first-of-type{border-top:0}
+.pillar:nth-child(even) .pillar-fig{order:2}
+.pillar-fig img{border-radius:var(--r); border:1px solid var(--line); aspect-ratio:4/3; object-fit:cover}
+.pillar h3{font:700 clamp(22px,2.5vw,29px)/1.15 'Cinzel',serif; margin:0 0 12px; color:var(--green)}
+.pillar .kicker{font:500 17px/1.5 'Archivo',sans-serif; color:var(--ink); margin:0 0 14px}
+.pillar p{margin:0 0 14px; font-size:15px}
+.pillar ul{list-style:none; margin:18px 0 0; padding:0; display:grid; gap:10px}
+.pillar li{position:relative; padding-left:22px; font-size:15px}
+.pillar li::before{content:"✦"; position:absolute; left:0; color:var(--gold); font-size:12px; top:3px}
+
+/* ---------- contrast band: not a passive deck-builder ---------- */
+.vs{background:var(--green); color:#D7E0D8; padding:88px 0}
+.vs h2{color:#F4F7F2; font:600 clamp(28px,3.6vw,42px)/1.14 'Cinzel',serif; margin:0 0 14px}
+.vs .eyebrow{color:var(--gold-lift)}
+.vs .eyebrow::before{background:var(--gold-lift)}
+.vs .sec-head p{color:#C6D2C7}
+.vs-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:20px; margin-top:44px}
+.vs-item{border:1px solid rgba(255,255,255,.13); border-radius:var(--r); padding:28px 30px;
+  background:rgba(255,255,255,.035)}
+.vs-item h4{color:#F4F7F2; font:600 18px/1.25 'Archivo',sans-serif; margin:0 0 10px;
+  display:flex; gap:11px; align-items:flex-start}
+.vs-item h4::before{content:"✔"; color:var(--gold-lift); flex:0 0 auto}
+.vs-item p{margin:0; font-size:15px; color:#B6C4B8}
+.vs-close{margin:40px 0 0; padding-top:28px; border-top:1px solid rgba(255,255,255,.12);
+  font:500 19px/1.5 'Cinzel',serif; color:#F4F7F2}
+.vs-close b{color:var(--gold-lift); font-weight:500}
+
+/* ---------- a turn in five steps ---------- */
+.turn{padding:88px 0; background:var(--paper); border-top:1px solid var(--line)}
+.steps{counter-reset:s; margin-top:44px; border-top:1px solid var(--line)}
+.step{counter-increment:s; display:grid; grid-template-columns:74px 1fr; gap:26px;
+  padding:26px 0; border-bottom:1px solid var(--line); align-items:start}
+.step::before{content:counter(s,decimal-leading-zero); font:600 26px/1 'Cinzel',serif; color:var(--gold)}
+.step h4{font:700 20px/1.2 'Cinzel',serif; margin:0 0 8px; color:var(--green)}
+.step p{margin:0; font-size:15px; max-width:64ch}
+.turn-win{margin-top:34px; display:flex; gap:22px; align-items:center; flex-wrap:wrap;
+  background:var(--white); border:1px solid var(--gold); border-radius:var(--r); padding:26px 30px}
+.turn-win h4{font:700 20px/1.2 'Cinzel',serif; margin:0 0 6px; color:var(--ink)}
+.turn-win p{margin:0; font-size:15px; max-width:62ch}
+
+/* ---------- three editions ---------- */
+.eds{display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin:0 0 26px}
+.ed{background:var(--white); border:1px solid var(--line); border-radius:var(--r);
+  display:flex; flex-direction:column; overflow:hidden}
+.ed--feat{border-color:var(--gold); box-shadow:0 0 0 3px rgba(176,129,47,.09)}
+.ed-img{background:var(--green-tint); border-bottom:1px solid var(--line)}
+.ed-img img{width:100%; aspect-ratio:3/2; object-fit:cover}
+.ed-body{padding:26px 26px 28px; display:flex; flex-direction:column; flex:1}
+.ed .tagbest{color:var(--gold); display:block; margin-bottom:10px}
+.ed h4{margin:0 0 12px; font:700 20px/1.2 'Cinzel',serif}
+.ed .price{font:700 30px/1 'Archivo',sans-serif; color:var(--ink); margin:0 0 4px}
+.ed .ship{color:var(--muted); font-size:13px; margin:0 0 18px}
+.ed ul{list-style:none; margin:0 0 22px; padding:0; display:grid; gap:9px; font-size:14px}
+.ed li{position:relative; padding-left:20px}
+.ed li::before{content:"✔"; position:absolute; left:0; color:var(--gold); font-size:11px; top:3px}
+.ed .btn{margin-top:auto; text-align:center}
+
+/* ---------- add-ons ---------- */
+.addons{margin-top:56px; padding-top:44px; border-top:1px solid var(--line)}
+.addon-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:34px}
+.addon{background:var(--white); border:1px solid var(--line); border-radius:var(--r); padding:22px}
+.addon img{width:100%; aspect-ratio:16/10; object-fit:cover; border-radius:var(--r);
+  border:1px solid var(--line); margin-bottom:18px}
+.addon .row{display:flex; justify-content:space-between; align-items:baseline; gap:12px; margin-bottom:9px}
+.addon h4{margin:0; font:700 17px/1.2 'Cinzel',serif}
+.addon .price{font:700 17px/1 'Archivo',sans-serif; color:var(--gold); white-space:nowrap}
+.addon p{margin:0; font-size:14px}
+
 @media (prefers-reduced-motion:reduce){*{transition:none !important; animation:none !important; scroll-behavior:auto}}
 
 /* ---------- responsive ---------- */
@@ -254,6 +342,9 @@ h1,h2,h3,h4{color:var(--ink); margin:0}
   .foot-grid{grid-template-columns:1fr 1fr}
   .nav{display:none}
   .hero-fig figcaption{position:static; margin-top:12px}
+  .premise-grid,.pillar{grid-template-columns:1fr; gap:32px}
+  .pillar:nth-child(even) .pillar-fig{order:0}
+  .vs-grid,.eds,.addon-grid{grid-template-columns:1fr}
 }
 @media (max-width:560px){
   .wrap,.chrome-in,.tool-in,.proof-in{padding-left:20px; padding-right:20px}
@@ -262,6 +353,9 @@ h1,h2,h3,h4{color:var(--ink); margin:0}
   .foot-grid{grid-template-columns:1fr}
   .tool-note{display:none}
   .buy{flex-direction:column; align-items:flex-start}
+  .step{grid-template-columns:1fr; gap:10px}
+  .flow{gap:9px}
+  .flow span{font-size:10px}
 }
 </style>
 </head>
@@ -275,7 +369,7 @@ h1,h2,h3,h4{color:var(--ink); margin:0}
       <button class="tab" role="tab" aria-selected="true" data-view="home">Rising Warrior Games</button>
       <button class="tab" role="tab" aria-selected="false" data-view="zo">Zombie Overlord</button>
     </div>
-    <p class="tool-note">White page, dark green structure, gold from the logo. Header, footer and preorder block are identical on both pages.</p>
+    <p class="tool-note">Two pages in one file for preview. In production, "Home" ships as index.html and "Zombie Overlord" as zombieoverlord.html — every <code>data-goto="zo"</code> becomes <code>href="zombieoverlord.html"</code>.</p>
   </div>
 </div>
 
@@ -287,6 +381,7 @@ h1,h2,h3,h4{color:var(--ink); margin:0}
       <span class="txt">Rising Warrior<s>Games · Chattanooga</s></span>
     </a>
     <nav class="nav">
+      <!-- PROD: data-goto="home" -> href="/"  ·  data-goto="zo" -> href="/zombieoverlord.html" -->
       <a data-navlink="home" class="on" data-goto="home">Home</a>
       <a data-goto="zo">Zombie Overlord</a>
       <a href="#studio">Studio</a>
@@ -324,7 +419,7 @@ h1,h2,h3,h4{color:var(--ink); margin:0}
   <div class="proof">
     <dl class="proof-in">
       <div><dt>Funded in</dt><dd>13 hours</dd></div>
-      <div><dt>Kickstarter backers</dt><dd>150+</dd></div>
+      <div><dt>Kickstarter backers</dt><dd>167</dd></div>
       <div><dt>Games in the box</dt><dd>194 cards</dd></div>
       <div><dt>Studio founded</dt><dd>2026</dd></div>
     </dl>
@@ -348,7 +443,7 @@ h1,h2,h3,h4{color:var(--ink); margin:0}
         <p class="tag">You're not surviving the apocalypse. You're running it. A competitive deck-builder where you play the villain.</p>
         <dl class="facts">
           <div><dt>Players</dt><dd>2–4</dd></div>
-          <div><dt>Playtime</dt><dd>45 min</dd></div>
+          <div><dt>Playtime</dt><dd>30–40 min</dd></div>
           <div><dt>Age</dt><dd>14+</dd></div>
           <div><dt>Cards</dt><dd>194</dd></div>
         </dl>
@@ -410,19 +505,42 @@ h1,h2,h3,h4{color:var(--ink); margin:0}
           <p class="zo-line">You're not surviving the apocalypse. <b>You're running it.</b></p>
           <dl class="spec">
             <div><dt>Players</dt><dd>2–4</dd></div>
-            <div><dt>Playtime</dt><dd>45 min</dd></div>
+            <div><dt>Playtime</dt><dd>30–40 min</dd></div>
             <div><dt>Age</dt><dd>14+</dd></div>
             <div><dt>Cards</dt><dd>194</dd></div>
           </dl>
           <div class="zo-cta">
             <a class="btn" href="#preorder">Preorder now</a>
-            <span class="note">Ships Q4 2026 · Checkout by BackerKit</span>
+            <span class="note">Funded in 13 hrs · 167 backers · Ships Q4 2026</span>
           </div>
         </div>
         <figure class="zo-art">
           <img src="images/Box_with_cards.jpg" alt="Zombie Overlord box with cards">
         </figure>
       </div>
+    </div>
+  </section>
+
+  <!-- PREMISE — the one-line hook, from the live ZO page -->
+  <section class="premise wrap">
+    <div class="premise-grid">
+      <div>
+        <p class="eyebrow mono">About the game</p>
+        <h2>The Dead Rise at Your Command</h2>
+        <p class="big">Most zombie games make you run. <b>Zombie Overlord lets you hunt.</b></p>
+        <p>You don't save survivors — you harvest them. Set traps. Lure the desperate into your base. Then flip them into zombies and add them to your growing horde.</p>
+        <p>Every turn, your deck gets stronger. Every rival gets closer to being overrun. Outplay your opponents, sabotage their plans, and prove there's only room for one ruler of the apocalypse.</p>
+      </div>
+      <figure>
+        <img src="images/Horde_Cover.png" alt="The Zombie Overlord horde">
+      </figure>
+    </div>
+    <div class="flow">
+      <span>Place traps</span><i>→</i>
+      <span>Lure survivors</span><i>→</i>
+      <span>Flip them into zombies</span><i>→</i>
+      <span>Build your deck</span><i>→</i>
+      <span>Crush your rivals</span>
     </div>
   </section>
 
@@ -451,6 +569,129 @@ h1,h2,h3,h4{color:var(--ink); margin:0}
     </div>
   </section>
 
+  <!-- PILLARS — "Three Things That Set It Apart", from the live ZO page -->
+  <section class="pillars wrap">
+    <div class="sec-head">
+      <p class="eyebrow mono">What makes it unique</p>
+      <h2>Three things that set it apart</h2>
+      <p>Zombie Overlord isn't just another zombie game. It's a strategic engine built around deception, conversion and chaos.</p>
+    </div>
+
+    <article class="pillar">
+      <figure class="pillar-fig"><img src="images/Survivor_Cards.jpg" alt="Survivor cards showing human and zombie sides"></figure>
+      <div>
+        <h3>Trap-and-convert gameplay</h3>
+        <p class="kicker">You don't just lure survivors — you turn them into your army.</p>
+        <p>Survivors roam the wasteland in desperation. By placing traps that match the resources they're searching for, you lure them to your base and convert them into loyal undead minions.</p>
+        <p>Every survivor you claim permanently strengthens your deck, unlocking stronger attacks, better combos and new strategic paths. But every survivor is contested — attack your rivals, sabotage their traps, or out-lure them entirely.</p>
+      </div>
+    </article>
+
+    <article class="pillar">
+      <figure class="pillar-fig"><img src="images/Trap_Cards.jpg" alt="Trap cards"></figure>
+      <div>
+        <h3>Strategic trap warfare</h3>
+        <p class="kicker">Your traps are both your weapons — and your greatest vulnerability.</p>
+        <p>Trap cards shape the battlefield and define your strategy, each tied to different resource types that fuel combos, attacks and disruption. Build deadly combos, bait opponents into bad decisions, or watch your plans crumble when rivals strike.</p>
+        <ul>
+          <li>Sabotage enemy traps to steal their advantage</li>
+          <li>Strike directly or dismantle their trap network</li>
+          <li>No plan survives contact with rival Overlords</li>
+          <li>Every turn reshapes the battlefield</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="pillar">
+      <figure class="pillar-fig"><img src="images/Unique_Survivor_Horde.png" alt="A selection of the 50+ unique characters"></figure>
+      <div>
+        <h3>50+ unique characters</h3>
+        <p class="kicker">Every game feels different.</p>
+        <p>Each character features original, hand-crafted artwork that brings the wasteland to life — from desperate civilians to dangerous criminals. Each one feels like a character, not just a card.</p>
+        <p>And when you convert them, they become yours forever.</p>
+      </div>
+    </article>
+  </section>
+
+  <!-- CONTRAST — "This Isn't a Passive Deck-Builder" -->
+  <section class="vs">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow mono">The difference</p>
+        <h2>This isn't a passive deck-builder</h2>
+        <p>Most deck-building games have you building quietly. Zombie Overlord doesn't.</p>
+      </div>
+      <div class="vs-grid">
+        <div class="vs-item">
+          <h4>You steal survivors</h4>
+          <p>From a shared board — every card you gain was taken from the game, and from everyone else.</p>
+        </div>
+        <div class="vs-item">
+          <h4>Your deck is your weapon</h4>
+          <p>Every card you convert makes you stronger while thinning the pool for your rivals.</p>
+        </div>
+        <div class="vs-item">
+          <h4>Direct attacks &amp; sabotage</h4>
+          <p>Every turn stays aggressive. No waiting around while opponents build in silence.</p>
+        </div>
+        <div class="vs-item">
+          <h4>PVP, not PVE</h4>
+          <p>You're fighting other Overlords, not a cooperative threat. Ruthless control of the wasteland.</p>
+        </div>
+      </div>
+      <p class="vs-close">No waiting. No passive play. <b>Just ruthless control of the wasteland.</b></p>
+    </div>
+  </section>
+
+  <!-- HOW TO PLAY — the five-step turn -->
+  <section class="turn">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow mono">How to play</p>
+        <h2>A turn in five steps</h2>
+        <p>Each round is fast, aggressive and full of decisions. Here's how a turn unfolds.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div>
+            <h4>Gain resources &amp; buy cards</h4>
+            <p>Play Supply cards to build up Purchase Power, then spend it on new Traps, Action cards or Scavengers from the shared Wasteland.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div>
+            <h4>Build your base &amp; activate abilities</h4>
+            <p>Place Trap cards into your base to set up defenses and lure types. Activate their special abilities for an edge — more resources, card draws or disruption.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div>
+            <h4>Command your horde</h4>
+            <p>Play Minion cards to attack rival bases. Hit their Life Points directly, or break and deactivate their Traps to disrupt their lure strategy before they can use it against you.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div>
+            <h4>Lure &amp; convert survivors</h4>
+            <p>Survivors in the Wasteland are drawn to whoever has the most matching resources across their active Traps. If you lure them, they flip into Zombie Minions and join your deck permanently.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div>
+            <h4>Clean up &amp; draw new cards</h4>
+            <p>Discard unused cards and draw back up. Your newly converted zombies shuffle into your deck, making every turn stronger than the last.</p>
+          </div>
+        </div>
+      </div>
+      <div class="turn-win">
+        <div>
+          <h4>Become the Overlord</h4>
+          <p>Last player standing with Life Points wins. Out-lure, out-build and out-battle your rivals to claim your rotten throne.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="gal wrap">
     <div class="sec-head">
       <p class="eyebrow mono">The components</p>
@@ -459,9 +700,9 @@ h1,h2,h3,h4{color:var(--ink); margin:0}
     </div>
     <div class="gal-grid">
       <figure><img src="images/Full_Layout_1.jpg" alt="Game in play"><figcaption>Game in play</figcaption></figure>
-      <figure><img src="images/Trap_Cards.jpg" alt="Trap cards"><figcaption>Trap cards</figcaption></figure>
-      <figure><img src="images/Survivor_Cards.jpg" alt="Survivor cards"><figcaption>Survivor cards</figcaption></figure>
-      <figure><img src="images/Box_with_cards.jpg" alt="Full game layout"><figcaption>Full layout</figcaption></figure>
+      <figure><img src="images/Action_Cards.png" alt="Action cards"><figcaption>Action cards</figcaption></figure>
+      <figure><img src="images/Survivors_Grouped.png" alt="Survivor artwork"><figcaption>Survivor artwork</figcaption></figure>
+      <figure><img src="images/layout_2.jpg" alt="Full game layout"><figcaption>Full layout</figcaption></figure>
     </div>
   </section>
 
@@ -473,24 +714,49 @@ h1,h2,h3,h4{color:var(--ink); margin:0}
         <h2>Manufactured and on the way</h2>
         <p>Preorders are open through BackerKit. Estimated delivery Q4 2026.</p>
       </div>
-      <div class="buys">
-        <div class="buy buy--feat">
-          <img src="images/Gold_Trim_Thematic_MockUp.png" alt="Complete bundle">
-          <div>
+      <div class="eds">
+        <div class="ed">
+          <div class="ed-img"><img src="images/Gold_Trim_Thematic_MockUp.png" alt="Core edition"></div>
+          <div class="ed-body">
+            <h4>Core Edition</h4>
+            <p class="price">$34</p>
+            <p class="ship">+ shipping</p>
+            <ul>
+              <li>Core game — 194 cards</li>
+              <li>50+ unique characters</li>
+              <li>All stretch goals included</li>
+            </ul>
+            <a class="btn btn--ghost btn--sm" href="https://zombie-overlord.backerkit.com/hosted_preorders">Preorder core</a>
+          </div>
+        </div>
+        <div class="ed ed--feat">
+          <div class="ed-img"><img src="images/Premium_Product.png" alt="Premium bundle"></div>
+          <div class="ed-body">
             <span class="tagbest mono">Most popular</span>
-            <h4>Complete Bundle</h4>
+            <h4>Premium Bundle</h4>
             <p class="price">$46</p>
-            <p class="ship">+ shipping · base game + mini expansion (bundle exclusive)</p>
+            <p class="ship">+ shipping</p>
+            <ul>
+              <li>Core game — 194 cards</li>
+              <li>Misfits Mini Expansion</li>
+              <li>All stretch goals included</li>
+            </ul>
             <a class="btn btn--sm" href="https://zombie-overlord.backerkit.com/hosted_preorders">Preorder bundle</a>
           </div>
         </div>
-        <div class="buy">
-          <img src="images/KS_Main_1x1.png" alt="Base game">
-          <div>
-            <h4>Base Game</h4>
-            <p class="price">$34</p>
-            <p class="ship">+ shipping · 194 cards, 50+ unique characters</p>
-            <a class="btn btn--ghost btn--sm" href="https://zombie-overlord.backerkit.com/hosted_preorders">Preorder base game</a>
+        <div class="ed">
+          <div class="ed-img"><img src="images/Battlefield_Product.png" alt="Battlefield edition"></div>
+          <div class="ed-body">
+            <h4>Battlefield Edition</h4>
+            <p class="price">$88</p>
+            <p class="ship">+ shipping</p>
+            <ul>
+              <li>Core game — 194 cards</li>
+              <li>Misfits Mini Expansion</li>
+              <li>Double playmat set — any 2 designs</li>
+              <li>All stretch goals included</li>
+            </ul>
+            <a class="btn btn--ghost btn--sm" href="https://zombie-overlord.backerkit.com/hosted_preorders">Preorder battlefield</a>
           </div>
         </div>
       </div>
@@ -498,6 +764,32 @@ h1,h2,h3,h4{color:var(--ink); margin:0}
         <span><b>Ships Q4 2026</b> from Chattanooga, TN</span>
         <span><b>Secure checkout</b> by BackerKit</span>
         <span><b>Questions?</b> hello@risingwarriorgames.com</span>
+      </div>
+
+      <!-- ADD-ONS — campaign exclusives, not available at retail -->
+      <div class="addons">
+        <div class="sec-head">
+          <p class="eyebrow mono">Add-ons</p>
+          <h2>Not available at retail</h2>
+          <p>These were unlocked during the campaign and stay exclusive to the BackerKit store. Add any of them to your order.</p>
+        </div>
+        <div class="addon-grid">
+          <div class="addon">
+            <img src="images/mini_expansion.png" alt="Misfits Mini Expansion">
+            <div class="row"><h4>Mini Expansion</h4><span class="price">$12</span></div>
+            <p>20 unique characters — Misfits, Holiday Horde and backer-created characters. Fully compatible with the core game.</p>
+          </div>
+          <div class="addon">
+            <img src="images/Playmats.png" alt="Custom player playmats">
+            <div class="row"><h4>Player Playmats</h4><span class="price">From $30</span></div>
+            <p>Full-size 24" × 14" mats with a smooth surface, non-slip rubber backing and subtle placement guides. $30 for one, $55 for two.</p>
+          </div>
+          <div class="addon">
+            <img src="images/Trackers_Addon.png" alt="Engraved life point trackers">
+            <div class="row"><h4>Life Point Trackers</h4><span class="price">$9</span></div>
+            <p>Four custom 16mm D6 dice with an engraved crown on every face — no standard pips — in a flannel drawstring bag.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
