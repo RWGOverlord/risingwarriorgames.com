@@ -25,6 +25,8 @@
     --gold-light: #e8c45a;
     --gold-dim: #8a6e22;
     --gold-faint: rgba(200,162,52,0.12);
+    --green: #3a9e22;
+    --green-light: #5ade30;
     --text: #f0e8d0;
     --text-muted: #9a8a6a;
     --text-dim: #5a4e38;
@@ -1372,7 +1374,359 @@
 
   .mobile-overlay.open { display: block; }
 
+  /* ===================== STICKY BUY-BAR ===================== */
+  .buy-bar {
+    position: fixed;
+    top: 72px;
+    left: 0; right: 0;
+    z-index: 990;
+    background: linear-gradient(135deg, #0d1a08 0%, #0f2009 100%);
+    border-bottom: 1px solid rgba(58,158,34,0.4);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    padding: 10px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+    flex-wrap: wrap;
+    transform: translateY(-130%);
+    transition: transform 0.4s cubic-bezier(0.4,0,0.2,1);
+  }
 
+  .buy-bar.visible { transform: translateY(0); }
+
+  .buy-bar-text {
+    font-family: 'Cinzel', serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text);
+  }
+
+  .buy-bar-text strong { color: var(--gold); font-weight: 600; }
+
+  .buy-bar-btn {
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background: var(--green);
+    color: #fff;
+    padding: 9px 24px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.3s, transform 0.2s;
+    white-space: nowrap;
+  }
+
+  .buy-bar-btn:hover { background: #2d8a1a; transform: translateY(-1px); }
+
+  /* ===================== THE FLIP ===================== */
+  .flip-section {
+    background: linear-gradient(180deg, var(--black) 0%, var(--black2) 100%);
+    text-align: center;
+  }
+
+  .flip-section .container { max-width: 880px; }
+
+  .flip-lead {
+    font-family: 'Crimson Pro', serif;
+    font-size: clamp(22px, 3.2vw, 34px);
+    line-height: 1.5;
+    color: var(--text);
+    font-weight: 400;
+  }
+
+  .flip-lead strong {
+    color: var(--gold-light);
+    font-weight: 600;
+  }
+
+  /* ===================== VIDEO ===================== */
+  .video-frame {
+    max-width: 860px;
+    margin: 0 auto 56px;
+    position: relative;
+  }
+
+  .video-frame::before {
+    content: '';
+    position: absolute;
+    inset: -12px;
+    border: 1px solid rgba(200,162,52,0.2);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .video-frame video {
+    width: 100%;
+    display: block;
+    border: 1px solid rgba(200,162,52,0.25);
+  }
+
+  /* ===================== THE CREATOR ===================== */
+  .creator-section {
+    background: linear-gradient(180deg, var(--black) 0%, var(--black3) 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .creator-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 50% 60% at 0% 40%, rgba(200,162,52,0.05) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .creator-grid {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 72px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .creator-photo-frame { position: relative; }
+
+  .creator-photo-frame::before {
+    content: '';
+    position: absolute;
+    inset: -12px;
+    border: 1px solid rgba(200,162,52,0.25);
+    pointer-events: none;
+  }
+
+  .creator-photo-frame img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 20px 50px rgba(0,0,0,0.7));
+  }
+
+  .creator-pullquote {
+    font-family: 'Crimson Pro', serif;
+    font-style: italic;
+    font-size: clamp(20px, 2.6vw, 28px);
+    line-height: 1.4;
+    color: var(--gold-light);
+    margin-bottom: 32px;
+    padding-left: 24px;
+    border-left: 3px solid var(--gold-dim);
+  }
+
+  .creator-body p {
+    font-size: 18px;
+    color: var(--text-muted);
+    line-height: 1.85;
+    margin-bottom: 20px;
+  }
+
+  .creator-body p strong { color: var(--text); font-weight: 600; }
+
+  .creator-signoff {
+    font-family: 'Cinzel', serif;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-top: 8px;
+  }
+
+  /* ===================== TIERS / LATE PLEDGE ===================== */
+  .tiers-section { background: var(--black); }
+
+  .pledge-countdown {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 0 auto 56px;
+  }
+
+  .pledge-countdown .cd-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .pledge-countdown .cd-num {
+    font-family: 'Cinzel', serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--gold-light);
+    min-width: 58px;
+    text-align: center;
+    background: rgba(200,162,52,0.08);
+    border: 1px solid rgba(200,162,52,0.25);
+    padding: 8px 10px;
+  }
+
+  .pledge-countdown .cd-label {
+    font-family: 'Cinzel', serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--text-dim);
+    text-transform: uppercase;
+  }
+
+  .pledge-countdown .cd-sep {
+    font-family: 'Cinzel', serif;
+    font-size: 22px;
+    color: var(--text-dim);
+    padding-bottom: 18px;
+  }
+
+  .tiers-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .tier-card {
+    background: var(--brown);
+    border: 1px solid rgba(200,162,52,0.15);
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.3s, transform 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .tier-card:hover { border-color: rgba(200,162,52,0.4); transform: translateY(-4px); }
+  .tier-card.featured { border-color: var(--gold-dim); }
+
+  .tier-badge {
+    position: absolute;
+    top: 22px;
+    right: -22px;
+    background: var(--gold);
+    color: var(--black);
+    font-family: 'Cinzel', serif;
+    font-size: 9px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 5px 36px;
+    transform: rotate(45deg);
+    z-index: 2;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  }
+
+  .tier-card > img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    filter: brightness(0.9);
+  }
+
+  .tier-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    filter: brightness(0.9);
+  }
+
+  .tier-body {
+    padding: 24px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .tier-price {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 28px;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .tier-name {
+    font-family: 'Cinzel', serif;
+    font-size: 14px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--text);
+    margin-bottom: 16px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid rgba(200,162,52,0.15);
+  }
+
+  .tier-includes {
+    list-style: none;
+    flex: 1;
+    margin-bottom: 20px;
+  }
+
+  .tier-includes li {
+    font-size: 15px;
+    color: var(--text-muted);
+    padding: 5px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .tier-includes li::before {
+    content: '\2726';
+    color: var(--gold);
+    font-size: 10px;
+    margin-top: 5px;
+    flex-shrink: 0;
+  }
+
+  .tier-btn {
+    display: block;
+    width: 100%;
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background: var(--green);
+    color: white;
+    padding: 14px 20px;
+    text-align: center;
+    text-decoration: none;
+    transition: background 0.3s;
+  }
+
+  .tier-btn:hover { background: #2d8a1a; }
+
+  .tier-btn.gold {
+    background: linear-gradient(135deg, var(--gold-light), var(--gold));
+    color: var(--black);
+  }
+
+  .tier-btn.gold:hover { filter: brightness(1.1); }
+
+  .addons-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3px;
+  }
+
+  @media (max-width: 768px) {
+    .buy-bar { padding: 8px 16px; gap: 14px; }
+    .buy-bar-text { font-size: 10px; letter-spacing: 1px; }
+    .flip-lead { font-size: 20px; }
+    .creator-grid { grid-template-columns: 1fr; gap: 36px; }
+    .creator-photo-frame { max-width: 320px; margin: 0 auto; }
+    .creator-pullquote { font-size: 20px; }
+    .tiers-grid { grid-template-columns: 1fr; }
+    .addons-grid { grid-template-columns: 1fr; }
+    .pledge-countdown .cd-num { font-size: 22px; min-width: 44px; }
+    .video-frame { margin-bottom: 36px; }
+  }
+
+  @media (max-width: 600px) {
+    .buy-bar-collapse { display: none; }
+  }
 
 </style>
 <!-- Meta Pixel Code -->
@@ -1403,8 +1757,8 @@ src="https://www.facebook.com/tr?id=2085516798873588&ev=PageView&noscript=1"
   <ul class="nav-links">
     <li><a href="#game">The Game</a></li>
     <li><a href="#gallery">Gallery</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="/latepledge.html" class="nav-cta">Order Now</a></li>
+    <li><a href="#creator">The Creator</a></li>
+    <li><a href="https://zombie-overlord.backerkit.com/hosted_preorders?utm_source=meta&amp;utm_medium=paid_social&amp;utm_campaign=zo_retarget&amp;utm_content=nav" class="nav-cta">Order Now</a></li>
   </ul>
 <button id="hamburger" class="hamburger" aria-label="Toggle navigation menu">
     <span></span>
@@ -1418,163 +1772,70 @@ src="https://www.facebook.com/tr?id=2085516798873588&ev=PageView&noscript=1"
   <ul>
     <li><a href="#game" class="mobile-nav-link">The Game</a></li>
     <li><a href="#gallery" class="mobile-nav-link">Gallery</a></li>
-    <li><a href="#about" class="mobile-nav-link">About</a></li>
-    <li><a href="/latepledge.html" class="mobile-nav-link mobile-cta">Order Now</a></li>
+    <li><a href="#creator" class="mobile-nav-link">The Creator</a></li>
+    <li><a href="https://zombie-overlord.backerkit.com/hosted_preorders?utm_source=meta&amp;utm_medium=paid_social&amp;utm_campaign=zo_retarget&amp;utm_content=mobile_nav" class="mobile-nav-link mobile-cta">Order Now</a></li>
   </ul>
 </div>
 
 <div id="mobile-overlay" class="mobile-overlay"></div>
 
+<!-- STICKY BUY-BAR -->
+<div id="buy-bar" class="buy-bar">
+  <span class="buy-bar-text"><span class="buy-bar-collapse"><strong>Zombie Overlord</strong> &middot; late pledges close June 15</span></span>
+  <a href="https://zombie-overlord.backerkit.com/hosted_preorders?utm_source=meta&amp;utm_medium=paid_social&amp;utm_campaign=zo_retarget&amp;utm_content=sticky_bar" class="buy-bar-btn">Get yours &rarr;</a>
+</div>
+
 <!-- HERO -->
-<section class="hero" style="min-height:100vh; display:flex; flex-direction:column; padding:0; align-items:stretch; justify-content:flex-start;">
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-moon"></div>
+  <div class="hero-sparks" id="hero-sparks"></div>
 
-  <!-- Urgency Bar -->
-  <div style="background:#1a0e00; border-bottom:1px solid rgba(200,162,52,0.25); padding:10px 24px; display:flex; align-items:center; justify-content:center; gap:20px; flex-wrap:wrap; margin-top:72px;">
-    <span style="font-family:'Cinzel',serif; font-size:11px; letter-spacing:3px; text-transform:uppercase; color:#c8a234;">
-      &#9201; Late pledge window closes June 15th &mdash; then it&rsquo;s gone
-    </span>
-    <div style="display:flex; gap:8px; align-items:center;" id="hero-countdown">
-      <div style="display:flex;flex-direction:column;align-items:center;gap:2px;">
-        <span style="font-family:'Cinzel',serif;font-size:20px;font-weight:700;color:#e8c45a;min-width:38px;text-align:center;background:rgba(200,162,52,0.08);border:1px solid rgba(200,162,52,0.2);padding:3px 6px;" id="hcd-days">--</span>
-        <span style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;color:#5a4e38;text-transform:uppercase;">Days</span>
-      </div>
-      <span style="font-family:'Cinzel',serif;font-size:16px;color:#5a4e38;padding-bottom:14px;">:</span>
-      <div style="display:flex;flex-direction:column;align-items:center;gap:2px;">
-        <span style="font-family:'Cinzel',serif;font-size:20px;font-weight:700;color:#e8c45a;min-width:38px;text-align:center;background:rgba(200,162,52,0.08);border:1px solid rgba(200,162,52,0.2);padding:3px 6px;" id="hcd-hours">--</span>
-        <span style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;color:#5a4e38;text-transform:uppercase;">Hrs</span>
-      </div>
-      <span style="font-family:'Cinzel',serif;font-size:16px;color:#5a4e38;padding-bottom:14px;">:</span>
-      <div style="display:flex;flex-direction:column;align-items:center;gap:2px;">
-        <span style="font-family:'Cinzel',serif;font-size:20px;font-weight:700;color:#e8c45a;min-width:38px;text-align:center;background:rgba(200,162,52,0.08);border:1px solid rgba(200,162,52,0.2);padding:3px 6px;" id="hcd-mins">--</span>
-        <span style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;color:#5a4e38;text-transform:uppercase;">Min</span>
-      </div>
-      <span style="font-family:'Cinzel',serif;font-size:16px;color:#5a4e38;padding-bottom:14px;">:</span>
-      <div style="display:flex;flex-direction:column;align-items:center;gap:2px;">
-        <span style="font-family:'Cinzel',serif;font-size:20px;font-weight:700;color:#e8c45a;min-width:38px;text-align:center;background:rgba(200,162,52,0.08);border:1px solid rgba(200,162,52,0.2);padding:3px 6px;" id="hcd-secs">--</span>
-        <span style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;color:#5a4e38;text-transform:uppercase;">Sec</span>
-      </div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Rising Warrior Games presents</div>
+
+    <img src="images/Zombie_Overlord_Title_Horizontal.png" alt="Zombie Overlord" class="hero-game-title-img">
+
+    <h1 class="hero-tagline" style="font-style:normal; font-family:'Cinzel Decorative',serif; font-weight:700; font-size:clamp(26px,4vw,46px); color:var(--text); line-height:1.15; margin-bottom:20px; opacity:0; animation:fadeup 1s ease forwards 0.9s;">
+      You don&rsquo;t survive the apocalypse.<br><span style="color:#64c832;">You run it.</span>
+    </h1>
+
+    <p style="font-size:clamp(17px,2.2vw,21px); color:var(--text-muted); line-height:1.6; max-width:680px; margin:0 auto 28px; opacity:0; animation:fadeup 1s ease forwards 1.1s;">
+      A competitive deck-builder where you set the traps, lure the survivors in, and flip them into a horde you turn loose on your rivals. Last Overlord standing wins.
+    </p>
+
+    <p class="hero-subtitle" style="margin-bottom:36px; opacity:0; animation:fadeup 1s ease forwards 1.25s;">
+      2&ndash;4 Players &middot; 30&ndash;40 Min &middot; Ages 14+ &middot; 194 Cards
+    </p>
+
+    <div class="hero-buttons">
+      <a href="https://zombie-overlord.backerkit.com/hosted_preorders?utm_source=meta&amp;utm_medium=paid_social&amp;utm_campaign=zo_retarget&amp;utm_content=hero" class="btn-primary">Get yours &mdash; late pledges close June 15</a>
+      <a href="#game" class="btn-secondary">See how it plays &darr;</a>
     </div>
   </div>
 
-  <!-- Hero Body: two-column -->
-  <div style="display:grid; grid-template-columns:1fr 1fr; flex:1; min-height:0;">
-
-    <!-- Left: photo -->
-    <div style="position:relative; overflow:hidden; min-height:500px;">
-      <img src="images/Box_with_cards.jpg" alt="Zombie Overlord game laid out on table showing box and cards"
-        style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 30%;">
-      <div style="position:absolute; inset:0; background:linear-gradient(to right, rgba(6,4,0,0.15) 0%, rgba(6,4,0,0.55) 100%);"></div>
-    </div>
-
-    <!-- Right: offer + CTA -->
-    <div style="display:flex; flex-direction:column; justify-content:center; padding:48px 48px 48px 44px; background:var(--black); gap:0;">
-
-      <!-- Eyebrow -->
-      <div style="font-family:'Cinzel',serif; font-size:10px; letter-spacing:4px; text-transform:uppercase; color:var(--gold); margin-bottom:14px; display:flex; align-items:center; gap:10px;">
-        <span style="display:inline-block; width:24px; height:1px; background:var(--gold); opacity:0.5;"></span>
-        Rising Warrior Games
-      </div>
-
-      <!-- Title -->
-      <h1 style="font-family:'Cinzel Decorative',serif; font-size:clamp(28px,3.5vw,44px); font-weight:700; color:var(--text); line-height:1.1; margin-bottom:8px;">
-        Zombie<br><span style="color:#64c832;">Overlord</span>
-      </h1>
-      <p style="font-family:'Cinzel',serif; font-size:11px; letter-spacing:5px; color:var(--text-dim); text-transform:uppercase; margin-bottom:18px;">
-        Deck-Building &middot; Strategy &middot; Apocalypse
-      </p>
-      <p style="font-style:italic; font-size:17px; font-weight:300; color:var(--text-muted); margin-bottom:24px; line-height:1.5;">
-        You&rsquo;re not surviving the apocalypse.<br>You&rsquo;re running it.
-      </p>
-
-      <!-- Social proof -->
-      <div style="display:flex; gap:18px; margin-bottom:24px; flex-wrap:wrap;">
-        <div style="font-family:'Cinzel',serif; font-size:10px; letter-spacing:1px; color:var(--text-dim); text-transform:uppercase;">
-          <span style="color:var(--gold);">&#9670;</span> Funded in <strong style="color:var(--text-muted);">13 hours</strong>
-        </div>
-        <div style="font-family:'Cinzel',serif; font-size:10px; letter-spacing:1px; color:var(--text-dim); text-transform:uppercase;">
-          <span style="color:var(--gold);">&#9670;</span> <strong style="color:var(--text-muted);">150+</strong> backers
-        </div>
-        <div style="font-family:'Cinzel',serif; font-size:10px; letter-spacing:1px; color:var(--text-dim); text-transform:uppercase;">
-          <span style="color:var(--gold);">&#9670;</span> Funded <strong style="color:var(--text-muted);">May 2026</strong>
-        </div>
-      </div>
-
-      <!-- Status strip -->
-      <div style="border-left:2px solid rgba(58,158,34,0.4); background:rgba(58,158,34,0.04); padding:10px 14px; margin-bottom:28px; display:flex; flex-direction:column; gap:6px;">
-        <div style="font-family:'Cinzel',serif; font-size:10px; letter-spacing:2px; text-transform:uppercase; color:#3a9e22;">&#10003; Kickstarter funded</div>
-        <div style="font-family:'Cinzel',serif; font-size:10px; letter-spacing:2px; text-transform:uppercase; color:#c8a234;">&#9654; Sending to manufacturer now</div>
-        <div style="font-family:'Cinzel',serif; font-size:10px; letter-spacing:2px; text-transform:uppercase; color:#3a4028;">&#9675; Est. delivery Q4 2026</div>
-      </div>
-
-      <!-- Featured bundle -->
-      <div style="border:2px solid var(--gold); background:rgba(200,162,52,0.07); padding:20px; margin-bottom:12px; position:relative;">
-        <div style="position:absolute; top:-11px; left:16px; background:var(--gold); color:var(--black); font-family:'Cinzel',serif; font-size:9px; letter-spacing:2px; text-transform:uppercase; padding:3px 10px; font-weight:700;">Most popular</div>
-        <div style="font-family:'Cinzel',serif; font-size:11px; letter-spacing:2px; color:var(--gold); text-transform:uppercase; margin-bottom:6px;">Complete Bundle</div>
-        <div style="font-size:14px; color:var(--text-muted); line-height:1.6; margin-bottom:12px;">
-          <span style="color:var(--text);">Zombie Overlord</span> base game<br>
-          + <span style="color:var(--text);">Mini Expansion</span> (exclusive to bundle)
-        </div>
-        <div style="display:flex; align-items:baseline; gap:10px; margin-bottom:14px;">
-          <span style="font-family:'Cinzel',serif; font-size:28px; font-weight:700; color:var(--gold-light);">$46</span>
-          <span style="font-family:'Cinzel',serif; font-size:11px; color:var(--text-dim); letter-spacing:1px;">+ shipping</span>
-        </div>
-        <a href="/latepledge.html"
-          style="display:block; background:var(--gold); color:var(--black); text-align:center; font-family:'Cinzel',serif; font-size:11px; letter-spacing:3px; text-transform:uppercase; font-weight:700; padding:14px 20px; text-decoration:none; transition:background 0.2s;">
-          Claim Your Copy &rarr;
-        </a>
-      </div>
-
-      <!-- Base game secondary -->
-      <div style="border:1px solid rgba(200,162,52,0.2); background:rgba(200,162,52,0.03); padding:16px 20px; margin-bottom:14px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;">
-        <div>
-          <div style="font-family:'Cinzel',serif; font-size:10px; letter-spacing:2px; color:var(--text-dim); text-transform:uppercase; margin-bottom:4px;">Base Game Only</div>
-          <span style="font-family:'Cinzel',serif; font-size:20px; font-weight:700; color:var(--text-muted);">$34</span>
-          <span style="font-family:'Cinzel',serif; font-size:11px; color:var(--text-dim); letter-spacing:1px; margin-left:6px;">+ shipping</span>
-        </div>
-        <a href="/latepledge.html"
-          style="font-family:'Cinzel',serif; font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--text-muted); border:1px solid rgba(200,162,52,0.25); padding:10px 18px; text-decoration:none; white-space:nowrap; transition:color 0.2s, border-color 0.2s;">
-          Order Base Game
-        </a>
-      </div>
-
-      <!-- Trust line -->
-      <div style="font-family:'Cinzel',serif; font-size:10px; letter-spacing:1px; color:var(--text-dim); display:flex; align-items:center; gap:8px;">
-        <span style="color:#3a9e22; font-size:13px;">&#9679;</span> Secure checkout &middot; Backerkit protected
-      </div>
-
-    </div>
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <div class="scroll-arrow"></div>
   </div>
-
-  <!-- Mobile stacked layout override -->
-  <style>
-    @media (max-width: 768px) {
-      .hero > div:last-of-type { grid-template-columns: 1fr !important; }
-      .hero > div:last-of-type > div:first-child { min-height: 280px !important; }
-      .hero > div:last-of-type > div:last-child { padding: 32px 24px !important; }
-    }
-  </style>
-
 </section>
 
-<script>
-  (function() {
-    var close = new Date('2026-06-15T23:59:59');
-    function pad(n) { return String(Math.max(0, Math.floor(n))).padStart(2, '0'); }
-    function tick() {
-      var diff = close - Date.now();
-      if (diff <= 0) {
-        ['hcd-days','hcd-hours','hcd-mins','hcd-secs'].forEach(function(id){ document.getElementById(id).textContent = '00'; });
-        return;
-      }
-      document.getElementById('hcd-days').textContent  = pad(diff / 86400000);
-      document.getElementById('hcd-hours').textContent = pad((diff % 86400000) / 3600000);
-      document.getElementById('hcd-mins').textContent  = pad((diff % 3600000) / 60000);
-      document.getElementById('hcd-secs').textContent  = pad((diff % 60000) / 1000);
-    }
-    tick();
-    setInterval(tick, 1000);
-  })();
-</script>
+<!-- THE FLIP -->
+<section class="flip-section">
+  <div class="container">
+    <div class="section-ornament">
+      <div class="ornament-line"></div>
+      <div class="ornament-diamond"></div>
+      <div class="ornament-line right"></div>
+    </div>
+    <p class="section-label">Why another zombie game</p>
+    <p class="flip-lead reveal">
+      Most zombie games make you run. <strong>Zombie Overlord makes you the reason everyone else is running.</strong> You don&rsquo;t board up the windows &mdash; you set the traps, harvest the survivors, and build the horde. It&rsquo;s a deck-builder where your deck is your army, and every survivor you convert makes you stronger and everyone else weaker.
+    </p>
+  </div>
+</section>
+
+<div class="gold-divider"></div>
 
 <!-- FUNDED BANNER -->
 <div class="funded-banner">
@@ -1582,7 +1843,7 @@ src="https://www.facebook.com/tr?id=2085516798873588&ev=PageView&noscript=1"
     <span class="funded-icon">&#x2726</span>
     <div class="funded-text">
       <strong>Funded in 13 Hours</strong>
-      <span>150+ backers believed first</span>
+      <span>167 backers believed first</span>
     </div>
   </div>
   <div class="funded-item">
@@ -1628,7 +1889,7 @@ src="https://www.facebook.com/tr?id=2085516798873588&ev=PageView&noscript=1"
         <h2>Lure. Convert.<br>Dominate.</h2>
         <p>Set cunning traps to draw desperate survivors into your base. Once captured, flip their card. Every survivor has a human side and a zombie side. They join your horde, and your deck grows stronger with every turn.</p>
         <p>Outmaneuver rival Overlords and disrupt their plans with action cards. Then unleash your minions to overwhelm their defenses and take control of the game. In the apocalypse, there is only one ruler.</p>
-        <a href="/latepledge.html" class="btn-secondary" style="display:inline-block; margin-top:12px;">Late Pledges Open→</a>
+        <a href="#pledge" class="btn-secondary" style="display:inline-block; margin-top:12px;">See the editions &rarr;</a>
       </div>
       <div class="game-image-frame">
         <img src="images/KS_Main_1x1.png" alt="Zombie Overlord Key Art">
@@ -1665,11 +1926,19 @@ src="https://www.facebook.com/tr?id=2085516798873588&ev=PageView&noscript=1"
       <div class="ornament-diamond"></div>
       <div class="ornament-line right"></div>
     </div>
-    <p class="section-label">The Components</p>
+    <p class="section-label">See It In Action</p>
     <h2 class="section-title reveal">Every Game <span>Plays Different</span></h2>
 	<div class="about-text reveal">
     	<p>No two matches unfold the same way. With a wide variety of survivors, traps, and action cards, every decision shapes a new path to victory.</p>
 	</div>
+
+    <div class="video-frame reveal">
+      <video controls playsinline poster="images/Horde_Cover.png">
+        <source src="videos/Launch_Video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
     <div class="gallery-grid reveal">
       <div class="gallery-item">
         <img src="images/Box_with_cards.jpg" alt="Full Game Layout">
@@ -1693,47 +1962,263 @@ src="https://www.facebook.com/tr?id=2085516798873588&ev=PageView&noscript=1"
 
 <div class="gold-divider"></div>
 
-<!-- ABOUT -->
-<section class="about-section" id="about">
+<!-- THE CREATOR -->
+<section class="creator-section" id="creator">
   <div class="container">
-    <div class="about-grid">
-      <div class="about-logo-block reveal">
-        <img src="images/RISING_LOGO_VECTOR.png" alt="Rising Warrior Games" class="about-logo">
-        <div class="about-quote">
-          "We make games that put players in command, where strategy, chaos, and personality collide."
-        </div>
-      </div>
-      <div class="about-text reveal">
-        <h2>Rising Warrior<br>Games</h2>
-        <p>Rising Warrior Games is an independent studio focused on creating competitive, system-driven tabletop experiences where players take control, not just react..</p>
-        <p>Our games are built around meaningful decisions, aggressive interaction, and mechanics that reward strategy over luck. We don’t design passive experiences, we design games where every move has consequences.</p>
-        <p>Zombie Overlord is our first release: a competitive deck-builder where you play as the villain, setting traps, luring survivors, and converting them into your army. It was designed, tested, and refined in Chattanooga, Tennessee, and brought to life by a community of early backers who believed in the vision from the start.</p>
-	<p>But this isn’t a one-off project.</p>
-	<p>Every game we create builds on the same foundation: strong mechanics, distinct identity, and systems that reward players who think ahead. We’re focused on refining and evolving our approach with each release, not repeating the same formula.</p>
-	<p>Rising Warrior Games isn’t about one game. It’s about creating experiences that hold up over time, games players come back to because they stay engaging, competitive, and rewarding.</p>
+    <div class="section-ornament">
+      <div class="ornament-line"></div>
+      <div class="ornament-diamond"></div>
+      <div class="ornament-line right"></div>
+    </div>
+    <p class="section-label" style="margin-bottom:48px;">The Creator</p>
 
-        <div class="about-facts">
-          <div class="about-fact">
-            <div class="about-fact-value">13hrs</div>
-            <div class="about-fact-label">Time to Fund</div>
-          </div>
-          <div class="about-fact">
-            <div class="about-fact-value">150+</div>
-            <div class="about-fact-label">Kickstarter Backers</div>
-          </div>
-          <div class="about-fact">
-            <div class="about-fact-value">194 cards</div>
-            <div class="about-fact-label">50+ Unique Characters</div>
-          </div>
-          <div class="about-fact">
-            <div class="about-fact-value">2026</div>
-            <div class="about-fact-label">Founded</div>
-          </div>
-        </div>
+    <div class="creator-grid">
+      <div class="creator-photo-frame reveal">
+        <img src="images/creator.png" alt="Erick, creator of Zombie Overlord and founder of Rising Warrior Games">
+      </div>
+      <div class="creator-body reveal">
+        <p class="creator-pullquote">Most zombie games make you run. I wanted one where you&rsquo;re the thing everyone else is running from.</p>
+
+        <p>Hi, I&rsquo;m Erick &mdash; I made Zombie Overlord, and I run Rising Warrior Games out of Chattanooga, Tennessee.</p>
+
+        <p>It didn&rsquo;t start here. The first version was a survival game: build your defenses, outlast the horde. It never clicked. It felt like every other zombie game, and it felt like <em>work</em> to play. So I flipped the whole thing &mdash; instead of surviving the apocalypse, what if you controlled it? Set the traps. Lure the survivors in. Flip them into your horde and turn them loose on your rivals. The moment I made that change, the game got faster, meaner, and a lot more fun.</p>
+
+        <p>Then life happened &mdash; COVID, a move, marriage, two kids &mdash; and it sat on a shelf. But the idea never left. When things settled, I came back to it and spent the last year doing almost nothing but refining, testing, and sharpening it into the game it is now.</p>
+
+        <p>Here&rsquo;s my favorite stat: across all that playtesting, I&rsquo;ve only won my own game twice. I used to think that meant I was bad at it. Now I think it means I built it right &mdash; <strong>nobody gets an edge at this table, not even the guy who designed it.</strong> Everyone has a real shot, and no two games play out the same way.</p>
+
+        <p>That&rsquo;s the whole goal: a game you pull back off the shelf again and again. Competitive, chaotic, and full of moments you&rsquo;re still talking about a week later.</p>
+
+        <p>And this is just the beginning. Zombie Overlord is the first game from Rising Warrior &mdash; there&rsquo;s a lot more of this world on the way.</p>
+
+        <p class="creator-signoff">&mdash; Erick &middot; Rising Warrior Games</p>
       </div>
     </div>
   </div>
 </section>
+
+<div class="gold-divider"></div>
+
+<!-- LATE PLEDGE -->
+<section class="tiers-section" id="pledge">
+  <div class="container">
+    <div class="section-ornament">
+      <div class="ornament-line"></div>
+      <div class="ornament-diamond"></div>
+      <div class="ornament-line right"></div>
+    </div>
+    <p class="section-label">Late Pledge Store</p>
+    <h2 class="section-title reveal">Choose Your <span>Edition</span></h2>
+    <p class="section-intro reveal">Late pledge pricing is active now &mdash; and it closes June 15. All editions include every stretch goal unlocked during the Kickstarter campaign.</p>
+
+    <!-- Countdown (relocated from hero) -->
+    <div class="pledge-countdown reveal" aria-label="Time remaining until late pledges close">
+      <div class="cd-unit"><span class="cd-num" id="cd-days">--</span><span class="cd-label">Days</span></div>
+      <span class="cd-sep">:</span>
+      <div class="cd-unit"><span class="cd-num" id="cd-hours">--</span><span class="cd-label">Hrs</span></div>
+      <span class="cd-sep">:</span>
+      <div class="cd-unit"><span class="cd-num" id="cd-mins">--</span><span class="cd-label">Min</span></div>
+      <span class="cd-sep">:</span>
+      <div class="cd-unit"><span class="cd-num" id="cd-secs">--</span><span class="cd-label">Sec</span></div>
+    </div>
+
+    <div class="tiers-grid reveal">
+
+      <!-- CORE EDITION -->
+      <div class="tier-card">
+        <img src="images/Gold_Trim_Thematic_MockUp.png" alt="Core Edition">
+        <div class="tier-body">
+          <div style="font-size:13px; color:var(--text-dim); margin-bottom:2px; font-family:'Cinzel',serif; letter-spacing:1px;">
+            <span style="text-decoration:line-through;">$32</span> <span style="font-size:11px;">Kickstarter price</span>
+          </div>
+          <div class="tier-price">$34</div>
+          <div style="font-size:12px; color:var(--text-dim); margin-bottom:12px; font-family:'Cinzel',serif; letter-spacing:1px; font-style:italic;">Late pledge price &mdash; retail will be higher</div>
+          <div class="tier-name">Core Edition</div>
+          <ul class="tier-includes">
+            <li>Core Game</li>
+            <li>All Stretch Goals Included</li>
+          </ul>
+          <a href="https://zombie-overlord.backerkit.com/hosted_preorders/847776?utm_source=meta&amp;utm_medium=paid_social&amp;utm_campaign=zo_retarget&amp;utm_content=tier_core" class="tier-btn">
+            Pre-Order on BackerKit
+          </a>
+        </div>
+      </div>
+
+      <!-- PREMIUM EDITION -->
+      <div class="tier-card featured">
+        <div class="tier-badge">Most Popular</div>
+        <img src="images/Premium_Product.png" alt="Premium Bundle">
+        <div class="tier-body">
+          <div style="font-size:13px; color:var(--text-dim); margin-bottom:2px; font-family:'Cinzel',serif; letter-spacing:1px;">
+            <span style="text-decoration:line-through;">$42</span> <span style="font-size:11px;">Kickstarter price</span>
+          </div>
+          <div class="tier-price">$46</div>
+          <div style="font-size:12px; color:var(--text-dim); margin-bottom:12px; font-family:'Cinzel',serif; letter-spacing:1px; font-style:italic;">Late pledge price &mdash; retail will be higher</div>
+          <div class="tier-name">Premium Bundle</div>
+          <ul class="tier-includes">
+            <li>Core Game</li>
+            <li>Misfits Mini Expansion</li>
+            <li>All Stretch Goals Included</li>
+          </ul>
+          <a href="https://zombie-overlord.backerkit.com/hosted_preorders/847778?utm_source=meta&amp;utm_medium=paid_social&amp;utm_campaign=zo_retarget&amp;utm_content=tier_premium" class="tier-btn gold">
+            Pre-Order on BackerKit
+          </a>
+        </div>
+      </div>
+
+      <!-- BATTLEFIELD EDITION -->
+      <div class="tier-card">
+        <img src="images/Battlefield_Product.png" alt="Battlefield Bundle">
+        <div class="tier-body">
+          <div style="font-size:13px; color:var(--text-dim); margin-bottom:2px; font-family:'Cinzel',serif; letter-spacing:1px;">
+            <span style="text-decoration:line-through;">$86</span> <span style="font-size:11px;">Kickstarter price</span>
+          </div>
+          <div class="tier-price">$88</div>
+          <div style="font-size:12px; color:var(--text-dim); margin-bottom:12px; font-family:'Cinzel',serif; letter-spacing:1px; font-style:italic;">Late pledge price &mdash; retail will be higher</div>
+          <div class="tier-name">Battlefield Edition</div>
+          <ul class="tier-includes">
+            <li>Core Game</li>
+            <li>Misfits Mini Expansion</li>
+            <li>Double Playmat Set &mdash; Choose Any 2 Designs</li>
+            <li>All Stretch Goals Included</li>
+          </ul>
+          <a href="https://zombie-overlord.backerkit.com/hosted_preorders/847780?utm_source=meta&amp;utm_medium=paid_social&amp;utm_campaign=zo_retarget&amp;utm_content=tier_battlefield" class="tier-btn">
+            Pre-Order on BackerKit
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <p style="text-align:center; margin-top:32px; font-size:15px; color:var(--text-dim); font-style:italic;">
+      &#10022; Additional add-ons available in the store &mdash; playmats, life point trackers, custom zombie portraits &amp; more.
+    </p>
+  </div>
+</section>
+
+<!-- CAMPAIGN EXCLUSIVES -->
+<section style="background:var(--black2); padding:80px 60px;">
+  <div class="container">
+    <div class="section-ornament">
+      <div class="ornament-line"></div>
+      <div class="ornament-diamond"></div>
+      <div class="ornament-line right"></div>
+    </div>
+    <p class="section-label">Campaign Exclusives</p>
+    <h2 class="section-title reveal">Only Available <span>During Late Pledges</span></h2>
+    <p class="section-intro reveal">These items will not be available at retail. Once late pledges close, they&rsquo;re gone for good.</p>
+
+    <!-- EXCLUSIVES GRID -->
+    <div class="reveal addons-grid" style="margin-bottom:3px;">
+
+      <!-- MINI EXPANSION -->
+      <div style="background:var(--brown); border:1px solid rgba(200,162,52,0.15); display:flex; flex-direction:column;">
+        <div style="background:linear-gradient(135deg,#0d1a08,#162608); padding:14px 20px; border-bottom:1px solid rgba(58,158,34,0.3); display:flex; align-items:center; justify-content:space-between;">
+          <span style="font-family:'Cinzel',serif; font-size:10px; letter-spacing:3px; text-transform:uppercase; color:var(--green-light);">&#9733; Kickstarter Exclusive</span>
+          <span style="font-family:'Cinzel Decorative',serif; font-size:20px; color:var(--gold);">$12</span>
+        </div>
+        <img src="images/mini_expansion.png" alt="Mini Expansion" class="tier-img">
+        <div style="padding:24px; flex:1; display:flex; flex-direction:column;">
+          <div style="font-family:'Cinzel',serif; font-size:13px; letter-spacing:2px; text-transform:uppercase; color:var(--gold); margin-bottom:12px;">Mini Expansion</div>
+          <p style="font-size:15px; color:var(--text-muted); line-height:1.75; margin-bottom:16px;">20 unique characters total &mdash; Misfits, Holiday Horde, and backer-created characters. Fully compatible with the core game.</p>
+          <ul style="list-style:none; padding:0; margin-bottom:20px;">
+            <li style="font-size:14px; color:var(--text-muted); padding:4px 0; display:flex; gap:8px;"><span style="color:var(--green-light); flex-shrink:0;">&#10004;</span> 20 Unique Characters Total</li>
+            <li style="font-size:14px; color:var(--text-muted); padding:4px 0; display:flex; gap:8px;"><span style="color:var(--green-light); flex-shrink:0;">&#10004;</span> Misfits + Holiday Horde Characters</li>
+            <li style="font-size:14px; color:var(--text-muted); padding:4px 0; display:flex; gap:8px;"><span style="color:var(--green-light); flex-shrink:0;">&#10004;</span> Backer-Created Characters</li>
+            <li style="font-size:14px; color:var(--text-muted); padding:4px 0; display:flex; gap:8px;"><span style="color:var(--green-light); flex-shrink:0;">&#10004;</span> Fully Compatible with Core Game</li>
+          </ul>
+          <a href="https://zombie-overlord.backerkit.com/hosted_preorders/844523?utm_source=meta&amp;utm_medium=paid_social&amp;utm_campaign=zo_retarget&amp;utm_content=addon_mini_expansion" class="tier-btn" style="margin-top:auto;">
+            Add to Order on BackerKit
+          </a>
+        </div>
+      </div>
+
+      <!-- CUSTOM ZOMBIE PORTRAIT -->
+      <div style="background:var(--brown); border:1px solid rgba(200,162,52,0.15); display:flex; flex-direction:column;">
+        <div style="background:linear-gradient(135deg,#1a0808,#260d0d); padding:14px 20px; border-bottom:1px solid rgba(224,82,82,0.3); display:flex; align-items:center; justify-content:space-between;">
+          <span style="font-family:'Cinzel',serif; font-size:10px; letter-spacing:3px; text-transform:uppercase; color:#e05252;">&#9888; Only 30 Left</span>
+          <span style="font-family:'Cinzel Decorative',serif; font-size:20px; color:var(--gold);">$25</span>
+        </div>
+        <img src="images/Chino.png" alt="Custom Zombie Portrait" class="tier-img">
+        <div style="padding:24px; flex:1; display:flex; flex-direction:column;">
+          <div style="font-family:'Cinzel',serif; font-size:13px; letter-spacing:2px; text-transform:uppercase; color:var(--gold); margin-bottom:12px;">Custom Zombie Portrait</div>
+          <p style="font-size:15px; color:var(--text-muted); line-height:1.75; margin-bottom:16px;">Get transformed into a custom zombie by the official Zombie Overlord artist. Limited to 50 backers total &mdash; 30 remaining.</p>
+          <ul style="list-style:none; padding:0; margin-bottom:20px;">
+            <li style="font-size:14px; color:var(--text-muted); padding:4px 0; display:flex; gap:8px;"><span style="color:var(--green-light); flex-shrink:0;">&#10004;</span> Custom zombie portrait from your photo</li>
+            <li style="font-size:14px; color:var(--text-muted); padding:4px 0; display:flex; gap:8px;"><span style="color:var(--green-light); flex-shrink:0;">&#10004;</span> Illustrated in Zombie Overlord style</li>
+            <li style="font-size:14px; color:var(--text-muted); padding:4px 0; display:flex; gap:8px;"><span style="color:var(--green-light); flex-shrink:0;">&#10004;</span> High-resolution digital download</li>
+            <li style="font-size:14px; color:var(--text-muted); padding:4px 0; display:flex; gap:8px;"><span style="color:var(--green-light); flex-shrink:0;">&#10004;</span> Delivered 4&ndash;6 weeks after campaign</li>
+          </ul>
+          <p style="font-size:13px; color:var(--text-dim); font-style:italic; margin-bottom:16px;">Digital reward only &mdash; not included in the game</p>
+          <a href="https://zombie-overlord.backerkit.com/hosted_preorders/845603?utm_source=meta&amp;utm_medium=paid_social&amp;utm_campaign=zo_retarget&amp;utm_content=addon_portrait" class="tier-btn" style="margin-top:auto; background:linear-gradient(135deg,#8b1a1a,#6b1212);">
+            Become Undead on BackerKit
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- PLAYMATS + TRACKERS ROW -->
+    <div class="reveal addons-grid">
+
+      <!-- PLAYMATS -->
+      <div style="background:var(--brown); border:1px solid rgba(200,162,52,0.15); display:flex; flex-direction:column;">
+        <div style="background:linear-gradient(135deg,#0d1a08,#162608); padding:14px 20px; border-bottom:1px solid rgba(58,158,34,0.3); display:flex; align-items:center; justify-content:space-between;">
+          <span style="font-family:'Cinzel',serif; font-size:10px; letter-spacing:3px; text-transform:uppercase; color:var(--green-light);">&#9733; Kickstarter Exclusive</span>
+          <span style="font-family:'Cinzel Decorative',serif; font-size:20px; color:var(--gold);">From $30</span>
+        </div>
+        <img src="images/Playmats.png" alt="Custom Player Playmats" class="tier-img">
+        <div style="padding:24px; flex:1; display:flex; flex-direction:column;">
+          <div style="font-family:'Cinzel',serif; font-size:13px; letter-spacing:2px; text-transform:uppercase; color:var(--gold); margin-bottom:12px;">Custom Player Playmats</div>
+          <p style="font-size:15px; color:var(--text-muted); line-height:1.75; margin-bottom:16px;">Full-size 24" &times; 14" player playmat designed specifically for Zombie Overlord. Smooth surface, non-slip rubber backing. Not available at retail.</p>
+          <ul style="list-style:none; padding:0; margin-bottom:20px;">
+            <li style="font-size:14px; color:var(--text-muted); padding:4px 0; display:flex; gap:8px;"><span style="color:var(--green-light); flex-shrink:0;">&#10004;</span> Full-Size 24" &times; 14" Player Playmat</li>
+            <li style="font-size:14px; color:var(--text-muted); padding:4px 0; display:flex; gap:8px;"><span style="color:var(--green-light); flex-shrink:0;">&#10004;</span> Smooth Surface for Effortless Card Movement</li>
+            <li style="font-size:14px; color:var(--text-muted); padding:4px 0; display:flex; gap:8px;"><span style="color:var(--green-light); flex-shrink:0;">&#10004;</span> Non-Slip Rubber Backing</li>
+            <li style="font-size:14px; color:var(--text-muted); padding:4px 0; display:flex; gap:8px;"><span style="color:var(--green-light); flex-shrink:0;">&#10004;</span> Designed with Subtle Placement Guides</li>
+          </ul>
+          <div style="display:flex; gap:8px; margin-top:auto;">
+            <a href="https://zombie-overlord.backerkit.com/hosted_preorders/844554?utm_source=meta&amp;utm_medium=paid_social&amp;utm_campaign=zo_retarget&amp;utm_content=addon_playmat1" style="flex:1; display:block; font-family:'Cinzel',serif; font-size:10px; letter-spacing:1px; text-transform:uppercase; background:var(--green); color:white; padding:12px 10px; text-align:center; text-decoration:none; transition:background 0.3s;">
+              1 Playmat &mdash; $30
+            </a>
+            <a href="https://zombie-overlord.backerkit.com/hosted_preorders/845604?utm_source=meta&amp;utm_medium=paid_social&amp;utm_campaign=zo_retarget&amp;utm_content=addon_playmat2" style="flex:1; display:block; font-family:'Cinzel',serif; font-size:10px; letter-spacing:1px; text-transform:uppercase; background:var(--gold); color:var(--black); padding:12px 10px; text-align:center; text-decoration:none; transition:filter 0.3s;">
+              2 Playmats &mdash; $55
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ENGRAVED TRACKERS -->
+      <div style="background:var(--brown); border:1px solid rgba(200,162,52,0.15); display:flex; flex-direction:column;">
+        <div style="background:linear-gradient(135deg,#0d1a08,#162608); padding:14px 20px; border-bottom:1px solid rgba(58,158,34,0.3); display:flex; align-items:center; justify-content:space-between;">
+          <span style="font-family:'Cinzel',serif; font-size:10px; letter-spacing:3px; text-transform:uppercase; color:var(--green-light);">&#9733; Kickstarter Exclusive</span>
+          <span style="font-family:'Cinzel Decorative',serif; font-size:20px; color:var(--gold);">$9</span>
+        </div>
+        <img src="images/Trackers_Addon.png" alt="Engraved Life Point Trackers" class="tier-img">
+        <div style="padding:24px; flex:1; display:flex; flex-direction:column;">
+          <div style="font-family:'Cinzel',serif; font-size:13px; letter-spacing:2px; text-transform:uppercase; color:var(--gold); margin-bottom:12px;">Engraved Life Point Trackers</div>
+          <p style="font-size:15px; color:var(--text-muted); line-height:1.75; margin-bottom:16px;">Track your life with style, fit for an Overlord. Set of 4 custom 16mm D6 dice with an engraved crown logo on every face. Includes a Zombie Overlord flannel drawstring bag.</p>
+          <ul style="list-style:none; padding:0; margin-bottom:20px;">
+            <li style="font-size:14px; color:var(--text-muted); padding:4px 0; display:flex; gap:8px;"><span style="color:var(--green-light); flex-shrink:0;">&#10004;</span> Set of 4 Custom 16mm D6 Dice</li>
+            <li style="font-size:14px; color:var(--text-muted); padding:4px 0; display:flex; gap:8px;"><span style="color:var(--green-light); flex-shrink:0;">&#10004;</span> Engraved Crown Logo on Every Face</li>
+            <li style="font-size:14px; color:var(--text-muted); padding:4px 0; display:flex; gap:8px;"><span style="color:var(--green-light); flex-shrink:0;">&#10004;</span> Zombie Overlord Flannel Drawstring Bag</li>
+            <li style="font-size:14px; color:var(--text-muted); padding:4px 0; display:flex; gap:8px;"><span style="color:var(--green-light); flex-shrink:0;">&#10004;</span> Thematic Upgrade for Immersive Play</li>
+          </ul>
+          <a href="https://zombie-overlord.backerkit.com/hosted_preorders/844524?utm_source=meta&amp;utm_medium=paid_social&amp;utm_campaign=zo_retarget&amp;utm_content=addon_trackers" class="tier-btn" style="margin-top:auto;">
+            Add to Order on BackerKit
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <p style="text-align:center; margin-top:28px; font-size:15px; color:var(--text-dim); font-style:italic;">
+      &#10022; All exclusives are available directly in the BackerKit store. Add them to any order.
+    </p>
+  </div>
+</section>
+
+<div class="gold-divider"></div>
 
 <!-- EMAIL SIGNUP -->
 <div class="signup-section" id="signup">
@@ -1742,8 +2227,8 @@ src="https://www.facebook.com/tr?id=2085516798873588&ev=PageView&noscript=1"
     <div class="ornament-diamond"></div>
     <div class="ornament-line right"></div>
   </div>
-  <h2>The Horde is Growing</h2>
-  <p>Be the first to hear about new games, expansions, and what Rising Warrior builds next.</p>
+  <h2>Join the Horde</h2>
+  <p>Not ready to pledge yet? Drop your email &mdash; we&rsquo;ll give you a heads-up before late pledges close June 15, and you&rsquo;ll get first word on what Rising Warrior builds next.</p>
   <form action="https://risingwarriorgames.us4.list-manage.com/subscribe/post?u=3edf41f5a60eff1da81bae6a0&amp;id=17c463ecea&amp;f_id=000ee2e0f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" class="signup-form">
     <input type="email" name="EMAIL" class="signup-input" id="signup-email" placeholder="Enter your email address" required>
     <input type="hidden" name="tags" value="6874067">
@@ -1770,14 +2255,15 @@ src="https://www.facebook.com/tr?id=2085516798873588&ev=PageView&noscript=1"
       <ul>
         <li><a href="#game">The Game</a></li>
         <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#about">About Us</a></li>
+        <li><a href="#creator">The Creator</a></li>
+        <li><a href="#pledge">Late Pledge</a></li>
         <li><a href="#signup">Stay Updated</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Zombie Overlord</h4>
       <ul>
-        <li><a href="/latepledge.html">Preorder On Backerkit
+        <li><a href="https://zombie-overlord.backerkit.com/hosted_preorders?utm_source=meta&amp;utm_medium=paid_social&amp;utm_campaign=zo_retarget&amp;utm_content=footer">Preorder on BackerKit</a></li>
         <li><a href="https://www.kickstarter.com/projects/zombieoverlord/zombie-overlord?ref=1epnvj">View on Kickstarter</a></li>
         <li><a href="https://boardgamegeek.com/boardgame/467950/zombie-overlord">BoardGameGeek</a></li>
         <li><a href="#">Contact Us</a></li>
@@ -1861,6 +2347,58 @@ src="https://www.facebook.com/tr?id=2085516798873588&ev=PageView&noscript=1"
       }
     });
   }
+
+  // Late-pledge countdown (relocated to pledge section)
+  (function() {
+    var close = new Date('2026-06-15T23:59:59');
+    function pad(n) { return String(Math.max(0, Math.floor(n))).padStart(2, '0'); }
+    var d = document.getElementById('cd-days'),
+        h = document.getElementById('cd-hours'),
+        m = document.getElementById('cd-mins'),
+        s = document.getElementById('cd-secs');
+    function tick() {
+      var diff = close - Date.now();
+      if (diff <= 0) { if (d) { d.textContent = h.textContent = m.textContent = s.textContent = '00'; } return; }
+      d.textContent = pad(diff / 86400000);
+      h.textContent = pad((diff % 86400000) / 3600000);
+      m.textContent = pad((diff % 3600000) / 60000);
+      s.textContent = pad((diff % 60000) / 1000);
+    }
+    if (d) { tick(); setInterval(tick, 1000); }
+  })();
+
+  // Sticky buy-bar — reveal once the hero scrolls off
+  (function() {
+    var bar = document.getElementById('buy-bar');
+    var hero = document.querySelector('.hero');
+    if (!bar || !hero) return;
+    function onScroll() {
+      if (window.scrollY > hero.offsetHeight - 120) bar.classList.add('visible');
+      else bar.classList.remove('visible');
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  })();
+
+  // Outbound BackerKit click tracking — GA4 key event + Meta InitiateCheckout
+  (function() {
+    document.querySelectorAll('a[href*="backerkit.com"]').forEach(function(link) {
+      link.addEventListener('click', function() {
+        var label = this.getAttribute('href');
+        try { label = new URL(this.href).searchParams.get('utm_content') || new URL(this.href).pathname; } catch (e) {}
+        if (typeof gtag === 'function') {
+          gtag('event', 'backerkit_click', {
+            event_category: 'outbound',
+            event_label: label,
+            transport_type: 'beacon'
+          });
+        }
+        if (typeof fbq === 'function') {
+          fbq('track', 'InitiateCheckout', { content_name: label });
+        }
+      });
+    });
+  })();
 
 </script>
 </body>
