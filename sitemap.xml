@@ -3,18 +3,34 @@
 
   <!-- Homepage -->
   <url>
-    <loc>https://www.risingwarriorgames.com/</loc>
-    <lastmod>2026-05-08</lastmod>
+    <loc>https://risingwarriorgames.com/</loc>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <!-- Late Pledge / Preorder -->
   <url>
-    <loc>https://www.risingwarriorgames.com/latepledge.html</loc>
-    <lastmod>2026-05-08</lastmod>
+    <loc>https://risingwarriorgames.com/latepledge.html</loc>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+  </url>
+
+  <!-- Zombie Overlord -->
+  <url>
+    <loc>https://risingwarriorgames.com/zombieoverlord.html</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Privacy Policy -->
+  <url>
+    <loc>https://risingwarriorgames.com/privacy.html</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 
 </urlset>
