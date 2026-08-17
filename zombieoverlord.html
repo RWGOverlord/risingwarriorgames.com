@@ -40,13 +40,16 @@
       <img src="images/RWG_Name_Logo.png" alt="Rising Warrior Games">
       <span class="tag">Chattanooga</span>
     </a>
-    <nav class="nav">
+    <nav class="nav" id="site-nav">
       <a href="/">Home</a>
       <a class="on" href="/zombieoverlord.html">Zombie Overlord</a>
       <a href="/#studio">Studio</a>
       <a href="/#news">Newsletter</a>
     </nav>
     <a class="btn btn--sm" href="https://zombie-overlord.backerkit.com/hosted_preorders">Preorder</a>
+    <button class="burger" type="button" id="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="site-nav">
+      <i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i>
+    </button>
   </div>
 </header>
 
@@ -268,6 +271,8 @@
       </button>
     </div>
 
+    <p class="watch-note">Filmed with a preproduction copy, so the box art in the video is an earlier version. The final cover is the one shown throughout the rest of this page.</p>
+
     <div class="chapters">
       <p class="chapters-label mono">Jump to</p>
       <ul>
@@ -464,5 +469,6 @@
   Array.prototype.forEach.call(document.querySelectorAll('.chapter'), bind);
 })();
 </script>
+<script src="nav.js" defer></script>
 </body>
 </html>
