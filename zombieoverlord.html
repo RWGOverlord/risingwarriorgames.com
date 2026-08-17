@@ -253,6 +253,33 @@
     </div>
   </section>
 
+  <!-- PLAYTHROUGH — click-to-play facade. No YouTube iframe or script until the user clicks. -->
+  <section class="watch wrap" id="playthrough">
+    <div class="sec-head">
+      <p class="eyebrow mono">See it played</p>
+      <h2>Watch a full game</h2>
+      <p>Lincoln Hoppe, The Game Bard, walked through a complete game in about eight minutes, from setup to the point where the conversion engine starts to snowball.</p>
+    </div>
+
+    <div class="lite" id="zo-lite" data-embed="https://www.youtube-nocookie.com/embed/gTeqBZemAVA">
+      <img src="images/ZO_Playthrough_Poster.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async">
+      <button class="lite-play" type="button" data-start="0" aria-label="Play the Zombie Overlord playthrough video">
+        <span class="lite-tri" aria-hidden="true"></span>
+      </button>
+    </div>
+
+    <div class="chapters">
+      <p class="chapters-label mono">Jump to</p>
+      <ul>
+        <li><button class="chapter" type="button" data-start="73" aria-label="Play the playthrough from 1:13 — What makes it different">What makes it different <span class="t">1:13</span></button></li>
+        <li><button class="chapter" type="button" data-start="149" aria-label="Play the playthrough from 2:29 — The lure phase dilemma">The lure phase dilemma <span class="t">2:29</span></button></li>
+        <li><button class="chapter" type="button" data-start="209" aria-label="Play the playthrough from 3:29 — Compared to Star Realms">Compared to Star Realms <span class="t">3:29</span></button></li>
+        <li><button class="chapter" type="button" data-start="350" aria-label="Play the playthrough from 5:50 — Who it's for">Who it's for <span class="t">5:50</span></button></li>
+        <li><button class="chapter" type="button" data-start="414" aria-label="Play the playthrough from 6:54 — Verdict">Verdict <span class="t">6:54</span></button></li>
+      </ul>
+    </div>
+  </section>
+
   <section class="gal wrap">
     <div class="sec-head">
       <p class="eyebrow mono">The components</p>
@@ -379,6 +406,7 @@
         <ul>
           <li><a href="/zombieoverlord.html">Zombie Overlord</a></li>
           <li><a href="https://zombie-overlord.backerkit.com/hosted_preorders">Preorder</a></li>
+          <li><a href="/zombieoverlord.html#playthrough">Full playthrough</a></li>
           <li><a href="https://boardgamegeek.com/boardgame/467950/zombie-overlord">BoardGameGeek</a></li>
         </ul>
       </div>
@@ -406,5 +434,35 @@
     </div>
   </div>
 </footer>
+
+<script>
+/* Playthrough facade: the YouTube iframe is created only on a user click. */
+(function(){
+  var lite = document.getElementById('zo-lite');
+  if(!lite) return;
+  var base = lite.getAttribute('data-embed');
+
+  function play(start){
+    var frame = document.createElement('iframe');
+    frame.src = base + '?autoplay=1' + (start > 0 ? '&start=' + start : '');
+    frame.title = 'Zombie Overlord playthrough and review by Lincoln Hoppe, The Game Bard';
+    frame.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+    frame.setAttribute('allowfullscreen', '');
+    frame.setAttribute('frameborder', '0');
+    lite.textContent = '';
+    lite.appendChild(frame);
+    frame.focus();
+  }
+
+  function bind(el){
+    el.addEventListener('click', function(){
+      play(parseInt(el.getAttribute('data-start'), 10) || 0);
+    });
+  }
+
+  bind(lite.querySelector('.lite-play'));
+  Array.prototype.forEach.call(document.querySelectorAll('.chapter'), bind);
+})();
+</script>
 </body>
 </html>
