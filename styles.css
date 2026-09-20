@@ -137,9 +137,6 @@ h1,h2,h3,h4{color:var(--ink); margin:0}
 .studio .eyebrow{color:var(--gold-lift)}
 .studio .eyebrow::before{background:var(--gold-lift)}
 .studio-grid{display:grid; grid-template-columns:.85fr 1.15fr; gap:64px; align-items:center}
-.studio-logo{background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.1);
-  border-radius:var(--r); padding:44px; display:grid; place-items:center}
-.studio-logo img{max-width:220px}
 .studio p{font-size:17px; margin:0 0 18px; color:#C6D2C7}
 .studio p:last-of-type{margin-bottom:0}
 .studio q{display:block; font:500 19px/1.5 'Cinzel',serif; color:#F4F7F2; quotes:none;
@@ -443,7 +440,7 @@ h1,h2,h3,h4{color:var(--ink); margin:0}
   .brand img{height:44px}
   .brand .tag{display:none}
   .hero{padding-top:56px; padding-bottom:48px}
-  .studio-logo{padding:28px}
+  .studio-photo{padding:22px}
   .foot-grid{grid-template-columns:1fr}
   .buy{flex-direction:column; align-items:flex-start}
   .step{grid-template-columns:1fr; gap:10px}
@@ -454,6 +451,7 @@ h1,h2,h3,h4{color:var(--ink); margin:0}
   .chapters li{width:100%}
   .chapter{width:100%; justify-content:space-between}
   .shipping{padding:24px 20px}
+  .note-card{grid-template-columns:1fr; gap:18px; padding:26px 22px}
   .flow{gap:9px}
   .flow span{font-size:10px}
 }
@@ -479,3 +477,23 @@ h1,h2,h3,h4{color:var(--ink); margin:0}
   background:var(--green); border:1px solid var(--line); border-radius:var(--r)}
 .trailer a{color:var(--gold); text-decoration:underline; text-underline-offset:2px}
 .trailer-fallback{padding:20px; color:var(--body)}
+
+/* ---------- studio portrait (home) ---------- */
+.studio-photo{display:flex; flex-direction:column; align-items:center; gap:14px;
+  background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.1);
+  border-radius:var(--r); padding:26px}
+.studio-photo img{width:100%; max-width:240px; aspect-ratio:1/1; object-fit:cover;
+  border-radius:50%; border:1px solid rgba(255,255,255,.16)}
+.studio-cap{color:var(--gold-lift); text-align:center}
+
+/* ---------- designer's note (product page) ---------- */
+.note-sec{padding-top:0; padding-bottom:88px}
+.note-card{display:grid; grid-template-columns:104px 1fr; gap:28px; align-items:start;
+  margin:0; padding:34px 36px; background:var(--green-tint);
+  border:1px solid var(--line); border-left:3px solid var(--gold); border-radius:var(--r)}
+.note-card img{width:104px; height:104px; border-radius:50%; object-fit:cover;
+  border:1px solid var(--line)}
+.note-card figcaption p{margin:0 0 13px; font-size:15px}
+.note-card .eyebrow{margin-bottom:14px}
+.note-card b{color:var(--ink); font-weight:600}
+.note-sign{color:var(--muted); margin:0 !important; letter-spacing:.14em}

@@ -66,6 +66,10 @@ TARGETS=(
   # launch video poster
   "Video_Cover.png>jpg          640 1100"
 
+  # creator portrait. NOTE: images/creator.png is actually an AVIF file with a
+  # .png extension, so it must be re-encoded rather than served directly.
+  "creator.png>jpg              240 480"
+
   # og:image / twitter:image — flattened to JPEG because several social
   # scrapers composite PNG alpha onto black
   "Gold_Trim_Thematic_MockUp.png>jpg  1200"
