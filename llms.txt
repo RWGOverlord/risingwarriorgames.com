@@ -67,12 +67,21 @@ Zombie Overlord shares structural DNA with deck-builders like Dominion, Ascensio
 
 Core Edition and Premium Bundle ship at the "Game" rate. Battlefield Edition includes playmats and ships at the "Game + 1-2 playmats" rate. Small add-ons (dice, mini expansion, holographic cards) ship in the same package and do not raise the shipping tier. Ranges are estimates based on current fulfillment quotes; final cost is confirmed through BackerKit based on address and order contents.
 
+### Language
+- Game is English only: all cards and the printed rulebook
+- German and Spanish rulebook PDFs will be offered for download once the game is released; cards remain English
+
+### Artist
+- All character art, backgrounds and visual identity by Maximiliano Musso ("Chino the Goat"), Buenos Aires
+- Portfolio: https://www.behance.net/chinothemfgoat
+
 ### Returns, Cancellations and Replacements
 - Pre-order cancellation: full refund any time before the order ships; contact hello@risingwarriorgames.com
 - Returns after delivery: accepted if unopened and still in shrinkwrap, within 30 days of delivery; buyer pays return shipping, full purchase price refunded on receipt
 - Damaged or missing cards: replaced free of charge, no return required and no time limit
 - EU and UK customers have a statutory 14-day right of withdrawal from delivery, for any reason
 - Refunds are processed directly by Rising Warrior Games, not by BackerKit
+- Adding to an existing order: orders are currently locked in BackerKit; customers should email hello@risingwarriorgames.com rather than placing a second order, to avoid paying shipping twice
 
 ### Retail Availability
 - Not currently sold in retail stores; the BackerKit store is the only sales channel
