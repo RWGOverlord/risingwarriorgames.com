@@ -452,6 +452,8 @@ h1,h2,h3,h4{color:var(--ink); margin:0}
   .chapter{width:100%; justify-content:space-between}
   .shipping{padding:24px 20px}
   .note-card{grid-template-columns:1fr; gap:18px; padding:26px 22px}
+  .specs-grid{grid-template-columns:1fr; gap:0}
+  .specs-grid div{grid-template-columns:100px 1fr; gap:12px}
   .artist{grid-template-columns:72px 1fr; gap:14px}
   .artist img{width:72px; height:72px}
   .flow{gap:9px}
@@ -506,3 +508,13 @@ h1,h2,h3,h4{color:var(--ink); margin:0}
 .artist img{width:96px; height:96px; object-fit:contain}
 .artist p{margin:0; font-size:14px; color:var(--body)}
 .artist b{color:var(--ink); font-weight:600}
+
+/* ---------- component manifest ---------- */
+.specs{margin-top:44px; padding-top:32px; border-top:1px solid var(--line)}
+.specs h3{font:700 20px/1.2 'Cinzel',serif; margin:0 0 22px; color:var(--green)}
+.specs-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:0 44px; margin:0}
+.specs-grid div{display:grid; grid-template-columns:118px 1fr; gap:16px;
+  padding:13px 0; border-bottom:1px solid var(--line-soft)}
+.specs-grid dt{font:500 10px/1.5 'IBM Plex Mono',monospace; letter-spacing:.14em;
+  text-transform:uppercase; color:var(--muted)}
+.specs-grid dd{margin:0; font-size:14px; color:var(--body)}
