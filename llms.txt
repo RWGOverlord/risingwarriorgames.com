@@ -37,7 +37,7 @@ Zombie Overlord shares structural DNA with deck-builders like Dominion, Ascensio
 
 ### Funding & Community
 - Funded on Kickstarter in approximately 13 hours
-- 150+ backers during the campaign
+- 167 backers during the campaign
 - Multiple stretch goals unlocked
 - High add-on participation rate including premium accessories
 - Independent self-published project
@@ -49,7 +49,28 @@ Zombie Overlord shares structural DNA with deck-builders like Dominion, Ascensio
 - Late pledges open through BackerKit while supplies last
 - Ships to US and international addresses
 - Fulfillment handled directly by Rising Warrior Games with regional shipping partners
-- Estimated delivery following manufacturing completion and freight
+- Print run departs the factory in China in September 2026; fulfillment begins November 2026
+
+### Shipping Estimates (USD, charged separately from item price)
+| Region | Game | Game + 1-2 playmats | Game + 2-4 playmats | Double core (2 games) |
+| --- | --- | --- | --- | --- |
+| United States | $8-$12 | $12-$18 | $16-$24 | $16-$24 |
+| Canada | $18-$22 | $22-$29 | $28-$32 | $28-$32 |
+| Rest of world | $22-$28 | $28-$36 | $37-$42 | $37-$42 |
+
+Core Edition and Premium Bundle ship at the "Game" rate. Battlefield Edition includes playmats and ships at the "Game + 1-2 playmats" rate. Small add-ons (dice, mini expansion, holographic cards) ship in the same package and do not raise the shipping tier. Ranges are estimates based on current fulfillment quotes; final cost is confirmed through BackerKit based on address and order contents.
+
+### Returns, Cancellations and Replacements
+- Pre-order cancellation: full refund any time before the order ships; contact hello@risingwarriorgames.com
+- Returns after delivery: accepted if unopened and still in shrinkwrap, within 30 days of delivery; buyer pays return shipping, full purchase price refunded on receipt
+- Damaged or missing cards: replaced free of charge, no return required and no time limit
+- EU and UK customers have a statutory 14-day right of withdrawal from delivery, for any reason
+- Refunds are processed directly by Rising Warrior Games, not by BackerKit
+
+### Retail Availability
+- Not currently sold in retail stores; the BackerKit store is the only sales channel
+- The studio intends to approach local game shops and a small number of online retailers in future; nothing is arranged and no date has been announced
+- Add-ons (Misfits Mini Expansion, playmats, engraved life trackers) are campaign unlocks and remain exclusive to the BackerKit store
 
 ### Where to Buy / Follow
 - Late Pledge (BackerKit): https://zombie-overlord.backerkit.com/hosted_preorders
