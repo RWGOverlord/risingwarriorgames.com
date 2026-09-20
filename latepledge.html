@@ -7,6 +7,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Redirecting to Zombie Overlord...</title>
+  <!-- Tracking bounce page, not a destination: keep it out of the index
+       and out of sitemap.xml. Crawlable so the noindex is actually seen. -->
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://risingwarriorgames.com/zombieoverlord.html">
 
   <!-- Meta Pixel Code -->
   <script>
@@ -47,6 +51,10 @@
 
 </head>
 <body>
+  <noscript>
+    <p>Continue to the <a href="https://zombie-overlord.backerkit.com/hosted_preorders">Zombie Overlord preorder store</a>,
+       or back to <a href="https://risingwarriorgames.com/zombieoverlord.html">the game page</a>.</p>
+  </noscript>
   <script>
     // Build destination URL, preserving any UTM params
     var base = "https://zombie-overlord.backerkit.com/hosted_preorders";

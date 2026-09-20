@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# latepledge.html is a tracking redirect with no content. It carries a
+# noindex meta tag rather than a Disallow here: blocking the crawl would stop
+# Google seeing the noindex, which is the opposite of what we want.
+
+Sitemap: https://risingwarriorgames.com/sitemap.xml

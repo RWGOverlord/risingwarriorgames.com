@@ -486,6 +486,25 @@
     </div>
   </section>
 
+  <!-- TRAILER — the 40s campaign video. preload="none" means not a byte of the
+       9 MB file is fetched until someone presses play; the poster carries the
+       frame until then. -->
+  <section class="trailer" id="trailer">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow mono">Watch</p>
+        <h2>Forty seconds of the horde</h2>
+        <p>The campaign trailer. If you would rather see a full game played end to end, there is <a href="#playthrough">an eight-minute playthrough</a> further down the page.</p>
+      </div>
+      <video class="trailer-vid" controls playsinline preload="none"
+             poster="images/opt/Video_Cover-1100.jpg"
+             width="1920" height="1080">
+        <source src="videos/Launch_Video.mp4" type="video/mp4">
+        <p class="trailer-fallback">Your browser can't play this video. <a href="videos/Launch_Video.mp4">Download it instead</a> (MP4, 9 MB).</p>
+      </video>
+    </div>
+  </section>
+
   <section class="play wrap">
     <div class="sec-head">
       <p class="eyebrow mono">How you win</p>

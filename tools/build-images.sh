@@ -63,6 +63,9 @@ TARGETS=(
   # playthrough poster
   "ZO_Playthrough_Poster.jpg    640 1280"
 
+  # launch video poster
+  "Video_Cover.png>jpg          640 1100"
+
   # og:image / twitter:image — flattened to JPEG because several social
   # scrapers composite PNG alpha onto black
   "Gold_Trim_Thematic_MockUp.png>jpg  1200"
