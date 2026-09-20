@@ -70,6 +70,11 @@ TARGETS=(
   # .png extension, so it must be re-encoded rather than served directly.
   "creator.png>jpg              240 480"
 
+  # artist credit. Chino_Portrait.png is a square centre crop of Chino.png,
+  # the artist's self-portrait as one of the game's zombies. Stays PNG: the
+  # character sits on transparency, not a background.
+  "Chino_Portrait.png           240 420"
+
   # og:image / twitter:image — flattened to JPEG because several social
   # scrapers composite PNG alpha onto black
   "Gold_Trim_Thematic_MockUp.png>jpg  1200"

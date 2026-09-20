@@ -452,6 +452,8 @@ h1,h2,h3,h4{color:var(--ink); margin:0}
   .chapter{width:100%; justify-content:space-between}
   .shipping{padding:24px 20px}
   .note-card{grid-template-columns:1fr; gap:18px; padding:26px 22px}
+  .artist{grid-template-columns:72px 1fr; gap:14px}
+  .artist img{width:72px; height:72px}
   .flow{gap:9px}
   .flow span{font-size:10px}
 }
@@ -497,3 +499,10 @@ h1,h2,h3,h4{color:var(--ink); margin:0}
 .note-card .eyebrow{margin-bottom:14px}
 .note-card b{color:var(--ink); font-weight:600}
 .note-sign{color:var(--muted); margin:0 !important; letter-spacing:.14em}
+
+/* ---------- artist credit ---------- */
+.artist{display:grid; grid-template-columns:96px 1fr; gap:18px; align-items:center;
+  margin-top:22px; padding-top:20px; border-top:1px solid var(--line)}
+.artist img{width:96px; height:96px; object-fit:contain}
+.artist p{margin:0; font-size:14px; color:var(--body)}
+.artist b{color:var(--ink); font-weight:600}
