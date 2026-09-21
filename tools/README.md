@@ -32,6 +32,23 @@ If the rulebook is ever re-exported **with real text**, use that directly
 instead — it would be accessible to screen readers and indexable by Google,
 which no image-only version can be.
 
+## Rulebook sources
+
+The authoritative source is the **final print files** — one JPEG per page,
+2432x2432, CMYK, as supplied to the manufacturer. `rulebook.pdf` and every
+diagram on `rules.html` are generated from those.
+
+Two earlier sources are NOT authoritative and should not be used again:
+a `Rulebook.docx` (an older draft) and a pre-production sample PDF. Both
+disagree with the print on rules that matter — Defense sits bottom right, not
+top right; the deactivate number is red, not yellow; and the final adds player
+elimination, Trap player-count icons, ability keywords and a Barricade
+clarification that neither earlier source contains.
+
+One known error in the printed rulebook: page 6 says a Trap's purchase cost is
+in the top left. On the final cards it is in the top right. `rules.html` states
+the correct position and notes the discrepancy.
+
 ## Rules page diagrams
 
 `images/rules/p*.jpg` are page renders from the 150 dpi rulebook master, used as

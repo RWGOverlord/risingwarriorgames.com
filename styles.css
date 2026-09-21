@@ -622,3 +622,9 @@ h1,h2,h3,h4{color:var(--ink); margin:0}
   .phases div,.glossary div,.credits div{grid-template-columns:1fr; gap:5px}
   .rules-cta{padding:24px 20px}
 }
+
+/* Backer credits list on the rules page. */
+.overlords{display:grid !important; grid-template-columns:repeat(3,1fr); gap:8px 20px; font-size:14px}
+.overlords li::before{content:"·" !important; color:var(--gold)}
+@media (max-width:760px){ .overlords{grid-template-columns:repeat(2,1fr)} }
+@media (max-width:460px){ .overlords{grid-template-columns:1fr} }
