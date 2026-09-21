@@ -11,7 +11,7 @@ Full rules: https://risingwarriorgames.com/rules.html
 Zombie Overlord is a competitive deck-building card game for 2–4 players with a 30–40 minute playtime, recommended for ages 14 and up. Players take on the role of rival zombie overlords competing to build the most powerful undead horde and dominate the apocalypse.
 
 ### Core Concept
-Unlike traditional zombie games where players survive the apocalypse, Zombie Overlord puts players in control of the undead. Players set traps, lure human survivors, and convert them into zombie minions — flipping dual-sided cards from their human form to their zombie form as they join your horde.
+Unlike traditional zombie games where players survive the apocalypse, Zombie Overlord puts players in control of the undead. Players set traps, lure human survivors, and convert them into zombie minions , flipping dual-sided cards from their human form to their zombie form as they join your horde.
 
 ### Key Mechanics
 - **Dual-Sided Survivor/Zombie Cards:** Every survivor card has a human side and a zombie side. Captured survivors are converted and added to your deck as zombie minions, growing your horde with each turn.

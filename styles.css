@@ -31,7 +31,12 @@ body{
   font:400 16px/1.65 'Archivo',system-ui,-apple-system,sans-serif;
   -webkit-font-smoothing:antialiased;
 }
-img{max-width:100%; display:block}
+/* height:auto is load-bearing: the width/height attributes on every <img>
+   map to CSS width/height as presentational hints, and with both set the
+   browser ignores aspect-ratio. Rules that set an explicit height below
+   (.brand, .gcard-img, .lite, .artist, .note-card, .foot-brand) still win
+   on specificity. */
+img{max-width:100%; height:auto; display:block}
 a{color:inherit}
 :focus-visible{outline:2px solid var(--gold); outline-offset:3px}
 
