@@ -31,3 +31,19 @@ larger for this artwork).
 If the rulebook is ever re-exported **with real text**, use that directly
 instead — it would be accessible to screen readers and indexable by Google,
 which no image-only version can be.
+
+## Rules page diagrams
+
+`images/rules/p*.jpg` are page renders from the 150 dpi rulebook master, used as
+figures on `rules.html`. Regenerate with `tools/renderpdf.swift`, then downsize:
+
+    /tmp/renderpdf master.pdf /tmp/pages 2000 0.85
+    for p in 03 04 06 08 09 10 12 13 14 15 16 17; do
+      for w in 700 1200; do
+        sips --resampleWidth $w -s format jpeg -s formatOptions 78 \
+          /tmp/pages/p$p.jpg --out images/rules/p$p-$w.jpg
+      done
+    done
+
+`tools/ocr.swift` OCRs those renders via the macOS Vision framework — that is how
+the text on `rules.html` was recovered, since the master carries no text layer.
