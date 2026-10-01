@@ -112,8 +112,8 @@
     "@type": "AggregateOffer",
     "priceCurrency": "USD",
     "lowPrice": "34",
-    "highPrice": "88",
-    "offerCount": 3,
+    "highPrice": "50",
+    "offerCount": 2,
     "availability": "https://schema.org/PreOrder",
     "offers": [
       {
@@ -171,11 +171,11 @@
       },
       {
         "@type": "Offer",
-        "name": "Premium Bundle",
-        "price": "46",
+        "name": "Horde Bundle",
+        "price": "50",
         "priceCurrency": "USD",
         "availability": "https://schema.org/PreOrder",
-        "url": "https://zombie-overlord.backerkit.com/hosted_preorders/847778",
+        "url": "https://zombie-overlord.backerkit.com/hosted_preorders/893290",
         "shippingDetails": [
           {
             "@type": "OfferShippingDetails",
@@ -200,59 +200,6 @@
               "@type": "MonetaryAmount",
               "minValue": "18",
               "maxValue": "22",
-              "currency": "USD"
-            }
-          }
-        ],
-        "seller": {
-          "@type": "Organization",
-          "name": "Rising Warrior Games"
-        },
-        "itemCondition": "https://schema.org/NewCondition",
-        "hasMerchantReturnPolicy": {
-          "@type": "MerchantReturnPolicy",
-          "applicableCountry": [
-            "US",
-            "CA"
-          ],
-          "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
-          "merchantReturnDays": 30,
-          "returnMethod": "https://schema.org/ReturnByMail",
-          "returnFees": "https://schema.org/ReturnFeesCustomerResponsibility",
-          "merchantReturnLink": "https://risingwarriorgames.com/zombieoverlord.html#faq"
-        }
-      },
-      {
-        "@type": "Offer",
-        "name": "Battlefield Edition",
-        "price": "88",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/PreOrder",
-        "url": "https://zombie-overlord.backerkit.com/hosted_preorders/847780",
-        "shippingDetails": [
-          {
-            "@type": "OfferShippingDetails",
-            "shippingDestination": {
-              "@type": "DefinedRegion",
-              "addressCountry": "US"
-            },
-            "shippingRate": {
-              "@type": "MonetaryAmount",
-              "minValue": "12",
-              "maxValue": "18",
-              "currency": "USD"
-            }
-          },
-          {
-            "@type": "OfferShippingDetails",
-            "shippingDestination": {
-              "@type": "DefinedRegion",
-              "addressCountry": "CA"
-            },
-            "shippingRate": {
-              "@type": "MonetaryAmount",
-              "minValue": "22",
-              "maxValue": "29",
               "currency": "USD"
             }
           }
@@ -373,10 +320,10 @@
     },
     {
       "@type": "Question",
-      "name": "What's the difference between the three editions?",
+      "name": "What's the difference between the game and the Horde Bundle?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "All three include the complete 194-card core game and every stretch goal unlocked during the campaign. Core Edition ($34). The game on its own. Premium Bundle ($46). Adds the Misfits Mini Expansion. Battlefield Edition ($88). Adds the Misfits Mini Expansion and a double playmat set in any two designs."
+        "text": "Both include the complete 194-card core game and every stretch goal unlocked during the campaign. Core Edition ($34). The game on its own. Horde Bundle ($50). Adds the Misfits Mini Expansion and the Life Point Trackers, $5 less than buying them separately. Playmats are available as add-ons with either one."
       }
     },
     {
@@ -416,7 +363,7 @@
       "name": "When will my order arrive?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The print run leaves the factory in China this week and fulfillment begins in November 2026. Shipping is charged separately from the item price and confirmed through BackerKit based on your address and what's in your order."
+        "text": "Zombie Overlord is manufactured and on its way from the factory, and fulfillment begins in November 2026. Shipping is charged separately from the item price and confirmed through BackerKit based on your address and what's in your order."
       }
     },
     {
@@ -457,6 +404,8 @@
 </head>
 <body>
 
+<div class="promo" data-loc="promo-bar"><b>Final preorders close October 28.</b> <a href="https://zombie-overlord.backerkit.com/hosted_preorders/893290" data-bk-preorders="https://zombie-overlord.backerkit.com/overlay_preorders/893290" data-offer="horde">Get the Horde Bundle for $50</a></div>
+
 <header class="chrome">
   <div class="chrome-in">
     <a class="brand" href="/">
@@ -472,7 +421,7 @@
       <a href="/rules.html">Rules</a>
       <a href="/#studio">Studio</a>
     </nav>
-    <a class="btn btn--sm" href="https://zombie-overlord.backerkit.com/hosted_preorders">Preorder</a>
+    <a class="btn btn--sm" href="#preorder">Preorder</a>
     <button class="burger" type="button" id="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="site-nav">
       <i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i>
     </button>
@@ -505,10 +454,12 @@
             <div><dt>Age</dt><dd>14+</dd></div>
             <div><dt>Cards</dt><dd>194</dd></div>
           </dl>
-          <p class="zo-price">From <b>$34</b><span>+ $8–$12 US shipping · <a href="#shipping">all regions</a></span></p>
-          <div class="zo-cta">
-            <a class="btn" href="#preorder">Preorder now</a>
-            <span class="note"><a href="https://www.kickstarter.com/projects/zombieoverlord/zombie-overlord" target="_blank" rel="noopener">Funded in 13 hrs · 167 backers</a> · Fulfillment begins Nov 2026</span>
+          <p class="zo-price"><b>$34</b><s>$45</s><span>preorder price + $8–$12 US shipping · <a href="#shipping">all regions</a></span></p>
+          <p class="zo-save">$11 off MSRP until October 28</p>
+          <div class="zo-cta" data-loc="hero">
+            <a class="btn" href="https://zombie-overlord.backerkit.com/hosted_preorders/893290" data-bk-preorders="https://zombie-overlord.backerkit.com/overlay_preorders/893290" data-offer="horde">Get the Horde Bundle · $50</a>
+            <a class="btn btn--ghost-l" href="https://zombie-overlord.backerkit.com/hosted_preorders/847776" data-bk-preorders="https://zombie-overlord.backerkit.com/overlay_preorders/847776" data-offer="core">Just the game · $34</a>
+            <span class="note"><a href="https://www.kickstarter.com/projects/zombieoverlord/zombie-overlord" target="_blank" rel="noopener">Funded on Kickstarter in 13 hrs</a> · 196 backers · Fulfillment begins Nov 2026</span>
           </div>
         </div>
         <figure class="zo-art">
@@ -544,6 +495,34 @@
       <span>Flip them into zombies</span><i>→</i>
       <span>Build your deck</span><i>→</i>
       <span>Crush your rivals</span>
+    </div>
+  </section>
+
+  <!-- HORDE BUNDLE: the featured final-preorder offer. Image is a stand-in
+       until the bundle shot from BackerKit is added. -->
+  <section class="horde wrap" id="horde" data-loc="horde-feature">
+    <div class="horde-card">
+      <figure class="horde-fig"><img src="images/opt/Premium_Product-700.png"
+           srcset="images/opt/Premium_Product-400.png 400w, images/opt/Premium_Product-700.png 700w"
+           sizes="(max-width:560px) calc(100vw - 90px), (max-width:920px) calc(100vw - 130px), 490px"
+           width="700" height="463" loading="lazy" decoding="async" alt="The Horde Bundle: Zombie Overlord, the Misfits Mini Expansion and the Life Point Trackers"></figure>
+      <div>
+        <p class="horde-tag mono">Final preorder · Best value</p>
+        <h2>The Horde Bundle</h2>
+        <p class="horde-lede">The game plus both campaign extras that aren't headed for retail.</p>
+        <ul class="horde-list">
+          <li>Zombie Overlord <small>· 194 cards, every stretch goal</small></li>
+          <li>Misfits Mini Expansion <small>· the core game repeats 20 Survivors; this swaps them for 20 new characters, so all 68 are unique</small></li>
+          <li>Life Point Trackers <small>· four engraved crown dice in a drawstring bag</small></li>
+        </ul>
+        <p class="horde-price"><b>$50</b><s>$73 value</s></p>
+        <p class="horde-save"><b>Save $5</b> on buying all three separately at preorder prices.</p>
+        <div class="horde-acts">
+          <a class="btn" href="https://zombie-overlord.backerkit.com/hosted_preorders/893290" data-bk-preorders="https://zombie-overlord.backerkit.com/overlay_preorders/893290" data-offer="horde">Get the Horde Bundle · $50</a>
+          <span class="horde-alt">or <a href="https://zombie-overlord.backerkit.com/hosted_preorders/847776" data-bk-preorders="https://zombie-overlord.backerkit.com/overlay_preorders/847776" data-offer="core">just the game for $34</a></span>
+        </div>
+        <p class="horde-meta"><span>Until preorders close October 28</span> · <span>+ $8–$12 US shipping</span></p>
+      </div>
     </div>
   </section>
 
@@ -784,6 +763,11 @@
         <li><button class="chapter" type="button" data-start="414" aria-label="Play the playthrough from 6:54, Verdict">Verdict <span class="t">6:54</span></button></li>
       </ul>
     </div>
+
+    <div class="cta-line" data-loc="after-playthrough">
+      <p>Seen enough? Build your horde.</p>
+      <a class="btn btn--sm" href="https://zombie-overlord.backerkit.com/hosted_preorders/893290" data-bk-preorders="https://zombie-overlord.backerkit.com/overlay_preorders/893290" data-offer="horde">Get the Horde Bundle · $50</a>
+    </div>
   </section>
 
   <section class="gal wrap">
@@ -829,69 +813,53 @@
   <section class="store" id="preorder">
     <div class="wrap">
       <div class="sec-head">
-        <p class="eyebrow mono">Preorder</p>
+        <p class="eyebrow mono">Final preorder · closes October 28</p>
         <h2>Manufactured and on the way</h2>
-        <p>The print run leaves the factory in China this week. Preorders are open through BackerKit and fulfillment begins November 2026.</p>
+        <p>Zombie Overlord is manufactured and on its way from the factory. Preorders close October 28, and fulfillment begins November 2026.</p>
       </div>
-      <div class="eds">
+      <div class="eds eds--2" data-loc="store">
+        <div class="ed ed--feat">
+          <div class="ed-img"><img src="images/opt/Premium_Product-700.png"
+               srcset="images/opt/Premium_Product-400.png 400w, images/opt/Premium_Product-700.png 700w"
+               sizes="(max-width:560px) calc(100vw - 48px), (max-width:920px) calc(100vw - 64px), 380px"
+               width="700" height="463" loading="lazy" decoding="async" alt="Horde Bundle"></div>
+          <div class="ed-body">
+            <span class="tagbest mono">Best value</span>
+            <h3>Horde Bundle</h3>
+            <p class="price">$50<s>$73 value</s></p>
+            <p class="save">Save $5 vs. buying separately</p>
+            <p class="ship">+ $8–$12 US shipping <a href="#shipping">other regions</a></p>
+            <ul>
+              <li>194-card core game, all stretch goals</li>
+              <li>Misfits Mini Expansion (all 68 Survivors unique)</li>
+              <li>Life Point Trackers</li>
+            </ul>
+            <a class="btn btn--sm" href="https://zombie-overlord.backerkit.com/hosted_preorders/893290" data-bk-preorders="https://zombie-overlord.backerkit.com/overlay_preorders/893290" data-offer="horde">Get the Horde Bundle</a>
+          </div>
+        </div>
         <div class="ed">
           <div class="ed-img"><img src="images/opt/Gold_Trim_Thematic_MockUp-700.png"
                srcset="images/opt/Gold_Trim_Thematic_MockUp-400.png 400w, images/opt/Gold_Trim_Thematic_MockUp-700.png 700w"
-               sizes="(max-width:560px) calc(100vw - 48px), (max-width:920px) calc(100vw - 64px), 345px"
+               sizes="(max-width:560px) calc(100vw - 48px), (max-width:920px) calc(100vw - 64px), 380px"
                width="700" height="467" loading="lazy" decoding="async" alt="Core edition"></div>
           <div class="ed-body">
             <h3>Core Edition</h3>
-            <p class="price">$34</p>
+            <p class="price">$34<s>$45 MSRP</s></p>
+            <p class="save">Save $11 off MSRP</p>
             <p class="ship">+ $8–$12 US shipping <a href="#shipping">other regions</a></p>
             <ul>
               <li>194-card core game</li>
               <li>48 unique characters</li>
               <li>All stretch goals included</li>
             </ul>
-            <a class="btn btn--ghost btn--sm" href="https://zombie-overlord.backerkit.com/hosted_preorders/847776">Preorder core</a>
-          </div>
-        </div>
-        <div class="ed ed--feat">
-          <div class="ed-img"><img src="images/opt/Premium_Product-700.png"
-               srcset="images/opt/Premium_Product-400.png 400w, images/opt/Premium_Product-700.png 700w"
-               sizes="(max-width:560px) calc(100vw - 48px), (max-width:920px) calc(100vw - 64px), 345px"
-               width="700" height="463" loading="lazy" decoding="async" alt="Premium bundle"></div>
-          <div class="ed-body">
-            <span class="tagbest mono">Most popular</span>
-            <h3>Premium Bundle</h3>
-            <p class="price">$46</p>
-            <p class="ship">+ $8–$12 US shipping <a href="#shipping">other regions</a></p>
-            <ul>
-              <li>194-card core game</li>
-              <li>Misfits Mini Expansion (68 characters in total)</li>
-              <li>All stretch goals included</li>
-            </ul>
-            <a class="btn btn--sm" href="https://zombie-overlord.backerkit.com/hosted_preorders/847778">Preorder bundle</a>
-          </div>
-        </div>
-        <div class="ed">
-          <div class="ed-img"><img src="images/opt/Battlefield_Product-700.png"
-               srcset="images/opt/Battlefield_Product-400.png 400w, images/opt/Battlefield_Product-700.png 700w"
-               sizes="(max-width:560px) calc(100vw - 48px), (max-width:920px) calc(100vw - 64px), 345px"
-               width="700" height="463" loading="lazy" decoding="async" alt="Battlefield edition"></div>
-          <div class="ed-body">
-            <h3>Battlefield Edition</h3>
-            <p class="price">$88</p>
-            <p class="ship">+ $12–$18 US shipping <a href="#shipping">other regions</a></p>
-            <ul>
-              <li>194-card core game</li>
-              <li>Misfits Mini Expansion (68 characters in total)</li>
-              <li>Double playmat set, any 2 designs</li>
-              <li>All stretch goals included</li>
-            </ul>
-            <a class="btn btn--ghost btn--sm" href="https://zombie-overlord.backerkit.com/hosted_preorders/847780">Preorder battlefield</a>
+            <a class="btn btn--ghost btn--sm" href="https://zombie-overlord.backerkit.com/hosted_preorders/847776" data-bk-preorders="https://zombie-overlord.backerkit.com/overlay_preorders/847776" data-offer="core">Preorder the game</a>
           </div>
         </div>
       </div>
       <!-- SHIPPING: real rates, shown before checkout rather than after. -->
       <div class="shipping" id="shipping">
         <h3>Shipping estimates</h3>
-        <p class="shipping-lede">Shipping is charged separately from the prices above. Core Edition and Premium Bundle both ship at the <b>Game</b> rate; Battlefield Edition includes playmats, so it ships at the <b>Game + 1–2 playmats</b> rate.</p>
+        <p class="shipping-lede">Shipping is charged separately from the prices above. The Core Edition and the Horde Bundle both ship at the <b>Game</b> rate. Adding playmats moves an order to the <b>Game + playmats</b> rates.</p>
         <div class="shipping-scroll">
           <table>
             <caption class="vh">Estimated shipping cost in US dollars by region and order contents</caption>
@@ -931,16 +899,16 @@
           <h2>Not available at retail</h2>
           <p>These were unlocked during the campaign and stay exclusive to the BackerKit store. Add any of them to your order.</p>
         </div>
-        <div class="addon-grid">
+        <div class="addon-grid" data-loc="add-ons">
           <div class="addon">
             <img src="images/opt/mini_expansion-620.png"
                  srcset="images/opt/mini_expansion-360.png 360w, images/opt/mini_expansion-620.png 620w"
                  sizes="(max-width:560px) calc(100vw - 92px), (max-width:920px) calc(100vw - 108px), 301px"
                  width="620" height="410" loading="lazy" decoding="async" alt="Misfits Mini Expansion">
             <div class="row"><h3>Mini Expansion</h3><span class="price">$12</span></div>
-            <p>21 cards adding 20 unique characters: Misfits, Holiday Horde and backer-created characters. Same stock as the core game, in a resealable bag.</p>
+            <p>20 new characters: Misfits, Holiday Horde and backer-created characters, plus a card explaining the swap. Same stock as the core game, in a resealable bag.</p>
             <div class="addon-cta">
-              <a class="btn btn--ghost btn--sm" href="https://zombie-overlord.backerkit.com/hosted_preorders/849211">Add to order</a>
+              <a class="btn btn--ghost btn--sm" href="https://zombie-overlord.backerkit.com/hosted_preorders/849211" data-bk-preorders="https://zombie-overlord.backerkit.com/overlay_preorders/849211" data-offer="mini">Add to order</a>
             </div>
           </div>
           <div class="addon">
@@ -951,8 +919,8 @@
             <div class="row"><h3>Player Playmats</h3><span class="price">From $30</span></div>
             <p>Full-size 24" × 14" mats with a smooth surface, non-slip rubber backing and subtle placement guides.</p>
             <div class="addon-cta">
-              <a class="btn btn--ghost btn--sm" href="https://zombie-overlord.backerkit.com/hosted_preorders/849203">1 mat · $30</a>
-              <a class="btn btn--ghost btn--sm" href="https://zombie-overlord.backerkit.com/hosted_preorders/849206">2 mats · $55</a>
+              <a class="btn btn--ghost btn--sm" href="https://zombie-overlord.backerkit.com/hosted_preorders/849203" data-bk-preorders="https://zombie-overlord.backerkit.com/overlay_preorders/849203" data-offer="mat-1">1 mat · $30</a>
+              <a class="btn btn--ghost btn--sm" href="https://zombie-overlord.backerkit.com/hosted_preorders/849206" data-bk-preorders="https://zombie-overlord.backerkit.com/overlay_preorders/849206" data-offer="mat-2">2 mats · $55</a>
             </div>
           </div>
           <div class="addon">
@@ -963,7 +931,7 @@
             <div class="row"><h3>Life Point Trackers</h3><span class="price">$9</span></div>
             <p>Four custom 16mm D6 dice with an engraved crown on every face, no standard pips, in a flannel drawstring bag.</p>
             <div class="addon-cta">
-              <a class="btn btn--ghost btn--sm" href="https://zombie-overlord.backerkit.com/hosted_preorders/849207">Add to order</a>
+              <a class="btn btn--ghost btn--sm" href="https://zombie-overlord.backerkit.com/hosted_preorders/849207" data-bk-preorders="https://zombie-overlord.backerkit.com/overlay_preorders/849207" data-offer="trackers">Add to order</a>
             </div>
           </div>
         </div>
@@ -998,14 +966,14 @@
       </details>
 
       <details>
-        <summary>What's the difference between the three editions?</summary>
+        <summary>What's the difference between the game and the Horde Bundle?</summary>
         <div>
-          <p>All three include the complete 194-card core game and every stretch goal unlocked during the campaign.</p>
+          <p>Both include the complete 194-card core game and every stretch goal unlocked during the campaign.</p>
           <ul>
             <li><b>Core Edition ($34).</b> The game on its own.</li>
-            <li><b>Premium Bundle ($46).</b> Adds the Misfits Mini Expansion.</li>
-            <li><b>Battlefield Edition ($88).</b> Adds the Misfits Mini Expansion and a double playmat set in any two designs.</li>
+            <li><b>Horde Bundle ($50).</b> Adds the Misfits Mini Expansion and the Life Point Trackers, $5 less than buying them separately.</li>
           </ul>
+          <p>Playmats are available as <a href="#preorder">add-ons</a> with either one.</p>
         </div>
       </details>
 
@@ -1037,7 +1005,7 @@
 
       <details>
         <summary>When will my order arrive?</summary>
-        <div><p>The print run leaves the factory in China this week and fulfillment begins in November 2026. Shipping is charged separately from the item price and confirmed through BackerKit based on your address and what's in your order.</p></div>
+        <div><p>Zombie Overlord is manufactured and on its way from the factory, and fulfillment begins in November 2026. Shipping is charged separately from the item price and confirmed through BackerKit based on your address and what's in your order.</p></div>
       </details>
 
       <details>
@@ -1089,7 +1057,7 @@
         <h2>Game</h2>
         <ul>
           <li><a href="/zombieoverlord.html">Zombie Overlord</a></li>
-          <li><a href="https://zombie-overlord.backerkit.com/hosted_preorders">Preorder</a></li>
+          <li><a href="#preorder">Preorder</a></li>
           <li><a href="/zombieoverlord.html#playthrough">Full playthrough</a></li>
           <li><a href="/rules.html">Rules</a></li>
           <li><a href="/rulebook.pdf" target="_blank" rel="noopener">Rulebook</a></li>
@@ -1152,6 +1120,7 @@
   Array.prototype.forEach.call(document.querySelectorAll('.chapter'), bind);
 })();
 </script>
+<script src="preorder.js" defer></script>
 <script src="nav.js" defer></script>
 </body>
 </html>

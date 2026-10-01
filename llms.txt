@@ -53,13 +53,15 @@ Zombie Overlord shares structural DNA with deck-builders like Dominion, Ascensio
 - Independent self-published project
 
 ### Pricing & Availability
-- Base game: $34 USD (BackerKit late pledge)
+- Base game: $34 USD preorder (MSRP $45)
+- Horde Bundle: $50 USD (core game, Misfits Mini Expansion and Life Point Trackers; $73 value, $5 less than buying them separately at preorder prices)
 - Originally launched at $32 USD on Kickstarter
 - Available add-ons: playmats, mini expansions, engraved life tracker dice, multi-copy bundles
-- Late pledges open through BackerKit while supplies last
+- Final preorders close October 28, 2026
 - Ships to US and international addresses
 - Fulfillment handled directly by Rising Warrior Games with regional shipping partners
-- Print run departs the factory in China in September 2026; fulfillment begins November 2026
+- Manufactured and on its way from the factory; fulfillment begins November 2026
+- 196 backers and preorder customers as of October 2026
 
 ### Shipping Estimates (USD, charged separately from item price)
 | Region | Game | Game + 1-2 playmats | Game + 2-4 playmats | Double core (2 games) |
@@ -68,7 +70,7 @@ Zombie Overlord shares structural DNA with deck-builders like Dominion, Ascensio
 | Canada | $18-$22 | $22-$29 | $28-$32 | $28-$32 |
 | Rest of world | $22-$28 | $28-$36 | $37-$42 | $37-$42 |
 
-Core Edition and Premium Bundle ship at the "Game" rate. Battlefield Edition includes playmats and ships at the "Game + 1-2 playmats" rate. Small add-ons (dice, mini expansion, holographic cards) ship in the same package and do not raise the shipping tier. Ranges are estimates based on current fulfillment quotes; final cost is confirmed through BackerKit based on address and order contents.
+The Core Edition and the Horde Bundle ship at the "Game" rate. Adding playmats moves an order to the "Game + playmats" rates. Small add-ons (dice, mini expansion, holographic cards) ship in the same package and do not raise the shipping tier. Ranges are estimates based on current fulfillment quotes; final cost is confirmed through BackerKit based on address and order contents.
 
 ### Language
 - Game is English only: all cards and the printed rulebook
@@ -92,7 +94,7 @@ Core Edition and Premium Bundle ship at the "Game" rate. Battlefield Edition inc
 - Add-ons (Misfits Mini Expansion, playmats, engraved life trackers) are campaign unlocks and remain exclusive to the BackerKit store
 
 ### Where to Buy / Follow
-- Late Pledge (BackerKit): https://zombie-overlord.backerkit.com/hosted_preorders
+- Preorder: https://risingwarriorgames.com/zombieoverlord.html#preorder (checkout through BackerKit)
 - Kickstarter Campaign: https://www.kickstarter.com/projects/zombieoverlord/zombie-overlord
 - Website: https://www.risingwarriorgames.com
 - Instagram: https://www.instagram.com/risingwarriorgames
