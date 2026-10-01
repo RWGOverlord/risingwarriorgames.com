@@ -1,0 +1,25 @@
+---
+layout: base
+title: Blog | Rising Warrior Games
+seo_title: The Rising Warrior Games Blog
+description: Board game news, zombie games worth knowing about, and notes from the studio behind Zombie Overlord.
+---
+<section class="blog-hero">
+  <div class="wrap">
+    <p class="eyebrow mono">Blog</p>
+    <h1>From the studio</h1>
+    <p class="lede">Board game news, zombie games worth knowing about, and notes on making Zombie Overlord.</p>
+  </div>
+</section>
+
+<section class="blog-list wrap">
+  {%- for post in site.posts %}
+  <article class="blog-item">
+    <p class="mono"><time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%B %-d, %Y' }}</time></p>
+    <h2><a href="{{ post.url }}">{{ post.h1 | default: post.title }}</a></h2>
+    <p>{{ post.description }}</p>
+  </article>
+  {%- else %}
+  <p>The first post is on its way.</p>
+  {%- endfor %}
+</section>

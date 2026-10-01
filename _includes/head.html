@@ -1,0 +1,41 @@
+{%- comment -%}
+  Shared <head> for blog pages. Set in front matter:
+    title        full <title>, e.g. "Some Post | Rising Warrior Games"
+    seo_title    optional shorter title for social cards (defaults to title)
+    description  meta description, roughly 150 characters
+    image        optional absolute path for the share image
+  Paths are absolute: blog pages live at /blog/<slug>/.
+{%- endcomment -%}
+{%- assign share_title = page.seo_title | default: page.title -%}
+{%- assign share_image = page.image | default: "/images/opt/Box_with_cards-1020.jpg" -%}
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J8B76D89RC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-J8B76D89RC');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ page.title }}</title>
+<meta name="description" content="{{ page.description | escape }}">
+<link rel="canonical" href="{{ page.url | absolute_url }}">
+<link rel="icon" href="/favicon.ico?v=2" sizes="any">
+<link rel="icon" type="image/png" href="/images/RWG_Favicon.png?v=2">
+<link rel="apple-touch-icon" href="/images/RWG_AppleTouch.png?v=2">
+<meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
+<meta property="og:site_name" content="Rising Warrior Games">
+<meta property="og:title" content="{{ share_title | escape }}">
+<meta property="og:description" content="{{ page.description | escape }}">
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+<meta property="og:image" content="{{ share_image | absolute_url }}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ share_title | escape }}">
+<meta name="twitter:description" content="{{ page.description | escape }}">
+<meta name="twitter:image" content="{{ share_image | absolute_url }}">
+<link rel="alternate" type="application/atom+xml" title="Rising Warrior Games blog" href="/blog/feed.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">

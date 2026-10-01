@@ -1,0 +1,32 @@
+# GitHub Pages builds this site with Jekyll. The hand-written pages
+# (index.html, zombieoverlord.html, rules.html...) have no front matter,
+# so Jekyll copies them through untouched. Only the blog uses templates:
+# _layouts/, _includes/, _posts/ and blog/index.html.
+
+title: Rising Warrior Games
+description: Board game news and notes from Rising Warrior Games, the Chattanooga studio behind Zombie Overlord.
+repository: RWGOverlord/risingwarriorgames.com
+url: https://risingwarriorgames.com
+# Explicit, so github-metadata never guesses a /pages/... project path.
+baseurl: ""
+timezone: America/New_York
+
+# Posts live at /blog/<slug>/. The slug comes from the post's filename,
+# so name files _posts/YYYY-MM-DD-the-url-you-want.md
+permalink: /blog/:title/
+
+markdown: kramdown
+kramdown:
+  # Keep straight quotes as typed; no automatic "--" or "---" dashes.
+  smart_quotes: apos,apos,quot,quot
+  typographic_symbols: {hellip: "...", mdash: "---", ndash: "--", laquo: "<<", raquo: ">>", laquo_space: "<< ", raquo_space: " >>"}
+
+plugins:
+  - jekyll-feed
+feed:
+  path: blog/feed.xml
+
+# Developer notes and build scripts, not pages.
+exclude:
+  - tools
+  - README.md

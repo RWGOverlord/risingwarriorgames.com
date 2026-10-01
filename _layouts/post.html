@@ -1,0 +1,45 @@
+---
+layout: base
+---
+{%- comment -%}
+  Front matter for a post:
+    title, seo_title, description, image (see _includes/head.html)
+    h1           the on-page headline (defaults to title without the site suffix)
+    updated      optional YYYY-MM-DD when the post was last revised
+{%- endcomment -%}
+{%- assign h1 = page.h1 | default: page.title -%}
+<div class="crumb">
+  <div class="wrap"><span class="mono"><a href="/">Rising Warrior Games</a><i>/</i><a href="/blog/">Blog</a></span></div>
+</div>
+
+<article class="post">
+  <header class="post-head">
+    <div class="wrap">
+      <p class="eyebrow mono"><time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: '%B %-d, %Y' }}</time>{% if page.updated %} · Updated <time datetime="{{ page.updated | date: '%Y-%m-%d' }}">{{ page.updated | date: '%B %-d' }}</time>{% endif %}</p>
+      <h1>{{ h1 }}</h1>
+      {% if page.lede %}<p class="post-lede">{{ page.lede }}</p>{% endif %}
+    </div>
+  </header>
+  <div class="post-body wrap">
+{{ content }}
+  </div>
+</article>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": {{ h1 | jsonify }},
+  "description": {{ page.description | jsonify }},
+  "datePublished": "{{ page.date | date_to_xmlschema }}",
+  "dateModified": "{{ page.updated | default: page.date | date_to_xmlschema }}",
+  "mainEntityOfPage": "{{ page.url | absolute_url }}",
+  "image": "{{ page.image | default: '/images/opt/Box_with_cards-1020.jpg' | absolute_url }}",
+  "author": { "@type": "Organization", "name": "Rising Warrior Games", "url": "https://risingwarriorgames.com/" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Rising Warrior Games",
+    "logo": { "@type": "ImageObject", "url": "https://risingwarriorgames.com/images/opt/RISING_LOGO_VECTOR-440.png" }
+  }
+}
+</script>
