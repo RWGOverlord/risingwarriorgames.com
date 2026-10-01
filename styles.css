@@ -700,3 +700,9 @@ h1,h2,h3,h4{color:var(--ink); margin:0}
   .horde-acts .btn,.zo-cta .btn{width:100%; text-align:center}
   .promo{font-size:10px; letter-spacing:.08em}
 }
+
+/* countdown filled in by promo.js; hidden until it has a value */
+.promo-count{display:inline-block; margin:0 8px 0 2px; padding:2px 8px; border-radius:var(--r);
+  background:var(--gold-lift); color:var(--ink); font-weight:500; white-space:nowrap}
+.horde-count{color:var(--gold); white-space:nowrap}
+.horde-count::before{content:" · "; color:var(--muted)}
