@@ -68,7 +68,9 @@ h1,h2,h3,h4{color:var(--ink); margin:0}
 .eyebrow::before{content:""; width:26px; height:1px; background:var(--gold); opacity:.6}
 .sec-head{max-width:620px; margin:0 0 44px}
 .sec-head h2{font:600 clamp(28px,3.6vw,42px)/1.12 'Cinzel',serif; letter-spacing:.005em; margin:0 0 14px}
-.sec-head p{margin:0; font-size:17px; color:var(--body)}
+/* :not(.eyebrow): otherwise this outranks .eyebrow/.mono and the label
+   renders at 17px in body grey with no gap above the heading. */
+.sec-head p:not(.eyebrow){margin:0; font-size:17px; color:var(--body)}
 
 /* ============================================================
    HEADER — constant on both pages. White, quiet.
