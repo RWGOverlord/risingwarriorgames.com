@@ -54,6 +54,8 @@ TARGETS=(
   "Gold_Trim_Thematic_MockUp.png  400 700"
   "Premium_Product.png           400 700"
   "Battlefield_Product.png       400 700"
+  # Horde Bundle: store card (400 700) and its own feature section (1000)
+  "Horde_Bundle.png              400 700 1000"
 
   # add-ons (3-up desktop, 1-up mobile)
   "mini_expansion.png           360 620"
@@ -79,6 +81,7 @@ TARGETS=(
   # scrapers composite PNG alpha onto black
   "Gold_Trim_Thematic_MockUp.png>jpg  1200"
   "Premium_Product.png>jpg            1200"
+  "Horde_Bundle.png>jpg               1200"
 )
 
 srcbytes=0
