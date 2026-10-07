@@ -754,3 +754,124 @@ h1,h2,h3,h4{color:var(--ink); margin:0}
   /* one line per cell: short rows, swipe sideways for the rest */
   .post-body td{white-space:nowrap}
 }
+
+/* ============================================================
+   LANDING PAGE (/play/) — ad traffic, one CTA, no navigation.
+   All rules are scoped under .lp so the rest of the site is untouched.
+   ============================================================ */
+.lp{background:var(--white)}
+.lp-wrap{max-width:1040px; margin:0 auto; padding-left:24px; padding-right:24px}
+.lp-narrow{max-width:720px}
+
+.lp-top{padding:20px 0 0}
+.lp-top img{height:46px; width:auto; margin:0 auto}
+
+/* ---- hero ---- */
+.lp-hero{padding:34px 0 56px}
+.lp-hero-grid{display:grid; grid-template-columns:1.05fr .95fr; gap:52px; align-items:center}
+.lp-hero h1{font:700 clamp(32px,4.6vw,50px)/1.08 'Cinzel',Georgia,serif;
+  color:var(--ink); margin:0 0 16px; text-wrap:balance}
+.lp-lede{font-size:18px; line-height:1.55; margin:0 0 26px; max-width:46ch}
+
+/* ---- the form: one field, big target ---- */
+.lp-form{margin:0 0 16px}
+.lp-form-row{display:flex; gap:10px; flex-wrap:wrap}
+.lp-form input[type="email"]{
+  flex:1 1 230px; min-width:0; padding:16px 18px; font:400 16px/1.2 'Archivo',sans-serif;
+  color:var(--ink); background:var(--white); border:1px solid var(--line);
+  border-radius:var(--r); transition:border-color .16s}
+.lp-form input[type="email"]:focus{outline:none; border-color:var(--gold)}
+.lp-form input[type="email"]:focus-visible{outline:2px solid var(--gold); outline-offset:2px}
+.lp-form .btn{flex:0 0 auto; padding:16px 26px; cursor:pointer; border:1px solid var(--gold)}
+.lp-hp{position:absolute; left:-10000px; width:1px; height:1px; overflow:hidden}
+.lp-consent{margin:12px 0 0; font-size:12.5px; line-height:1.5; color:var(--muted); max-width:52ch}
+.lp-consent a{color:var(--muted); text-decoration:underline; text-underline-offset:2px}
+.lp-consent a:hover{color:var(--gold)}
+
+/* The cost of entry, said plainly instead of discovered later. */
+.lp-req{margin:0; padding:14px 16px; font-size:13.5px; line-height:1.55; max-width:52ch;
+  background:var(--green-tint); border-left:3px solid var(--gold); border-radius:var(--r)}
+.lp-req b{color:var(--ink); font-weight:600}
+
+/* ---- screenshot slot ---- */
+.lp-shot{width:100%; aspect-ratio:16/9; border-radius:var(--r); overflow:hidden; display:block}
+.lp-shot img{width:100%; height:100%; object-fit:cover; display:block}
+.lp-shot--empty{display:grid; place-content:center; gap:6px; text-align:center;
+  background:var(--green-tint); border:2px dashed var(--line); color:var(--muted)}
+.lp-shot--empty span{font:500 12px/1 'IBM Plex Mono',monospace; letter-spacing:.16em; text-transform:uppercase}
+.lp-shot--empty small{font-size:11.5px}
+
+/* ---- proof strip ---- */
+.lp-proof{background:var(--green); color:#C6D2C7; padding:18px 0}
+.lp-proof p{margin:0; text-align:center; font-size:14.5px}
+
+/* ---- content sections ---- */
+.lp-sec{padding:54px 0}
+.lp-sec--tint{background:var(--paper); border-top:1px solid var(--line); border-bottom:1px solid var(--line)}
+.lp-sec h2{font:600 clamp(23px,3vw,31px)/1.18 'Cinzel',Georgia,serif;
+  color:var(--green); margin:0 0 18px; text-wrap:balance}
+.lp-sec p{margin:0 0 14px; font-size:16px}
+.lp-sec b{color:var(--ink); font-weight:600}
+
+.lp-steps{list-style:none; counter-reset:lps; margin:0; padding:0; display:grid; gap:16px}
+.lp-steps li{counter-increment:lps; position:relative; padding-left:46px; font-size:16px}
+.lp-steps li::before{content:counter(lps); position:absolute; left:0; top:-2px;
+  width:30px; height:30px; display:grid; place-items:center; border-radius:50%;
+  background:var(--green); color:var(--gold-lift); font:700 14px/1 'Cinzel',serif}
+
+.lp-points{list-style:none; margin:0; padding:0; display:grid; gap:13px}
+.lp-points li{position:relative; padding-left:24px; font-size:16px}
+.lp-points li::before{content:"\2726"; position:absolute; left:0; top:3px; color:var(--gold); font-size:12px}
+
+.lp-specs{display:flex; flex-wrap:wrap; gap:0; margin:24px 0 0;
+  border-top:1px solid var(--line); border-bottom:1px solid var(--line)}
+.lp-specs div{padding:14px 24px 14px 0; margin-right:24px; border-right:1px solid var(--line)}
+.lp-specs div:last-child{border-right:0; margin-right:0}
+.lp-specs dt{font:500 9px/1 'IBM Plex Mono',monospace; letter-spacing:.2em;
+  text-transform:uppercase; color:var(--muted); margin-bottom:8px}
+.lp-specs dd{margin:0; font:600 16px/1 'Archivo',sans-serif; color:var(--ink)}
+
+/* ---- closing CTA: scrolls back to the one form ---- */
+.lp-cta{background:var(--green); color:#C6D2C7; padding:56px 0; text-align:center}
+.lp-cta h2{font:600 clamp(23px,3vw,31px)/1.18 'Cinzel',Georgia,serif; color:#fff; margin:0 0 12px}
+.lp-cta p{margin:0 0 22px; font-size:16px}
+.lp-cta .btn{padding:16px 30px}
+.lp-cta-note{margin:18px 0 0 !important; font-size:12.5px; color:#8D9C8F}
+
+/* ---- footer: privacy link stays, ad platforms require it ---- */
+.lp-foot{padding:26px 0 34px; text-align:center; font-size:12.5px; color:var(--muted)}
+.lp-foot p{margin:0 0 6px}
+.lp-foot a{color:var(--muted); text-decoration:underline; text-underline-offset:2px}
+.lp-foot a:hover{color:var(--gold)}
+
+@media (max-width:880px){
+  .lp-hero-grid{grid-template-columns:1fr; gap:30px}
+  .lp-hero-art{order:-1}
+  .lp-hero{padding:24px 0 44px}
+}
+@media (max-width:560px){
+  .lp-wrap{padding-left:20px; padding-right:20px}
+  .lp-form .btn{flex:1 1 100%}
+  .lp-specs div{padding-right:18px; margin-right:18px}
+  .lp-sec{padding:42px 0}
+}
+
+/* Landing page: solo section and screenshot framing. */
+.lp-shot figcaption,.lp-aishot figcaption{margin-top:10px; font-size:12.5px; color:var(--muted); text-align:center}
+.lp-shot{margin:0; aspect-ratio:auto}
+.lp-shot img{width:100%; height:auto; border:1px solid var(--line); border-radius:var(--r); display:block}
+.lp-shot--wide{max-width:720px; margin:0 auto}
+.lp-solo-grid{display:grid; grid-template-columns:1fr 320px; gap:44px; align-items:center}
+.lp-aishot{margin:0}
+.lp-aishot img{width:100%; height:auto; border:1px solid var(--line); border-radius:var(--r); display:block}
+@media (max-width:880px){
+  .lp-solo-grid{grid-template-columns:1fr; gap:26px}
+  .lp-aishot{max-width:280px; margin:0 auto}
+}
+
+/* Landing page: post-signup confirmation. */
+.lp-thanks{padding-top:40px}
+.lp-thanks h1{font:700 clamp(30px,4.2vw,44px)/1.1 'Cinzel',Georgia,serif; color:var(--ink); margin:0 0 14px}
+.lp-thanks h2{margin-top:34px}
+.lp-thanks .lp-req{margin:0 0 10px}
+.lp-note{margin:22px 0 0; font-size:13.5px; color:var(--muted)}

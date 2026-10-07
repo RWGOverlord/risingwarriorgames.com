@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J8B76D89RC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-J8B76D89RC');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Check your email</title>
+<meta name="description" content="Your Zombie Overlord Tabletop Simulator link is on its way.">
+<meta name="robots" content="noindex, follow">
+<link rel="icon" href="/favicon.ico?v=2" sizes="any">
+<link rel="icon" type="image/png" href="/images/RWG_Favicon.png?v=2">
+<link rel="apple-touch-icon" href="/images/RWG_AppleTouch.png?v=2">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body class="lp">
+
+<header class="lp-top">
+  <img src="/images/opt/RWG_Name_Logo-180.png"
+       srcset="/images/opt/RWG_Name_Logo-180.png 180w, /images/opt/RWG_Name_Logo-270.png 270w"
+       sizes="90px" width="180" height="108" decoding="async" alt="Rising Warrior Games">
+</header>
+
+<main>
+
+  <!-- The signup API redirects here with ?signup=ok | invalid | closed.
+       The success state is the default markup so it still reads correctly
+       with no JavaScript, and the other two are revealed by the script
+       at the bottom. The conversion fires only on ?signup=ok. -->
+
+  <section class="lp-sec lp-thanks">
+    <div class="lp-wrap lp-narrow">
+
+      <!-- ok, and the no-parameter case -->
+      <div id="state-ok">
+        <p class="eyebrow mono">You are in</p>
+        <h1>Check your email</h1>
+        <p class="lp-lede">Your invite is on its way and usually arrives within a minute or two.</p>
+
+        <div class="lp-req">
+          <b>Not there?</b> Look in spam or promotions, and add
+          <a href="mailto:hello@risingwarriorgames.com">hello@risingwarriorgames.com</a>
+          to your contacts so the rest of the emails reach you.
+        </div>
+
+        <h2>What happens next</h2>
+        <ol class="lp-steps">
+          <li><b>Open the link on the computer you play on.</b> It takes you to the mod in the Steam Workshop.</li>
+          <li><b>Subscribe to it, then launch Tabletop Simulator.</b> The mod shows up under your Workshop games.</li>
+          <li><b>Sit down and start.</b> Take a seat, set the computer opponents, and the table does the rest.</li>
+        </ol>
+
+        <p class="lp-note">You will need Tabletop Simulator on Steam to open it. The mod itself is free and yours to keep.</p>
+      </div>
+
+      <!-- invalid -->
+      <div id="state-invalid" hidden>
+        <p class="eyebrow mono">That did not work</p>
+        <h1>We could not use that email address</h1>
+        <p class="lp-lede">Something about the address did not go through. It is usually a typo in the domain, like gmail.con.</p>
+        <p><a class="btn" href="/play/#lp-email">Try again</a></p>
+        <p class="lp-note">If it keeps failing, email
+          <a href="mailto:hello@risingwarriorgames.com">hello@risingwarriorgames.com</a>
+          and the link will be sent over by hand.</p>
+      </div>
+
+      <!-- closed -->
+      <div id="state-closed" hidden>
+        <p class="eyebrow mono">Not right now</p>
+        <h1>Signups are closed</h1>
+        <p class="lp-lede">We are not handing out new invites at the moment. Try again shortly, or email
+          <a href="mailto:hello@risingwarriorgames.com">hello@risingwarriorgames.com</a>
+          and we will let you know when it reopens.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- The preorder lives here rather than on the landing page: the signup has
+       already happened, so this is no longer a competing call to action.
+       Hidden on the invalid state, where the job is to get them to retry. -->
+  <section class="lp-sec lp-sec--tint" id="state-offer">
+    <div class="lp-wrap lp-narrow">
+      <h2>While you are here</h2>
+      <p>Zombie Overlord is a real boxed game, printed and shipping now. Preorders close on <b>29 October</b>, and after that the only way to get a copy is retail, whenever it reaches shops.</p>
+      <p>Play the digital version first. If you like it, the box is there.</p>
+      <p><a class="btn" href="/zombieoverlord.html">See the boxed game</a></p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="lp-foot">
+  <div class="lp-wrap">
+    <p>&copy; 2026 Rising Warrior Games, Chattanooga, Tennessee</p>
+    <p>
+      <a href="/privacy.html">Privacy policy</a>
+      <span aria-hidden="true">&middot;</span>
+      <a href="mailto:hello@risingwarriorgames.com">hello@risingwarriorgames.com</a>
+    </p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var state = new URLSearchParams(location.search).get('signup');
+
+  var ok      = document.getElementById('state-ok');
+  var invalid = document.getElementById('state-invalid');
+  var closed  = document.getElementById('state-closed');
+  var offer   = document.getElementById('state-offer');
+
+  if (state === 'invalid') {
+    ok.hidden = true; invalid.hidden = false; offer.hidden = true;
+    document.title = 'That email address did not work';
+  } else if (state === 'closed') {
+    ok.hidden = true; closed.hidden = false;
+    document.title = 'Signups are closed';
+  }
+
+  /* Conversion fires only on an explicit ok. No parameter means someone
+     reached this page directly, which is not a signup. The API also returns
+     ok for repeat, unsubscribed, rate limited and bot submissions, so this
+     count runs a little above real new signups by design: the newsletter
+     admin holds the true numbers. */
+  if (state === 'ok' && typeof gtag === 'function') {
+    gtag('event', 'sign_up', { method: 'tts-invite' });
+
+    /* Meta Pixel: uncomment once the pixel is on these pages.
+    if (typeof fbq === 'function') fbq('track', 'Lead'); */
+  }
+})();
+</script>
+</body>
+</html>

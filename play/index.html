@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J8B76D89RC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-J8B76D89RC');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Play Zombie Overlord on Tabletop Simulator</title>
+<meta name="description" content="Play Zombie Overlord solo against the computer, or online with up to three friends. Get the Tabletop Simulator mod free.">
+
+<!-- Ad landing page: kept out of search on purpose. Crawlable so the noindex
+     is actually seen, and deliberately absent from sitemap.xml. -->
+<meta name="robots" content="noindex, follow">
+
+<link rel="icon" href="/favicon.ico?v=2" sizes="any">
+<link rel="icon" type="image/png" href="/images/RWG_Favicon.png?v=2">
+<link rel="apple-touch-icon" href="/images/RWG_AppleTouch.png?v=2">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Rising Warrior Games">
+<meta property="og:title" content="Play Zombie Overlord on Tabletop Simulator">
+<meta property="og:description" content="Play Zombie Overlord solo against the computer, or online with up to three friends. Get the Tabletop Simulator mod free.">
+<meta property="og:url" content="https://risingwarriorgames.com/play/">
+<meta property="og:image" content="https://risingwarriorgames.com/images/opt/KS_Main_1x1-1000.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Play Zombie Overlord on Tabletop Simulator">
+<meta name="twitter:description" content="Play Zombie Overlord solo against the computer, or online with up to three friends. Get the Tabletop Simulator mod free.">
+<meta name="twitter:image" content="https://risingwarriorgames.com/images/opt/KS_Main_1x1-1000.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body class="lp">
+
+<!-- No navigation anywhere on this page. The logo is deliberately not a link:
+     every clickable thing that is not the form is a way to leave. -->
+<header class="lp-top">
+  <img src="/images/opt/RWG_Name_Logo-180.png"
+       srcset="/images/opt/RWG_Name_Logo-180.png 180w, /images/opt/RWG_Name_Logo-270.png 270w"
+       sizes="90px" width="180" height="108" decoding="async" alt="Rising Warrior Games">
+</header>
+
+<main>
+
+  <section class="lp-hero">
+    <div class="lp-wrap">
+      <div class="lp-hero-grid">
+        <div class="lp-hero-copy">
+          <p class="eyebrow mono">Tabletop Simulator</p>
+          <h1>Play Zombie Overlord online, free</h1>
+          <p class="lp-lede">The complete game as a Tabletop Simulator mod. <b>Play solo against the computer</b>, or online with up to three friends. Nothing to print, nothing to set up. Enter your email and we will send you the link.</p>
+
+          <!-- Signup form. The endpoint is also set in the script at the
+               bottom of this file, which is the one place to change it. -->
+          <form id="rwg-signup-tts-invite" method="post" action="https://news.risingwarriorgames.com/api/signup/tts-invite" class="lp-form">
+            <label class="vh" for="lp-email">Your email address</label>
+            <div class="lp-form-row">
+              <input id="lp-email" type="email" name="email" autocomplete="email"
+                     placeholder="you@example.com" required>
+              <button type="submit" class="btn">Send me the link</button>
+            </div>
+
+            <!-- The API takes these as optional. Kept in the payload but hidden,
+                 so the form is a single field: every extra box costs signups.
+                 To collect a first name, swap this input for a visible one. -->
+            <input type="hidden" name="first_name" value="">
+            <input type="hidden" name="last_name" value="">
+
+            <!-- Bot trap: real people never see this, bots fill it in. -->
+            <div class="lp-hp" aria-hidden="true">
+              <input type="text" name="rwg_hp" autocomplete="off" tabindex="-1">
+            </div>
+
+            <input type="hidden" name="elapsed_ms" value="">
+            <input type="hidden" name="utm_source" value="">
+            <input type="hidden" name="utm_medium" value="">
+            <input type="hidden" name="utm_campaign" value="">
+            <input type="hidden" name="utm_content" value="">
+            <input type="hidden" name="utm_term" value="">
+            <input type="hidden" name="landing_path" value="">
+
+            <p class="lp-consent">
+              We will email you the link, plus the occasional Zombie Overlord update.
+              Unsubscribe any time. <a href="/privacy.html" target="_blank" rel="noopener">Privacy policy</a>.
+            </p>
+          </form>
+
+          <p class="lp-req">
+            <b>You will need Tabletop Simulator on Steam</b>, which costs about $20 and is not ours.
+            The Zombie Overlord mod itself is free.
+          </p>
+        </div>
+
+        <div class="lp-hero-art">
+          <figure class="lp-shot">
+            <img src="/images/tts/table-1100.jpg"
+                 srcset="/images/tts/table-600.jpg 600w, /images/tts/table-1100.jpg 1100w"
+                 sizes="(max-width:880px) calc(100vw - 48px), 460px"
+                 width="1100" height="712" fetchpriority="high" decoding="async"
+                 alt="Zombie Overlord set up on a four player table in Tabletop Simulator, with the Purchase Row and Wasteland in the middle and a player hand along the bottom">
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="lp-proof">
+    <div class="lp-wrap">
+      <p>Funded on Kickstarter in 13 hours by 196 backers. Printed, boxed and shipping now.</p>
+    </div>
+  </div>
+
+  <section class="lp-sec">
+    <div class="lp-wrap lp-narrow">
+      <h2>How it works</h2>
+      <ol class="lp-steps">
+        <li><b>Enter your email.</b> One field, no account to make.</li>
+        <li><b>We send you the link.</b> It arrives in a minute or two.</li>
+        <li><b>Open it in Tabletop Simulator and play.</b> On your own against the computer, or host a table and invite up to three friends.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="lp-sec lp-solo">
+    <div class="lp-wrap">
+      <div class="lp-solo-grid">
+        <div>
+          <h2>Play it on your own</h2>
+          <p>The computer plays the other Overlords. Sit down as one player and you still get a full two, three or four player game, with the rest of the table buying traps, luring survivors and attacking you back.</p>
+          <p>Set a difficulty for the opponents. Nothing to schedule, nobody to teach.</p>
+          <ul class="lp-points">
+            <li><b>The mod enforces the rules.</b> It handles purchase power, attacks and the lure phase, so nobody has to referee.</li>
+            <li><b>How to Play is built in.</b> There is a button on the table if you forget something.</li>
+          </ul>
+        </div>
+        <figure class="lp-aishot">
+          <img src="/images/tts/ai-620.jpg"
+               srcset="/images/tts/ai-340.jpg 340w, /images/tts/ai-620.jpg 620w"
+               sizes="(max-width:880px) 280px, 320px"
+               width="620" height="877" loading="lazy" decoding="async"
+               alt="The in game log showing computer opponents taking their turns: Blue's turn on Normal Balanced, Yellow luring a Scientist, buying an Ammo Trap and destroying another player's Medicine Trap">
+          <figcaption>The computer opponents, mid game</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="lp-sec lp-sec--tint">
+    <div class="lp-wrap lp-narrow">
+      <h2>You are not surviving the apocalypse. You are running it.</h2>
+      <p>Zombie Overlord is a competitive deck-builder where you play the villain. Set traps to lure desperate survivors into your base, convert them into your own horde, and tear down the other Overlords before they do the same to you.</p>
+      <p>Every survivor you take is one your rivals cannot have, so the board is a fight from the first turn. No waiting politely while everyone builds an engine.</p>
+      <dl class="lp-specs">
+        <div><dt>Players</dt><dd>1 to 4</dd></div>
+        <div><dt>Playtime</dt><dd>30 to 40 min</dd></div>
+        <div><dt>Age</dt><dd>14+</dd></div>
+        <div><dt>Cards</dt><dd>194</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="lp-sec">
+    <div class="lp-wrap lp-narrow">
+      <h2>Why play it here first</h2>
+      <ul class="lp-points">
+        <li><b>Try the whole game, not a demo.</b> Every card is in it.</li>
+        <li><b>Play with people anywhere.</b> Tabletop Simulator handles the table, the shuffling and the rules nobody wants to referee.</li>
+        <li><b>Decide for yourself.</b> Play a few games before you ever think about buying a box.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="lp-sec lp-sec--tint">
+    <div class="lp-wrap lp-narrow">
+      <figure class="lp-shot lp-shot--wide">
+        <img src="/images/tts/inplay-1100.jpg"
+             srcset="/images/tts/inplay-600.jpg 600w, /images/tts/inplay-1100.jpg 1100w"
+             sizes="(max-width:880px) calc(100vw - 48px), 720px"
+             width="1100" height="712" loading="lazy" decoding="async"
+             alt="A Zombie Overlord game in progress in Tabletop Simulator, showing traps placed around the table and survivor cards in the Wasteland">
+        <figcaption>Four players, one of them human.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="lp-cta">
+    <div class="lp-wrap lp-narrow">
+      <h2>Get the link</h2>
+      <p>One email, and the mod is yours to keep. Play it solo tonight.</p>
+      <a class="btn" href="#lp-email">Send me the link</a>
+      <p class="lp-cta-note">Requires Tabletop Simulator on Steam. The mod is free.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="lp-foot">
+  <div class="lp-wrap">
+    <p>&copy; 2026 Rising Warrior Games, Chattanooga, Tennessee</p>
+    <p>
+      <a href="/privacy.html" target="_blank" rel="noopener">Privacy policy</a>
+      <span aria-hidden="true">&middot;</span>
+      <a href="mailto:hello@risingwarriorgames.com">hello@risingwarriorgames.com</a>
+    </p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  /* The signup endpoint. Kept here so there is one line to change. */
+  var ENDPOINT = 'https://news.risingwarriorgames.com/api/signup/tts-invite';
+
+  var f = document.getElementById('rwg-signup-tts-invite');
+  if (!f) return;
+  f.setAttribute('action', ENDPOINT);
+
+  var t0 = Date.now();
+  var q = new URLSearchParams(location.search);
+
+  ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'].forEach(function (k) {
+    if (f.elements[k]) f.elements[k].value = q.get(k) || '';
+  });
+  if (f.elements.landing_path) f.elements.landing_path.value = location.pathname;
+
+  f.addEventListener('submit', function () {
+    if (f.elements.elapsed_ms) f.elements.elapsed_ms.value = String(Date.now() - t0);
+    /* Diagnostic only, NOT the conversion. The conversion fires on
+       /play/thanks/?signup=ok. Keeping a submit event here means a gap
+       between submits and conversions shows up as a broken endpoint
+       rather than as quiet, invisible failure. */
+    if (typeof gtag === 'function') {
+      gtag('event', 'form_submit', {
+        event_category: 'signup',
+        event_label: 'tts-invite',
+        campaign: q.get('utm_campaign') || ''
+      });
+    }
+  });
+})();
+</script>
+</body>
+</html>
