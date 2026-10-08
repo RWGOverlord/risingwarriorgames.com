@@ -81,12 +81,12 @@ The Core Edition and the Horde Bundle ship at the "Game" rate. Adding playmats m
 - Portfolio: https://www.behance.net/chinothemfgoat
 
 ### Returns, Cancellations and Replacements
-- Pre-order cancellation: full refund any time before the order ships; contact hello@risingwarriorgames.com
+- Pre-order cancellation: full refund any time before the order ships; contact overlord@risingwarriorgames.com
 - Returns after delivery: accepted if unopened and still in shrinkwrap, within 30 days of delivery; buyer pays return shipping, full purchase price refunded on receipt
 - Damaged or missing cards: replaced free of charge, no return required and no time limit
 - EU and UK customers have a statutory 14-day right of withdrawal from delivery, for any reason
 - Refunds are processed directly by Rising Warrior Games, not by BackerKit
-- Adding to an existing order: orders are currently locked in BackerKit; customers should email hello@risingwarriorgames.com rather than placing a second order, to avoid paying shipping twice
+- Adding to an existing order: orders are currently locked in BackerKit; customers should email overlord@risingwarriorgames.com rather than placing a second order, to avoid paying shipping twice
 
 ### Retail Availability
 - Not currently sold in retail stores; the BackerKit store is the only sales channel
