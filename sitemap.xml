@@ -33,6 +33,14 @@ layout: null
     <priority>0.8</priority>
   </url>
 
+  <!-- Reglas (Spanish) -->
+  <url>
+    <loc>https://risingwarriorgames.com/reglas.html</loc>
+    <lastmod>2026-10-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Rulebook -->
   <url>
     <loc>https://risingwarriorgames.com/rulebook.pdf</loc>

@@ -875,3 +875,11 @@ h1,h2,h3,h4{color:var(--ink); margin:0}
 .lp-thanks h2{margin-top:34px}
 .lp-thanks .lp-req{margin:0 0 10px}
 .lp-note{margin:22px 0 0; font-size:13.5px; color:var(--muted)}
+
+/* Language switcher on the rules pages. */
+.lang-switch{display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin:0 0 26px}
+.lang-switch .mono{color:var(--gold-lift); letter-spacing:.2em}
+.lang-switch a,.lang-switch .on{font-size:14px; text-decoration:none; padding-bottom:2px}
+.lang-switch a{color:#C6D2C7; border-bottom:1px solid rgba(255,255,255,.3)}
+.lang-switch a:hover{color:var(--gold-lift); border-bottom-color:var(--gold-lift)}
+.lang-switch .on{color:#fff; font-weight:600; border-bottom:1px solid var(--gold-lift)}
