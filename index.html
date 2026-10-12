@@ -199,15 +199,46 @@
       <p class="eyebrow mono" style="justify-content:center">Stay in the loop</p>
       <h2>The Horde is Growing</h2>
       <p>Be the first to hear about restocks, expansions and what Rising Warrior builds next.</p>
-      <form action="https://risingwarriorgames.us4.list-manage.com/subscribe/post?u=3edf41f5a60eff1da81bae6a0&amp;id=17c463ecea&amp;f_id=000ee2e0f0" method="post" target="_blank">
-        <input type="email" name="EMAIL" placeholder="Enter your email address" required>
-        <!-- Mailchimp bot trap: real users never see this, bots fill it and the signup is dropped -->
-        <div aria-hidden="true" style="position:absolute; left:-5000px">
-          <input type="text" name="b_3edf41f5a60eff1da81bae6a0_17c463ecea" tabindex="-1" value="" autocomplete="off">
-        </div>
-        <button type="submit" class="btn btn--green">Join</button>
-      </form>
-      <small>No spam. Just games.</small>
+      <!-- The signup API 303s back to this page with ?signup=ok | invalid | closed.
+           The form is the default markup, so the page is correct before any
+           JavaScript runs, and the states below are revealed by news.js. -->
+      <div id="news-form-wrap">
+        <form id="rwg-signup-website-welcome" method="post" action="https://news.risingwarriorgames.com/api/signup/website-welcome">
+          <label class="vh" for="news-email">Your email address</label>
+          <input id="news-email" type="email" name="email" autocomplete="email"
+                 placeholder="Enter your email address" required>
+
+          <!-- Optional on the API. Kept in the payload but hidden, so this stays
+               a one field form. Swap to a visible input to collect a first name. -->
+          <input type="hidden" name="first_name" value="">
+          <input type="hidden" name="last_name" value="">
+
+          <!-- Bot trap: real people never see this, bots fill it in. -->
+          <div class="news-hp" aria-hidden="true">
+            <input type="text" name="rwg_hp" autocomplete="off" tabindex="-1">
+          </div>
+
+          <input type="hidden" name="elapsed_ms" value="">
+          <input type="hidden" name="utm_source" value="">
+          <input type="hidden" name="utm_medium" value="">
+          <input type="hidden" name="utm_campaign" value="">
+          <input type="hidden" name="utm_content" value="">
+          <input type="hidden" name="utm_term" value="">
+          <input type="hidden" name="landing_path" value="">
+
+          <button type="submit" class="btn btn--green">Join</button>
+        </form>
+        <small id="news-invalid" class="news-msg news-msg--bad" hidden>That address did not work. Check it for a typo and try again.</small>
+        <small>By signing up you agree to receive the Rising Warrior Games newsletter: news about our games, updates and offers by email. Unsubscribe any time with one click. <a href="/privacy.html">Privacy policy</a>.</small>
+      </div>
+
+      <div id="news-ok" class="news-msg news-msg--good" hidden>
+        <p><b>You are on the list.</b> A welcome email is on its way. If it does not turn up, look in spam or promotions.</p>
+      </div>
+
+      <div id="news-closed" class="news-msg" hidden>
+        <p><b>Signups are paused right now.</b> Try again shortly, or email <a href="mailto:hello@risingwarriorgames.com">hello@risingwarriorgames.com</a>.</p>
+      </div>
     </div>
   </section>
 
@@ -260,5 +291,6 @@
 </footer>
 <script src="promo.js" defer></script>
 <script src="nav.js" defer></script>
+<script src="news.js" defer></script>
 </body>
 </html>
