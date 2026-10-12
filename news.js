@@ -24,8 +24,39 @@
     });
     if (form.elements.landing_path) form.elements.landing_path.value = location.pathname;
 
-    form.addEventListener('submit', function () {
+    /* The POST goes to the API, which creates the subscriber and sends the
+       welcome email before redirecting back. That is a real wait with no visible
+       feedback, so show the button working and stop a second click firing a
+       second submission. */
+    var submitting = false;
+    var btn = form.querySelector('button[type="submit"]');
+    var btnLabel = btn ? btn.textContent : '';
+
+    form.addEventListener('submit', function (e) {
+      if (submitting) { e.preventDefault(); return; }
+      submitting = true;
       if (form.elements.elapsed_ms) form.elements.elapsed_ms.value = String(Date.now() - t0);
+      form.setAttribute('aria-busy', 'true');
+      /* Deferred so the submission is already under way: a submit button
+         disabled synchronously is dropped from the payload in some browsers. */
+      setTimeout(function () {
+        if (!btn) return;
+        btn.disabled = true;
+        btn.classList.add('is-busy');
+        btn.textContent = 'Joining...';
+      }, 0);
+    });
+
+    /* Coming back via the back button can restore this page from the cache with
+       the button still disabled and still reading "Joining...". Reset it. */
+    window.addEventListener('pageshow', function (ev) {
+      if (!ev.persisted) return;
+      submitting = false;
+      form.removeAttribute('aria-busy');
+      if (!btn) return;
+      btn.disabled = false;
+      btn.classList.remove('is-busy');
+      btn.textContent = btnLabel;
     });
   }
 

@@ -246,7 +246,34 @@ src="https://www.facebook.com/tr?id=2085516798873588&ev=PageView&noscript=1"
   });
   if (f.elements.landing_path) f.elements.landing_path.value = location.pathname;
 
-  f.addEventListener('submit', function () {
+  var submitting = false;
+  var btn = f.querySelector('button[type="submit"]');
+  var btnLabel = btn ? btn.textContent : '';
+
+  /* Reset if the browser restores this page from cache on a back navigation,
+     otherwise the button stays disabled and stuck on its pending label. */
+  window.addEventListener('pageshow', function (ev) {
+    if (!ev.persisted) return;
+    submitting = false;
+    f.removeAttribute('aria-busy');
+    if (!btn) return;
+    btn.disabled = false;
+    btn.classList.remove('is-busy');
+    btn.textContent = btnLabel;
+  });
+
+  f.addEventListener('submit', function (e) {
+    /* The API creates the subscriber and sends the email before redirecting, so
+       show the button working and stop a second click sending a second POST. */
+    if (submitting) { e.preventDefault(); return; }
+    submitting = true;
+    f.setAttribute('aria-busy', 'true');
+    setTimeout(function () {
+      if (!btn) return;
+      btn.disabled = true;
+      btn.classList.add('is-busy');
+      btn.textContent = 'Sending...';
+    }, 0);
     if (f.elements.elapsed_ms) f.elements.elapsed_ms.value = String(Date.now() - t0);
     /* Diagnostic only, NOT the conversion. The conversion fires on
        /play/thanks/?signup=ok. Keeping a submit event here means a gap
