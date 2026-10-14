@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J8B76D89RC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-J8B76D89RC');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What is next from Rising Warrior Games</title>
+<meta name="description" content="The next game from Rising Warrior Games, the Chattanooga studio behind Zombie Overlord.">
+
+<!-- QR destination, not a search result. Kept out of the index and out of
+     sitemap.xml, same as the other utility pages. -->
+<meta name="robots" content="noindex, follow">
+
+<link rel="icon" href="/favicon.ico?v=2" sizes="any">
+<link rel="icon" type="image/png" href="/images/RWG_Favicon.png?v=2">
+<link rel="apple-touch-icon" href="/images/RWG_AppleTouch.png?v=2">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Rising Warrior Games">
+<meta property="og:title" content="What is next from Rising Warrior Games">
+<meta property="og:description" content="The next game from Rising Warrior Games, the Chattanooga studio behind Zombie Overlord.">
+<meta property="og:url" content="https://risingwarriorgames.com/zo2/">
+<meta property="og:image" content="https://risingwarriorgames.com/images/opt/RISING_LOGO_VECTOR-440.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body class="lp">
+
+<header class="lp-top">
+  <img src="/images/opt/RWG_Name_Logo-180.png"
+       srcset="/images/opt/RWG_Name_Logo-180.png 180w, /images/opt/RWG_Name_Logo-270.png 270w"
+       sizes="90px" width="180" height="108" decoding="async" alt="Rising Warrior Games">
+</header>
+
+<main>
+  <section class="lp-sec zo2">
+    <div class="lp-wrap lp-narrow">
+
+      <!-- Shown while there is nowhere to forward to. -->
+      <div id="zo2-holding">
+        <p class="eyebrow mono">Coming next</p>
+        <h1>Something new is coming</h1>
+        <p class="lp-lede">We are building the next game at Rising Warrior Games. It is not announced yet, but this page is where it lands first.</p>
+        <p>Join the list and you will hear about it before anyone scanning this code later does.</p>
+        <div class="acts">
+          <a class="btn" href="/#news">Get told first</a>
+          <a class="btn btn--ghost" href="/zombieoverlord.html">Meanwhile, Zombie Overlord</a>
+        </div>
+      </div>
+
+      <!-- Shown once DESTINATION below is set, while the forward happens. -->
+      <div id="zo2-forward" hidden>
+        <p class="eyebrow mono">One moment</p>
+        <h1>Taking you to Kickstarter</h1>
+        <p class="lp-lede">If nothing happens in a few seconds, use the link below.</p>
+        <p class="acts"><a class="btn" id="zo2-manual" href="#">Continue to Kickstarter</a></p>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer class="lp-foot">
+  <div class="lp-wrap">
+    <p>&copy; 2026 Rising Warrior Games, Chattanooga, Tennessee</p>
+    <p>
+      <a href="/">risingwarriorgames.com</a>
+      <span aria-hidden="true">&middot;</span>
+      <a href="mailto:hello@risingwarriorgames.com">hello@risingwarriorgames.com</a>
+    </p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  /* ------------------------------------------------------------------
+     THE ONE LINE TO CHANGE.
+
+     Empty string  = this page shows the holding content above.
+     A URL         = it forwards there instead.
+
+     Use the PUBLIC Kickstarter URL. Never the preview link: its token
+     would be readable in this page's source by anyone.
+
+     When this is set, also add a meta refresh to <head> so the forward
+     still happens without JavaScript:
+       <meta http-equiv="refresh" content="2;url=THE_SAME_URL">
+     ------------------------------------------------------------------ */
+  var DESTINATION = '';
+
+  var holding = document.getElementById('zo2-holding');
+  var forward = document.getElementById('zo2-forward');
+  var manual  = document.getElementById('zo2-manual');
+  var q = new URLSearchParams(location.search);
+
+  /* Which printed code was scanned: /zo2/?s=flyer, ?s=con, ?s=card.
+     Lets one page serve several codes and still tell them apart. */
+  var src = (q.get('s') || '').slice(0, 32);
+  if (typeof gtag === 'function') {
+    gtag('event', 'qr_scan', { event_category: 'zo2', event_label: src || 'none' });
+  }
+
+  if (!DESTINATION) return;
+
+  /* Carry the scan source through so Kickstarter sees where it came from. */
+  var url = DESTINATION;
+  var tag = 'utm_source=' + encodeURIComponent(src || 'qr') +
+            '&utm_medium=print&utm_campaign=zo2';
+  url += (url.indexOf('?') === -1 ? '?' : '&') + tag;
+
+  if (holding) holding.hidden = true;
+  if (forward) forward.hidden = false;
+  if (manual) manual.href = url;
+
+  /* A beat so the holding frame paints and the analytics call gets away,
+     then go. replace() keeps this page out of the back button. */
+  setTimeout(function () { location.replace(url); }, 600);
+})();
+</script>
+</body>
+</html>

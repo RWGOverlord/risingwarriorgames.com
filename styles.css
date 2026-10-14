@@ -904,3 +904,9 @@ h1,h2,h3,h4{color:var(--ink); margin:0}
   border:2px solid currentColor; border-right-color:transparent;
   animation:btn-spin .7s linear infinite}
 @keyframes btn-spin{to{transform:rotate(360deg)}}
+
+/* /zo2/ QR destination page. */
+.zo2{padding-top:60px; text-align:center}
+.zo2 h1{font:700 clamp(30px,4.4vw,46px)/1.1 'Cinzel',Georgia,serif; color:var(--ink); margin:0 0 16px}
+.zo2 .lp-lede{margin-left:auto; margin-right:auto}
+.zo2 .acts{justify-content:center; margin-top:26px}
