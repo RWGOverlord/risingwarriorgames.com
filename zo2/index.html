@@ -18,6 +18,11 @@
      sitemap.xml, same as the other utility pages. -->
 <meta name="robots" content="noindex, follow">
 
+<!-- Fallback for no JavaScript. The script at the bottom normally gets there
+     first and adds the scan source; this is the backstop. Keep the URL here
+     and the DESTINATION constant below in step. -->
+<meta http-equiv="refresh" content="3;url=https://www.kickstarter.com/profile/risingwarriorgames/created?utm_source=qr&amp;utm_medium=print&amp;utm_campaign=zo2">
+
 <link rel="icon" href="/favicon.ico?v=2" sizes="any">
 <link rel="icon" type="image/png" href="/images/RWG_Favicon.png?v=2">
 <link rel="apple-touch-icon" href="/images/RWG_AppleTouch.png?v=2">
@@ -61,7 +66,7 @@
         <p class="eyebrow mono">One moment</p>
         <h1>Taking you to Kickstarter</h1>
         <p class="lp-lede">If nothing happens in a few seconds, use the link below.</p>
-        <p class="acts"><a class="btn" id="zo2-manual" href="#">Continue to Kickstarter</a></p>
+        <p class="acts"><a class="btn" id="zo2-manual" href="https://www.kickstarter.com/profile/risingwarriorgames/created">Continue to Kickstarter</a></p>
       </div>
 
     </div>
@@ -90,11 +95,10 @@
      Use the PUBLIC Kickstarter URL. Never the preview link: its token
      would be readable in this page's source by anyone.
 
-     When this is set, also add a meta refresh to <head> so the forward
-     still happens without JavaScript:
-       <meta http-equiv="refresh" content="2;url=THE_SAME_URL">
+     There is also a meta refresh in <head> doing the same job for anyone
+     without JavaScript. Change both together or they will disagree.
      ------------------------------------------------------------------ */
-  var DESTINATION = '';
+  var DESTINATION = 'https://www.kickstarter.com/profile/risingwarriorgames/created';
 
   var holding = document.getElementById('zo2-holding');
   var forward = document.getElementById('zo2-forward');
