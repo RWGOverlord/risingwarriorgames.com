@@ -1001,17 +1001,28 @@ h1,h2,h3,h4{color:var(--ink); margin:0}
 /* ---------- step 2: the playmats ---------- */
 
 .omats{display:grid; gap:10px}
-.omat{position:relative; display:block; cursor:pointer}
+.omat{position:relative; display:block}
 .omat input{position:absolute; top:50%; left:16px; margin:-9px 0 0; width:18px; height:18px;
-  z-index:1; accent-color:var(--gold)}
+  z-index:2; accent-color:var(--gold)}
 .omat-in{display:flex; align-items:center; gap:12px;
   background:var(--white); border:1px solid var(--line); border-radius:var(--r);
   padding:12px 16px 12px 44px; transition:.16s ease}
-.omat-art{flex:0 0 clamp(84px,24vw,132px); background:var(--green-tint);
-  border-radius:2px; overflow:hidden; align-self:stretch; display:flex}
+.omat-pick{flex:1 1 auto; min-width:0; cursor:pointer; align-self:stretch;
+  display:flex; align-items:center}
+/* The thumbnail is its own button so it can enlarge rather than tick the
+   box. align-self:stretch would make a short row's picture tall, so the
+   aspect-ratio on the image governs and the button hugs it. */
+.omat-zoom{flex:0 0 clamp(84px,24vw,132px); display:block; position:relative; padding:0;
+  border:0; border-radius:2px; overflow:hidden; background:var(--green-tint);
+  cursor:zoom-in; -webkit-appearance:none; appearance:none}
+.omat-mag{position:absolute; right:4px; bottom:4px; width:21px; height:21px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center; color:#1A1204;
+  background:rgba(255,255,255,.88); box-shadow:0 1px 3px rgba(20,32,26,.35);
+  transition:.16s ease}
+.omat-zoom:hover .omat-mag{background:var(--gold-lift)}
 /* 12:7 is the real 24 by 14 inch mat, which is the shape of the cropped
    masters, so cover fills the frame without cutting anything off. */
-.omat-art img{width:100%; aspect-ratio:12/7; object-fit:cover; align-self:center}
+.omat-zoom img{width:100%; aspect-ratio:12/7; object-fit:cover; display:block}
 .omat-body{flex:1 1 auto; min-width:0; display:flex; flex-wrap:wrap;
   align-items:baseline; gap:4px 14px; padding:2px 0}
 .omat:hover .omat-in{border-color:var(--muted)}
@@ -1111,4 +1122,45 @@ h1,h2,h3,h4{color:var(--ink); margin:0}
 @media (min-width:900px){
   .opicks{grid-template-columns:repeat(3,1fr)}
   .omats{grid-template-columns:repeat(2,1fr)}
+}
+
+/* ---------- playmat close-up ----------
+   A native <dialog>, so Escape, focus trapping and the backdrop come from
+   the browser. ::backdrop is the browser's own layer, not a child element,
+   which is why the dimming is set there rather than on .zoom. */
+.zoom{border:0; padding:0; background:transparent; max-width:none; max-height:none;
+  width:100%; height:100%; overflow:auto}
+.zoom::backdrop{background:rgba(12,20,15,.82)}
+.zoom-in{max-width:1040px; margin:auto; padding:48px 16px 24px; position:relative;
+  min-height:100%; display:flex; flex-direction:column; justify-content:center}
+
+.zoom-close{position:absolute; top:10px; right:12px; width:40px; height:40px; padding:0;
+  border:0; border-radius:50%; cursor:pointer; background:rgba(255,255,255,.14);
+  color:#F2F5F0; font:400 26px/1 'Archivo',sans-serif; transition:.16s ease}
+.zoom-close:hover{background:rgba(255,255,255,.28)}
+
+.zoom-stage{position:relative; display:flex; align-items:center; justify-content:center}
+.zoom-stage img{width:100%; height:auto; border-radius:var(--r); display:block;
+  box-shadow:0 18px 50px rgba(0,0,0,.5)}
+
+.zoom-nav{position:absolute; top:50%; transform:translateY(-50%); width:44px; height:44px;
+  padding:0 0 4px; border:0; border-radius:50%; cursor:pointer; z-index:1;
+  background:rgba(255,255,255,.16); color:#F2F5F0;
+  font:400 30px/1 'Archivo',sans-serif; transition:.16s ease}
+.zoom-nav:hover{background:var(--gold); color:#1A1204}
+.zoom-prev{left:-8px}
+.zoom-next{right:-8px}
+
+.zoom-foot{display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between;
+  gap:12px 20px; margin-top:18px}
+.zoom-cap{margin:0; color:#E7EDE8; font-size:14.5px}
+.zoom-add:disabled{opacity:.45; cursor:not-allowed}
+.zoom-add:disabled:hover{background:var(--gold); border-color:var(--gold)}
+
+@media (max-width:620px){
+  .zoom-in{padding:56px 14px 20px}
+  .zoom-prev{left:2px}
+  .zoom-next{right:2px}
+  .zoom-foot{justify-content:center; text-align:center}
+  .zoom-add{width:100%}
 }

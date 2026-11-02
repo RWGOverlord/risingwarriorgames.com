@@ -69,13 +69,15 @@ TARGETS=(
   "Horde_Edition.png            400 700"
   "Overlord_Bundle.png          400 700"
 
-  # order panel: playmat thumbnails. 110px slot, so 240 covers 2x with
-  # headroom and 480 covers a 3x screen.
-  "Mat_Night_1.png              240 480"
-  "Mat_Night_2.png              240 480"
-  "Mat_Night_3.png              240 480"
-  "Mat_Night_4.png              240 480"
-  "Mat_Board.png                240 480"
+  # order panel: playmat thumbnails (132px slot, so 240 is 2x and 480 is 3x)
+  # and the close-up the thumbnail opens (up to 1400, just under the 1482
+  # master). JPEG: the mats are full-bleed dark art with nothing transparent,
+  # and a 1400px PNG of it runs about ten times the size.
+  "Mat_Night_1.png>jpg          240 480 900 1400"
+  "Mat_Night_2.png>jpg          240 480 900 1400"
+  "Mat_Night_3.png>jpg          240 480 900 1400"
+  "Mat_Night_4.png>jpg          240 480 900 1400"
+  "Mat_Board.png>jpg            240 480 900 1400"
 
   # playthrough poster
   "ZO_Playthrough_Poster.jpg    640 1280"

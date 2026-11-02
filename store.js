@@ -64,11 +64,11 @@
     /* The mats carry no alt text on purpose. Each thumbnail sits beside its
        own name, so describing it again only makes a screen reader say
        everything twice. */
-    mat_night_1: { base: 'Mat_Night_1', ext: 'png', w: [240, 480], alt: '' },
-    mat_night_2: { base: 'Mat_Night_2', ext: 'png', w: [240, 480], alt: '' },
-    mat_night_3: { base: 'Mat_Night_3', ext: 'png', w: [240, 480], alt: '' },
-    mat_night_4: { base: 'Mat_Night_4', ext: 'png', w: [240, 480], alt: '' },
-    mat_board:   { base: 'Mat_Board',   ext: 'png', w: [240, 480], alt: '' }
+    mat_night_1: { base: 'Mat_Night_1', ext: 'jpg', w: [240, 480], zoom: [900, 1400], alt: '' },
+    mat_night_2: { base: 'Mat_Night_2', ext: 'jpg', w: [240, 480], zoom: [900, 1400], alt: '' },
+    mat_night_3: { base: 'Mat_Night_3', ext: 'jpg', w: [240, 480], zoom: [900, 1400], alt: '' },
+    mat_night_4: { base: 'Mat_Night_4', ext: 'jpg', w: [240, 480], zoom: [900, 1400], alt: '' },
+    mat_board:   { base: 'Mat_Board',   ext: 'jpg', w: [240, 480], zoom: [900, 1400], alt: '' }
   };
 
   /* Pictures appear for a group only when every item in it has one. A row of
@@ -76,6 +76,17 @@
      sparse, and both groups fill in on their own as masters land. */
   var showBundleArt = false;
   var showMatArt = false;
+
+  var MAGNIFIER =
+    '<svg viewBox="0 0 16 16" width="12" height="12" focusable="false">'
+    + '<circle cx="6.6" cy="6.6" r="4.4" fill="none" stroke="currentColor" stroke-width="1.7"/>'
+    + '<path d="M10.1 10.1 L14 14" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>'
+    + '</svg>';
+
+  /* Close-up viewer state: the add-on ids that have a close-up, in the order
+     they appear, and which one is showing. */
+  var zoomIds = [];
+  var zoomAt = 0;
 
   var cat = null;
   var sel = { bundle: null, addons: {}, delivery: null, region: null, confirm: false };
@@ -247,19 +258,30 @@
 
   function matRow(a) {
     var h = '';
-    h += '<label class="omat" data-mat="' + esc(a.id) + '">';
-    h += '<input type="checkbox" name="ord-addon" value="' + esc(a.id) + '">';
-    h += '<span class="omat-in">';
+    /* The thumbnail is a button, not part of the label. A <label> may not
+       contain another interactive control, and clicking the picture should
+       enlarge it rather than tick the box: the mats are what a buyer most
+       needs to look at closely, and four of them are dark city streets that
+       are hard to tell apart at this size. The rest of the row still picks. */
+    h += '<div class="omat" data-mat="' + esc(a.id) + '">';
+    h += '<div class="omat-in">';
     if (showMatArt) {
-      h += '<span class="omat-art">' + art(a.id, '110px') + '</span>';
+      h += '<button class="omat-zoom" type="button" data-zoom="' + esc(a.id) + '"'
+         + ' aria-label="' + esc('View ' + a.name + ' close up') + '">'
+         + art(a.id, '132px')
+         + '<span class="omat-mag" aria-hidden="true">' + MAGNIFIER + '</span>'
+         + '</button>';
     }
+    h += '<label class="omat-pick">';
+    h += '<input type="checkbox" name="ord-addon" value="' + esc(a.id) + '">';
     h += '<span class="omat-body">';
     h += '<span class="omat-name">' + esc(a.name) + '</span>';
     h += '<span class="omat-price">' + money(a.price_cents);
     if (a.msrp_cents) h += ' <s>' + money(a.msrp_cents) + '</s>';
     h += '</span>';
     h += '<span class="omat-state mono"></span>';
-    h += '</span></span></label>';
+    h += '</span></label>';
+    h += '</div></div>';
     return h;
   }
 
@@ -380,6 +402,29 @@
     h += '</div>';
 
     h += '</form>';
+
+    if (showMatArt) h += zoomDialog();
+
+    return h;
+  }
+
+  /* A native <dialog>, so Escape, the backdrop and focus trapping are the
+     browser's job rather than ours. */
+  function zoomDialog() {
+    var h = '';
+    h += '<dialog class="zoom" id="ord-zoom" aria-label="Playmat close-up">';
+    h += '<div class="zoom-in">';
+    h += '<button class="zoom-close" type="button" id="zoom-close" aria-label="Close">&times;</button>';
+    h += '<div class="zoom-stage">';
+    h += '<button class="zoom-nav zoom-prev" type="button" id="zoom-prev" aria-label="Previous playmat">&#8249;</button>';
+    h += '<img id="zoom-img" alt="">';
+    h += '<button class="zoom-nav zoom-next" type="button" id="zoom-next" aria-label="Next playmat">&#8250;</button>';
+    h += '</div>';
+    h += '<div class="zoom-foot">';
+    h += '<p class="zoom-cap" id="zoom-cap"></p>';
+    h += '<button class="btn btn--sm zoom-add" type="button" id="zoom-add"></button>';
+    h += '</div>';
+    h += '</div></dialog>';
     return h;
   }
 
@@ -535,6 +580,75 @@
     if (els.pay) els.pay.disabled = !ready();
   }
 
+  /* ---------- the close-up ---------- */
+
+  function zoomOpen(id) {
+    var i = zoomIds.indexOf(id);
+    if (i < 0 || !els.zoom) return;
+    zoomAt = i;
+    zoomPaint();
+    if (els.zoom.showModal) els.zoom.showModal();
+    else els.zoom.setAttribute('open', '');
+  }
+
+  function zoomStep(by) {
+    if (!zoomIds.length) return;
+    zoomAt = (zoomAt + by + zoomIds.length) % zoomIds.length;
+    zoomPaint();
+  }
+
+  function zoomPaint() {
+    var id = zoomIds[zoomAt];
+    var a = ART[id];
+    var item = addon(id);
+    if (!a || !item) return;
+
+    var small = '/images/opt/' + a.base + '-' + a.zoom[0] + '.' + a.ext;
+    var large = '/images/opt/' + a.base + '-' + a.zoom[1] + '.' + a.ext;
+    els.zoomImg.src = large;
+    els.zoomImg.srcset = small + ' ' + a.zoom[0] + 'w, ' + large + ' ' + a.zoom[1] + 'w';
+    els.zoomImg.sizes = '(max-width:900px) 92vw, 820px';
+    els.zoomImg.alt = item.name;
+
+    var cap = item.name + ' · ' + money(item.price_cents);
+    if (!item.available) cap += ' · sold out';
+    else if (typeof item.remaining === 'number') cap += ' · ' + item.remaining + ' left';
+    els.zoomCap.textContent = cap;
+
+    /* The add button mirrors the row behind the dialog, including why it
+       cannot be used: a mat needs a game, and a bundle may already hold it. */
+    var box = root.querySelector('.omat[data-mat="' + id + '"] input');
+    var on = !!(box && box.checked);
+    var b = bundle(sel.bundle);
+    els.zoomAdd.hidden = false;
+    if (on) {
+      els.zoomAdd.textContent = 'Remove from order';
+      els.zoomAdd.disabled = false;
+    } else if (!item.available) {
+      els.zoomAdd.textContent = 'Sold out';
+      els.zoomAdd.disabled = true;
+    } else if (!b) {
+      els.zoomAdd.textContent = 'Choose an edition first';
+      els.zoomAdd.disabled = true;
+    } else if (!canAdd(id)) {
+      els.zoomAdd.textContent = (b.addable_addons || []).indexOf(id) < 0
+        ? 'Already in this bundle' : 'Limit reached';
+      els.zoomAdd.disabled = true;
+    } else {
+      els.zoomAdd.textContent = 'Add to order';
+      els.zoomAdd.disabled = false;
+    }
+  }
+
+  function zoomToggle() {
+    var id = zoomIds[zoomAt];
+    var box = root.querySelector('.omat[data-mat="' + id + '"] input');
+    if (!box || (box.disabled && !box.checked)) return;
+    box.checked = !box.checked;
+    box.dispatchEvent(new Event('change', { bubbles: true }));
+    zoomPaint();
+  }
+
   function showError(msg) {
     if (!els.err) return;
     if (!msg) { els.err.hidden = true; els.err.textContent = ''; return; }
@@ -555,6 +669,40 @@
     els.total = document.getElementById('ord-total');
     els.err = document.getElementById('ord-err');
     els.pay = document.getElementById('ord-pay');
+    els.zoom = document.getElementById('ord-zoom');
+    els.zoomImg = document.getElementById('zoom-img');
+    els.zoomCap = document.getElementById('zoom-cap');
+    els.zoomAdd = document.getElementById('zoom-add');
+
+    zoomIds = [];
+    Array.prototype.forEach.call(root.querySelectorAll('.omat-zoom'), function (b) {
+      zoomIds.push(b.getAttribute('data-zoom'));
+    });
+
+    if (els.zoom) {
+      document.getElementById('zoom-close').addEventListener('click', function () {
+        els.zoom.close();
+      });
+      document.getElementById('zoom-prev').addEventListener('click', function () { zoomStep(-1); });
+      document.getElementById('zoom-next').addEventListener('click', function () { zoomStep(1); });
+      els.zoomAdd.addEventListener('click', zoomToggle);
+
+      /* Clicking the backdrop lands on the dialog itself, never on .zoom-in. */
+      els.zoom.addEventListener('click', function (e) {
+        if (e.target === els.zoom) els.zoom.close();
+      });
+      els.zoom.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowLeft') { e.preventDefault(); zoomStep(-1); }
+        else if (e.key === 'ArrowRight') { e.preventDefault(); zoomStep(1); }
+      });
+    }
+
+    root.addEventListener('click', function (e) {
+      var btn = e.target.closest ? e.target.closest('.omat-zoom') : null;
+      if (!btn) return;
+      e.preventDefault();
+      zoomOpen(btn.getAttribute('data-zoom'));
+    });
 
     /* A picture whose file is not there yet takes its frame with it, so a
        half-built images/opt/ never shows a broken-image box on the page.
@@ -602,6 +750,7 @@
         sel.region = t.value || null;
       }
       sync();
+      if (els.zoom && els.zoom.open) zoomPaint();
     });
 
     els.form.addEventListener('submit', function (e) {
