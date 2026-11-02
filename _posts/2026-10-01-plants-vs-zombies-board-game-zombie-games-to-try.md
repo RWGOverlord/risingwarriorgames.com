@@ -18,7 +18,7 @@ Here's a look at the Plants vs. Zombies board game, followed by other zombie gam
 | Game | Players | Play time | Style | Status |
 | --- | --- | --- | --- | --- |
 | Plants vs. Zombies: The Board Game | 1–4 | Not announced | Co-op | Kickstarter from Oct 14, 2026 |
-| Zombie Overlord | 2–4 | 30–40 min | Competitive deck-builder | Preorder until Oct 29, 2026 |
+| Zombie Overlord | 2–4 | 30–40 min | Competitive deck-builder | Shipping from Nov 2026 |
 | Zombie Dice | 2+ | 10–20 min | Competitive push-your-luck | In print |
 | Zombie Fluxx | 2–6 | 10–30 min | Competitive card game | In print |
 | Zombie Kidz Evolution | 2–4 | 15 min | Co-op family legacy game | In print |
@@ -48,7 +48,7 @@ It's a deck-builder for two to four players, ages 14 and up, and a game takes 30
 
 In other words, it's the opposite pitch from Plants vs. Zombies. No teamwork, and you're the one with the zombies.
 
-Zombie Overlord [funded on Kickstarter](https://www.kickstarter.com/projects/zombieoverlord/zombie-overlord) in 13 hours and starts shipping in November 2026. Preorders are open until October 29, and the [full rules](/rules.html) are free to read if you'd like to see how it plays first.
+Zombie Overlord [funded on Kickstarter](https://www.kickstarter.com/projects/zombieoverlord/zombie-overlord) in 13 hours and starts shipping in November 2026. The [full rules](/rules.html) are free to read if you'd like to see how it plays first.
 
 *Zombie Overlord is published by Rising Warrior Games, the publisher of this site.*
 
