@@ -40,6 +40,41 @@
     }
   };
 
+  /* Artwork. Page assets rather than catalog data, so it is mapped here and
+     not sent down /api/catalog. Widths must exist in images/opt/, which
+     tools/build-images.sh generates from the masters in images/.
+
+     An item with no entry here gets no picture, and an entry whose file
+     fails to load has its frame removed rather than left as a broken image.
+     Both cases are normal: artwork arrives one file at a time. */
+  var ART = {
+    core: {
+      base: 'Gold_Trim_Thematic_MockUp', ext: 'png', w: [400, 700],
+      alt: 'The Zombie Overlord box'
+    },
+    horde: {
+      base: 'Horde_Bundle', ext: 'png', w: [400, 700],
+      alt: 'The box with the Misfits Mini Expansion and the Life Point Trackers'
+    },
+    /* overlord: no artwork yet. Nothing in images/ shows the box with the
+       Board Mat and nothing else, and the near misses all misrepresent it:
+       Battlefield_Product shows three mats when the bundle contains one.
+       Until a master exists, BUNDLE_ART_ALL below keeps every edition
+       picture off rather than show two cards with art and one without. */
+
+    mat_night_1: { base: 'Mat_Night_1', ext: 'png', w: [240, 480], alt: 'Player Mat: Night 1' },
+    mat_night_2: { base: 'Mat_Night_2', ext: 'png', w: [240, 480], alt: 'Player Mat: Night 2' },
+    mat_night_3: { base: 'Mat_Night_3', ext: 'png', w: [240, 480], alt: 'Player Mat: Night 3' },
+    mat_night_4: { base: 'Mat_Night_4', ext: 'png', w: [240, 480], alt: 'Player Mat: Night 4' },
+    mat_board:   { base: 'Mat_Board',   ext: 'png', w: [240, 480], alt: 'The Board Mat' }
+  };
+
+  /* Pictures appear for a group only when every item in it has one. A row of
+     cards where some have art and some do not reads as broken rather than
+     sparse, and both groups fill in on their own as masters land. */
+  var showBundleArt = false;
+  var showMatArt = false;
+
   var cat = null;
   var sel = { bundle: null, addons: {}, delivery: null, region: null, confirm: false };
   var els = {};
@@ -94,6 +129,21 @@
     var found = null;
     (cat.addons || []).forEach(function (a) { if (a.id === id) found = a; });
     return found;
+  }
+
+  function art(id, sizes) {
+    var a = ART[id];
+    if (!a) return '';
+    var small = '/images/opt/' + a.base + '-' + a.w[0] + '.' + a.ext;
+    var large = '/images/opt/' + a.base + '-' + a.w[1] + '.' + a.ext;
+    return '<img src="' + esc(large) + '" srcset="' + esc(small) + ' ' + a.w[0] + 'w, '
+         + esc(large) + ' ' + a.w[1] + 'w" sizes="' + esc(sizes) + '" alt="'
+         + esc(a.alt || '') + '" loading="lazy" decoding="async" data-art>';
+  }
+
+  function haveArtForAll(ids) {
+    for (var i = 0; i < ids.length; i++) { if (!ART[ids[i]]) return false; }
+    return ids.length > 0;
   }
 
   function matCount() {
@@ -171,8 +221,14 @@
     var save = b.msrp_cents && b.msrp_cents > b.price_cents ? b.msrp_cents - b.price_cents : 0;
     var h = '';
     h += '<label class="opick' + (b.available ? '' : ' is-out') + '">';
-    h += '<input type="radio" name="ord-bundle" value="' + esc(b.id) + '"' + (b.available ? '' : ' disabled') + '>';
     h += '<span class="opick-in">';
+    if (showBundleArt) {
+      h += '<span class="opick-art">'
+         + art(b.id, '(max-width:619px) calc(100vw - 90px), (max-width:899px) calc(50vw - 56px), 330px')
+         + '</span>';
+    }
+    h += '<span class="opick-txt">';
+    h += '<input type="radio" name="ord-bundle" value="' + esc(b.id) + '"' + (b.available ? '' : ' disabled') + '>';
     if (copy.tag) h += '<span class="opick-tag mono">' + esc(copy.tag) + '</span>';
     h += '<span class="opick-name">' + esc(b.name) + '</span>';
     h += '<span class="opick-price">' + money(b.price_cents);
@@ -183,7 +239,7 @@
     copy.items.forEach(function (i) { h += '<span>' + esc(i) + '</span>'; });
     h += '</span>';
     if (!b.available) h += '<span class="opick-out mono">Sold out</span>';
-    h += '</span></label>';
+    h += '</span></span></label>';
     return h;
   }
 
@@ -192,12 +248,16 @@
     h += '<label class="omat" data-mat="' + esc(a.id) + '">';
     h += '<input type="checkbox" name="ord-addon" value="' + esc(a.id) + '">';
     h += '<span class="omat-in">';
+    if (showMatArt) {
+      h += '<span class="omat-art">' + art(a.id, '110px') + '</span>';
+    }
+    h += '<span class="omat-body">';
     h += '<span class="omat-name">' + esc(a.name) + '</span>';
     h += '<span class="omat-price">' + money(a.price_cents);
     if (a.msrp_cents) h += ' <s>' + money(a.msrp_cents) + '</s>';
     h += '</span>';
     h += '<span class="omat-state mono"></span>';
-    h += '</span></label>';
+    h += '</span></span></label>';
     return h;
   }
 
@@ -281,6 +341,9 @@
 
   function panel() {
     var h = '';
+
+    showBundleArt = haveArtForAll((cat.bundles || []).map(function (b) { return b.id; }));
+    showMatArt = haveArtForAll((cat.addons || []).map(function (a) { return a.id; }));
 
     if (cat.promo && cat.promo.label) {
       h += '<p class="ord-promo mono">' + esc(cat.promo.label);
@@ -490,6 +553,18 @@
     els.total = document.getElementById('ord-total');
     els.err = document.getElementById('ord-err');
     els.pay = document.getElementById('ord-pay');
+
+    /* A picture whose file is not there yet takes its frame with it, so a
+       half-built images/opt/ never shows a broken-image box on the page.
+       The complete check catches one that failed before this ran. */
+    Array.prototype.forEach.call(root.querySelectorAll('img[data-art]'), function (img) {
+      function drop() {
+        var frame = img.parentNode;
+        if (frame && frame.parentNode) frame.parentNode.removeChild(frame);
+      }
+      img.addEventListener('error', drop);
+      if (img.complete && img.naturalWidth === 0) drop();
+    });
 
     root.addEventListener('change', function (e) {
       var t = e.target;

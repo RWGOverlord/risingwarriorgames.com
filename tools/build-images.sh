@@ -62,6 +62,18 @@ TARGETS=(
   "Playmats.png                 360 620"
   "Trackers_Addon.png           360 620"
 
+  # order panel: the Overlord Bundle card, same slot as the other two editions.
+  # No master yet; the script warns and carries on until one lands.
+  "Overlord_Bundle.png          400 700"
+
+  # order panel: playmat thumbnails. 110px slot, so 240 covers 2x with
+  # headroom and 480 covers a 3x screen.
+  "Mat_Night_1.png              240 480"
+  "Mat_Night_2.png              240 480"
+  "Mat_Night_3.png              240 480"
+  "Mat_Night_4.png              240 480"
+  "Mat_Board.png                240 480"
+
   # playthrough poster
   "ZO_Playthrough_Poster.jpg    640 1280"
 

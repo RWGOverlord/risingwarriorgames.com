@@ -964,11 +964,17 @@ h1,h2,h3,h4{color:var(--ink); margin:0}
 /* ---------- step 1: the editions ---------- */
 
 .opicks{display:grid; gap:14px}
-.opick{position:relative; display:block; cursor:pointer}
+.opick{display:block; cursor:pointer}
+/* The padding lives on .opick-txt, not .opick-in, so .opick-art can run to
+   the card edge. The radio is positioned against .opick-txt, which keeps it
+   beside the edition name whether or not there is a picture above it. */
+.opick-in{display:block; height:100%; background:var(--white); border:1px solid var(--line);
+  border-radius:var(--r); overflow:hidden; transition:.16s ease}
+.opick-txt{position:relative; display:block; padding:18px 20px 20px 48px}
 .opick input{position:absolute; top:19px; left:18px; z-index:1; margin:0;
   width:18px; height:18px; accent-color:var(--gold)}
-.opick-in{display:block; height:100%; background:var(--white); border:1px solid var(--line);
-  border-radius:var(--r); padding:18px 20px 20px 48px; transition:.16s ease}
+.opick-art{display:block; background:var(--green-tint); border-bottom:1px solid var(--line)}
+.opick-art img{width:100%; aspect-ratio:3/2; object-fit:cover}
 .opick:hover .opick-in{border-color:var(--muted)}
 .opick:has(input:checked) .opick-in{border-color:var(--gold); box-shadow:0 0 0 3px rgba(176,129,47,.12)}
 .opick.is-out{cursor:not-allowed}
@@ -993,9 +999,14 @@ h1,h2,h3,h4{color:var(--ink); margin:0}
 .omat{position:relative; display:block; cursor:pointer}
 .omat input{position:absolute; top:50%; left:16px; margin:-9px 0 0; width:18px; height:18px;
   z-index:1; accent-color:var(--gold)}
-.omat-in{display:flex; flex-wrap:wrap; align-items:baseline; gap:4px 14px;
+.omat-in{display:flex; align-items:center; gap:12px;
   background:var(--white); border:1px solid var(--line); border-radius:var(--r);
-  padding:14px 16px 14px 46px; transition:.16s ease}
+  padding:12px 16px 12px 44px; transition:.16s ease}
+.omat-art{flex:0 0 clamp(78px,22vw,110px); background:var(--green-tint);
+  border-radius:2px; overflow:hidden; align-self:stretch; display:flex}
+.omat-art img{width:100%; aspect-ratio:16/10; object-fit:cover; align-self:center}
+.omat-body{flex:1 1 auto; min-width:0; display:flex; flex-wrap:wrap;
+  align-items:baseline; gap:4px 14px; padding:2px 0}
 .omat:hover .omat-in{border-color:var(--muted)}
 .omat:has(input:checked) .omat-in{border-color:var(--gold); background:#FFFCF4}
 .omat.is-off{cursor:not-allowed}
