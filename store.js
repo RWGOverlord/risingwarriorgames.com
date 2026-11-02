@@ -49,24 +49,26 @@
      Both cases are normal: artwork arrives one file at a time. */
   var ART = {
     core: {
-      base: 'Gold_Trim_Thematic_MockUp', ext: 'png', w: [400, 700],
+      base: 'Core_Edition', ext: 'png', w: [400, 700],
       alt: 'The Zombie Overlord box'
     },
     horde: {
-      base: 'Horde_Bundle', ext: 'png', w: [400, 700],
+      base: 'Horde_Edition', ext: 'png', w: [400, 700],
       alt: 'The box with the Misfits Mini Expansion and the Life Point Trackers'
     },
-    /* overlord: no artwork yet. Nothing in images/ shows the box with the
-       Board Mat and nothing else, and the near misses all misrepresent it:
-       Battlefield_Product shows three mats when the bundle contains one.
-       Until a master exists, BUNDLE_ART_ALL below keeps every edition
-       picture off rather than show two cards with art and one without. */
+    overlord: {
+      base: 'Overlord_Bundle', ext: 'png', w: [400, 700],
+      alt: 'The box, the Misfits Mini Expansion, the Life Point Trackers and the Board Mat'
+    },
 
-    mat_night_1: { base: 'Mat_Night_1', ext: 'png', w: [240, 480], alt: 'Player Mat: Night 1' },
-    mat_night_2: { base: 'Mat_Night_2', ext: 'png', w: [240, 480], alt: 'Player Mat: Night 2' },
-    mat_night_3: { base: 'Mat_Night_3', ext: 'png', w: [240, 480], alt: 'Player Mat: Night 3' },
-    mat_night_4: { base: 'Mat_Night_4', ext: 'png', w: [240, 480], alt: 'Player Mat: Night 4' },
-    mat_board:   { base: 'Mat_Board',   ext: 'png', w: [240, 480], alt: 'The Board Mat' }
+    /* The mats carry no alt text on purpose. Each thumbnail sits beside its
+       own name, so describing it again only makes a screen reader say
+       everything twice. */
+    mat_night_1: { base: 'Mat_Night_1', ext: 'png', w: [240, 480], alt: '' },
+    mat_night_2: { base: 'Mat_Night_2', ext: 'png', w: [240, 480], alt: '' },
+    mat_night_3: { base: 'Mat_Night_3', ext: 'png', w: [240, 480], alt: '' },
+    mat_night_4: { base: 'Mat_Night_4', ext: 'png', w: [240, 480], alt: '' },
+    mat_board:   { base: 'Mat_Board',   ext: 'png', w: [240, 480], alt: '' }
   };
 
   /* Pictures appear for a group only when every item in it has one. A row of

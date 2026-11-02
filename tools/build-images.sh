@@ -62,8 +62,11 @@ TARGETS=(
   "Playmats.png                 360 620"
   "Trackers_Addon.png           360 620"
 
-  # order panel: the Overlord Bundle card, same slot as the other two editions.
-  # No master yet; the script warns and carries on until one lands.
+  # order panel: the three edition cards. These masters are prepared by
+  # tools/prepare-item-art.py, which trims each product out of its white
+  # surround so the three render at a matching size under object-fit:contain.
+  "Core_Edition.png             400 700"
+  "Horde_Edition.png            400 700"
   "Overlord_Bundle.png          400 700"
 
   # order panel: playmat thumbnails. 110px slot, so 240 covers 2x with

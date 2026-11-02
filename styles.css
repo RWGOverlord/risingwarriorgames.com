@@ -973,8 +973,13 @@ h1,h2,h3,h4{color:var(--ink); margin:0}
 .opick-txt{position:relative; display:block; padding:18px 20px 20px 48px}
 .opick input{position:absolute; top:19px; left:18px; z-index:1; margin:0;
   width:18px; height:18px; accent-color:var(--gold)}
-.opick-art{display:block; background:var(--green-tint); border-bottom:1px solid var(--line)}
-.opick-art img{width:100%; aspect-ratio:3/2; object-fit:cover}
+/* contain, on white, because the three edition shots are different shapes:
+   the box alone and the Horde Bundle are 3:2, the Overlord Bundle is nearly
+   square. Cropping any of them to a common frame would cut product out of
+   the picture. Every master has a white background, so the letterboxing a
+   contain fit leaves is invisible rather than a grey bar. */
+.opick-art{display:block; background:var(--white); border-bottom:1px solid var(--line)}
+.opick-art img{width:100%; aspect-ratio:4/3; object-fit:contain}
 .opick:hover .opick-in{border-color:var(--muted)}
 .opick:has(input:checked) .opick-in{border-color:var(--gold); box-shadow:0 0 0 3px rgba(176,129,47,.12)}
 .opick.is-out{cursor:not-allowed}
@@ -1002,9 +1007,11 @@ h1,h2,h3,h4{color:var(--ink); margin:0}
 .omat-in{display:flex; align-items:center; gap:12px;
   background:var(--white); border:1px solid var(--line); border-radius:var(--r);
   padding:12px 16px 12px 44px; transition:.16s ease}
-.omat-art{flex:0 0 clamp(78px,22vw,110px); background:var(--green-tint);
+.omat-art{flex:0 0 clamp(84px,24vw,132px); background:var(--green-tint);
   border-radius:2px; overflow:hidden; align-self:stretch; display:flex}
-.omat-art img{width:100%; aspect-ratio:16/10; object-fit:cover; align-self:center}
+/* 12:7 is the real 24 by 14 inch mat, which is the shape of the cropped
+   masters, so cover fills the frame without cutting anything off. */
+.omat-art img{width:100%; aspect-ratio:12/7; object-fit:cover; align-self:center}
 .omat-body{flex:1 1 auto; min-width:0; display:flex; flex-wrap:wrap;
   align-items:baseline; gap:4px 14px; padding:2px 0}
 .omat:hover .omat-in{border-color:var(--muted)}
