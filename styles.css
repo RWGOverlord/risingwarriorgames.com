@@ -214,6 +214,8 @@ h1,h2,h3,h4{color:var(--ink); margin:0}
 .zo-price span{font-size:13px; color:#93A395}
 .zo-price a{color:var(--gold-lift); text-decoration:underline; text-underline-offset:2px}
 
+.zo-status{margin:0 0 18px; font:500 13px/1.5 'IBM Plex Mono',monospace;
+  letter-spacing:.1em; text-transform:uppercase; color:var(--gold-lift)}
 .zo-cta{display:flex; gap:12px; flex-wrap:wrap; align-items:center}
 .zo-cta .note{font:500 11px/1.4 'IBM Plex Mono',monospace; letter-spacing:.1em;
   text-transform:uppercase; color:#93A395}
