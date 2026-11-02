@@ -872,6 +872,66 @@
        gets here again has to tick it again. */
   }
 
+  /* ---------- arriving from a QR code ----------
+
+     A code printed on the Horde Bundle sign at the convention points at
+
+       https://risingwarriorgames.com/zombieoverlord.html?bundle=horde#preorder
+
+     and lands with that edition already chosen. This is not the kind of
+     default the panel otherwise refuses: scanning the code on the sign in
+     front of you is itself the choice, made in the physical world a second
+     earlier. Everything that stops an accidental purchase is untouched.
+     Delivery still has no default, the pickup confirmation is still
+     required, and the total is still shown before the pay button works.
+
+     ?src=<anything> is passed to analytics only, so several codes can point
+     at the same edition and still be told apart afterwards.
+
+     A printed code outlives the page it points at, so an unknown edition is
+     ignored rather than treated as an error, and one that has sold out says
+     so instead of silently selecting nothing. */
+
+  function deepLink() {
+    var q;
+    try { q = new URLSearchParams(window.location.search); } catch (e) { return; }
+
+    var want = q.get('bundle');
+    var applied = false;
+
+    if (want) {
+      var b = bundle(want);
+      if (b && b.available) {
+        sel.bundle = want;
+        var radio = root.querySelector('input[name="ord-bundle"][value="' + want + '"]');
+        if (radio) radio.checked = true;
+        applied = true;
+      } else if (b) {
+        showError(b.name + ' has sold out. Pick one of the others below.');
+        applied = true;
+      }
+    }
+
+    if (typeof gtag === 'function' && (want || q.get('src'))) {
+      gtag('event', 'select_promotion', {
+        promotion_id: q.get('src') || ('qr-' + (want || 'panel')),
+        item_id: want || ''
+      });
+    }
+
+    /* The browser scrolls to #preorder before this panel exists, so by the
+       time it does the page has grown underneath and the anchor is no longer
+       where the viewport was left. Put it back. */
+    if (applied || window.location.hash === '#preorder') {
+      var target = document.getElementById('preorder');
+      if (target) {
+        window.requestAnimationFrame(function () {
+          target.scrollIntoView({ block: 'start' });
+        });
+      }
+    }
+  }
+
   /* ---------- load ---------- */
 
   function load(keep, message) {
@@ -888,7 +948,7 @@
         sel = { bundle: null, addons: {}, delivery: null, region: null, confirm: false };
         root.innerHTML = panel();
         wire();
-        restore(keep);
+        if (keep) restore(keep); else deepLink();
         sync();
         rateTable();
         if (message) showError(message);
