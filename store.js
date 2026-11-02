@@ -225,7 +225,8 @@
       if (p.area_note) h += '<span>' + esc(p.area_note) + '</span>';
       h += '</span>';
       if (p.orders_close) {
-        h += '<span class="odel-note">Pickup orders close ' + esc(dateShort(p.orders_close)) + '.</span>';
+        h += '<span class="odel-note">Pickup orders close ' + esc(dateShort(p.orders_close)) +
+             '. Checkout asks for a phone number on pickup orders, so we can reach you on the day.</span>';
       }
       h += '</span></label>';
 
