@@ -492,7 +492,7 @@
     if (els.matHint) {
       els.matHint.textContent = !b
         ? 'Choose an edition first. Playmats are an add-on to a game, not sold on their own.'
-        : 'Full size 24" × 14" mats, rubber backed. Add as many as you like, one of each.';
+        : 'Full size 24" × 10" mats, rubber backed. Add as many as you like, one of each.';
     }
 
     Array.prototype.forEach.call(root.querySelectorAll('.omat'), function (row) {

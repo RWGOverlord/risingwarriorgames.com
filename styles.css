@@ -19,6 +19,12 @@
   --ink:        #14201A;   /* headings */
   --body:       #47524B;   /* body copy */
   --muted:      #7A857D;   /* labels, captions */
+  /* --muted on white is 3.83:1, under the 4.5:1 WCAG AA wants for text this
+     small. This is the same grey-green darkened to 5.79:1 on white, 5.38 on
+     --paper and 5.07 on --green-tint, so it clears AA on every background
+     the order panel uses while staying lighter than --body. Small print that
+     carries real information, like how many mats are left, uses this. */
+  --muted-ink:  #5E6860;
 
   --shell: 1140px;
   --r: 3px;
@@ -289,7 +295,7 @@ h1,h2,h3,h4{color:var(--ink); margin:0}
 .shipping tbody td{color:var(--body); font-variant-numeric:tabular-nums}
 .shipping tbody tr:last-child th,.shipping tbody tr:last-child td{border-bottom:0}
 .shipping-notes{list-style:none; margin:20px 0 0; padding:0; display:grid; gap:9px;
-  font-size:13px; color:var(--muted); max-width:78ch}
+  font-size:13.5px; color:var(--body); max-width:78ch}
 .shipping-notes li{position:relative; padding-left:18px}
 .shipping-notes li::before{content:"·"; position:absolute; left:6px; color:var(--gold); font-weight:700}
 
@@ -923,7 +929,7 @@ h1,h2,h3,h4{color:var(--ink); margin:0}
 
 .order{margin:0 0 34px}
 
-.ord-boot{margin:0; padding:40px 0; color:var(--muted); font-size:14px}
+.ord-boot{margin:0; padding:40px 0; color:var(--muted-ink); font-size:14px}
 
 .ord-down{background:var(--white); border:1px solid var(--line); border-left:3px solid var(--gold);
   border-radius:var(--r); padding:26px 26px 28px}
@@ -956,7 +962,7 @@ h1,h2,h3,h4{color:var(--ink); margin:0}
   margin-right:10px; border-radius:50%; background:var(--green); color:var(--gold-lift);
   font:500 12px/1 'IBM Plex Mono',monospace; vertical-align:2px}
 .ord-opt{font:500 10px/1 'IBM Plex Mono',monospace; letter-spacing:.16em; text-transform:uppercase;
-  color:var(--muted); vertical-align:3px; margin-left:6px}
+  color:var(--muted-ink); vertical-align:3px; margin-left:6px}
 
 .ord-hint{margin:0 0 18px; font-size:14px; color:var(--body)}
 .ord-hint--loud{color:var(--ink); font-weight:500}
@@ -990,12 +996,12 @@ h1,h2,h3,h4{color:var(--ink); margin:0}
 .opick-name{display:block; font:700 18px/1.25 'Cinzel',serif; color:var(--ink); margin-bottom:6px}
 .opick-price{display:block; font:700 26px/1 'Archivo',sans-serif; color:var(--ink);
   font-variant-numeric:tabular-nums}
-.opick-price s{font:500 15px/1 'Archivo',sans-serif; color:var(--muted); margin-left:7px}
+.opick-price s{font:500 15px/1 'Archivo',sans-serif; color:var(--muted-ink); margin-left:7px}
 .opick-save{display:block; margin-top:5px; color:var(--gold); font-size:13px; font-weight:600}
 .opick-list{display:grid; gap:7px; margin-top:14px; font-size:13.5px; line-height:1.5}
 .opick-list span{position:relative; padding-left:18px; display:block}
 .opick-list span::before{content:"✔"; position:absolute; left:0; top:2px; color:var(--gold); font-size:10px}
-.opick-out{display:inline-block; margin-top:12px; color:var(--muted); letter-spacing:.16em;
+.opick-out{display:inline-block; margin-top:12px; color:var(--muted-ink); letter-spacing:.16em;
   text-transform:uppercase; font:500 10px/1 'IBM Plex Mono',monospace}
 
 /* ---------- step 2: the playmats ---------- */
@@ -1020,8 +1026,10 @@ h1,h2,h3,h4{color:var(--ink); margin:0}
   background:rgba(255,255,255,.88); box-shadow:0 1px 3px rgba(20,32,26,.35);
   transition:.16s ease}
 .omat-zoom:hover .omat-mag{background:var(--gold-lift)}
-/* 12:7 is the real 24 by 14 inch mat, which is the shape of the cropped
-   masters, so cover fills the frame without cutting anything off. */
+/* 12:7 matches the supplied artwork (1482x865), so cover fills the frame
+   without cutting any of the design off. Note this is NOT the proportion of
+   the physical mat, which is 24 by 10: the BackerKit mockups are not drawn
+   to scale. Forcing 24:10 here would crop the art rather than fix that. */
 .omat-zoom img{width:100%; aspect-ratio:12/7; object-fit:cover; display:block}
 .omat-body{flex:1 1 auto; min-width:0; display:flex; flex-wrap:wrap;
   align-items:baseline; gap:4px 14px; padding:2px 0}
@@ -1034,8 +1042,8 @@ h1,h2,h3,h4{color:var(--ink); margin:0}
 .omat-name{font-weight:600; color:var(--ink); font-size:15px; flex:1 1 auto; min-width:0}
 .omat-price{font:600 15px/1.2 'Archivo',sans-serif; color:var(--ink); white-space:nowrap;
   font-variant-numeric:tabular-nums}
-.omat-price s{font-weight:500; color:var(--muted); margin-left:6px; font-size:13px}
-.omat-state{flex:0 0 100%; color:var(--muted); letter-spacing:.14em; text-transform:uppercase;
+.omat-price s{font-weight:500; color:var(--muted-ink); margin-left:6px; font-size:13px}
+.omat-state{flex:0 0 100%; color:var(--muted-ink); letter-spacing:.14em; text-transform:uppercase;
   font:500 10px/1.4 'IBM Plex Mono',monospace}
 .omat-state:empty{display:none}
 
@@ -1064,7 +1072,7 @@ h1,h2,h3,h4{color:var(--ink); margin:0}
 .odel-meta{display:grid; gap:4px; font-size:13.5px; line-height:1.5; color:var(--body)}
 .odel-where{color:var(--ink); font-weight:600}
 .odel-note{display:block; margin-top:12px; padding-top:12px; border-top:1px solid var(--line-soft);
-  color:var(--muted); font-size:12.5px}
+  color:var(--muted-ink); font-size:12.5px}
 
 .ord-confirm{margin-top:16px; background:var(--white); border:1px solid var(--gold);
   border-radius:var(--r); padding:16px 18px}
@@ -1109,7 +1117,7 @@ h1,h2,h3,h4{color:var(--ink); margin:0}
 .ord-fine{margin:14px 0 0; font-size:12.5px; line-height:1.6; color:#A6B2A8}
 .ord-fine a{color:var(--gold-lift); text-decoration:underline; text-underline-offset:2px}
 
-.shipping-foot{margin:14px 0 0; font-size:13px; color:var(--muted)}
+.shipping-foot{margin:14px 0 0; font-size:13.5px; color:var(--body)}
 
 /* Two across once there is room for it, three for the editions. */
 @media (min-width:620px){

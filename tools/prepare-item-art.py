@@ -11,8 +11,9 @@ thumbnail. This crops it off.
 The crop line is found rather than hardcoded: scanning down from 60% height,
 the first row that is light all the way across is the top of the band. On the
 current exports that lands at y=865 of 1076 for all five mats, which gives
-1482x865, a ratio of 1.7133 against the real 24x14 inch mat's 1.7143. The
-detection matters if the mats are ever re-exported at another size.
+1482x865. The detection matters if the mats are ever re-exported at another
+size. Note the result is 1.71:1, which is the mockup's proportion and not the
+physical mat's: the mats are 24 by 10 inches, or 2.4:1.
 
 Sources are not modified. Re-run it after dropping in new exports, then run
 tools/build-images.sh to regenerate images/opt/.
