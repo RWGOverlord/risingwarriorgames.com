@@ -912,3 +912,185 @@ h1,h2,h3,h4{color:var(--ink); margin:0}
 .zo2 h1{font:700 clamp(30px,4.4vw,46px)/1.1 'Cinzel',Georgia,serif; color:var(--ink); margin:0 0 16px}
 .zo2 .lp-lede{margin-left:auto; margin-right:auto}
 .zo2 .acts{justify-content:center; margin-top:26px}
+
+/* ============================================================
+   ORDER PANEL — #preorder on zombieoverlord.html, built by store.js
+   from GET /api/catalog. No price, count or date is styled in as
+   content here; everything numeric arrives from the service.
+   Laid out one column first, so 400px is the starting point rather
+   than a breakpoint to patch later.
+   ============================================================ */
+
+.order{margin:0 0 34px}
+
+.ord-boot{margin:0; padding:40px 0; color:var(--muted); font-size:14px}
+
+.ord-down{background:var(--white); border:1px solid var(--line); border-left:3px solid var(--gold);
+  border-radius:var(--r); padding:26px 26px 28px}
+.ord-down h3{font:700 19px/1.25 'Cinzel',serif; margin:0 0 10px; color:var(--green)}
+.ord-down p{margin:0; font-size:14.5px}
+.ord-down a{color:var(--gold); text-decoration:underline; text-underline-offset:2px}
+
+.ord-promo{display:inline-flex; flex-wrap:wrap; align-items:center; gap:0 8px; margin:0 0 22px;
+  padding:9px 14px; border-radius:var(--r); background:var(--gold-lift); color:#1A1204;
+  font-size:10px; letter-spacing:.14em}
+.ord-promo span{opacity:.72}
+
+.ord-form{display:grid; gap:18px}
+
+/* fieldset needs min-width:0 or its implicit min-content width stops the
+   grid children inside it from ever shrinking below their widest row. */
+/* A <legend> is laid out ON its fieldset's top border, which leaves the
+   border running through the heading, and the usual float workaround makes
+   every grid inside shrink to fit beside the float instead of filling the
+   row. So the fieldset carries no border at all: the card chrome lives on
+   .ord-body inside it, and the legend is simply a heading above the card.
+   min-width:0 keeps the fieldset's implicit min-content width from stopping
+   those grids shrinking on a narrow screen. */
+.ord-step{border:0; min-width:0; margin:0; padding:0}
+.ord-step legend{display:block; width:100%; padding:0; margin:0 0 12px;
+  font:700 19px/1.3 'Cinzel',serif; color:var(--ink)}
+.ord-body{border:1px solid var(--line); border-radius:var(--r);
+  background:var(--white); padding:22px 20px 24px}
+.ord-num{display:inline-flex; align-items:center; justify-content:center; width:24px; height:24px;
+  margin-right:10px; border-radius:50%; background:var(--green); color:var(--gold-lift);
+  font:500 12px/1 'IBM Plex Mono',monospace; vertical-align:2px}
+.ord-opt{font:500 10px/1 'IBM Plex Mono',monospace; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--muted); vertical-align:3px; margin-left:6px}
+
+.ord-hint{margin:0 0 18px; font-size:14px; color:var(--body)}
+.ord-hint--loud{color:var(--ink); font-weight:500}
+
+/* ---------- step 1: the editions ---------- */
+
+.opicks{display:grid; gap:14px}
+.opick{position:relative; display:block; cursor:pointer}
+.opick input{position:absolute; top:19px; left:18px; z-index:1; margin:0;
+  width:18px; height:18px; accent-color:var(--gold)}
+.opick-in{display:block; height:100%; background:var(--white); border:1px solid var(--line);
+  border-radius:var(--r); padding:18px 20px 20px 48px; transition:.16s ease}
+.opick:hover .opick-in{border-color:var(--muted)}
+.opick:has(input:checked) .opick-in{border-color:var(--gold); box-shadow:0 0 0 3px rgba(176,129,47,.12)}
+.opick.is-out{cursor:not-allowed}
+.opick.is-out .opick-in{opacity:.5}
+
+.opick-tag{display:block; color:var(--gold); margin-bottom:8px;
+  font:500 10px/1 'IBM Plex Mono',monospace; letter-spacing:.16em; text-transform:uppercase}
+.opick-name{display:block; font:700 18px/1.25 'Cinzel',serif; color:var(--ink); margin-bottom:6px}
+.opick-price{display:block; font:700 26px/1 'Archivo',sans-serif; color:var(--ink);
+  font-variant-numeric:tabular-nums}
+.opick-price s{font:500 15px/1 'Archivo',sans-serif; color:var(--muted); margin-left:7px}
+.opick-save{display:block; margin-top:5px; color:var(--gold); font-size:13px; font-weight:600}
+.opick-list{display:grid; gap:7px; margin-top:14px; font-size:13.5px; line-height:1.5}
+.opick-list span{position:relative; padding-left:18px; display:block}
+.opick-list span::before{content:"✔"; position:absolute; left:0; top:2px; color:var(--gold); font-size:10px}
+.opick-out{display:inline-block; margin-top:12px; color:var(--muted); letter-spacing:.16em;
+  text-transform:uppercase; font:500 10px/1 'IBM Plex Mono',monospace}
+
+/* ---------- step 2: the playmats ---------- */
+
+.omats{display:grid; gap:10px}
+.omat{position:relative; display:block; cursor:pointer}
+.omat input{position:absolute; top:50%; left:16px; margin:-9px 0 0; width:18px; height:18px;
+  z-index:1; accent-color:var(--gold)}
+.omat-in{display:flex; flex-wrap:wrap; align-items:baseline; gap:4px 14px;
+  background:var(--white); border:1px solid var(--line); border-radius:var(--r);
+  padding:14px 16px 14px 46px; transition:.16s ease}
+.omat:hover .omat-in{border-color:var(--muted)}
+.omat:has(input:checked) .omat-in{border-color:var(--gold); background:#FFFCF4}
+.omat.is-off{cursor:not-allowed}
+.omat.is-off .omat-in{opacity:.52}
+.omat.is-out .omat-in{opacity:.52}
+.omat.is-out .omat-name{text-decoration:line-through; text-decoration-color:var(--muted)}
+.omat-name{font-weight:600; color:var(--ink); font-size:15px; flex:1 1 auto; min-width:0}
+.omat-price{font:600 15px/1.2 'Archivo',sans-serif; color:var(--ink); white-space:nowrap;
+  font-variant-numeric:tabular-nums}
+.omat-price s{font-weight:500; color:var(--muted); margin-left:6px; font-size:13px}
+.omat-state{flex:0 0 100%; color:var(--muted); letter-spacing:.14em; text-transform:uppercase;
+  font:500 10px/1.4 'IBM Plex Mono',monospace}
+.omat-state:empty{display:none}
+
+/* ---------- step 3: pickup or ship ----------
+   Deliberately the loudest thing in the panel. Nobody should pay for
+   shipping by accident when they could collect the box in person. */
+
+.ord-body--deliver{border-color:var(--gold); background:var(--green-tint);
+  box-shadow:0 0 0 3px rgba(176,129,47,.1)}
+
+.odels{display:grid; gap:14px}
+.odel{position:relative; display:block; cursor:pointer}
+.odel input{position:absolute; top:20px; left:18px; z-index:1; margin:0;
+  width:20px; height:20px; accent-color:var(--gold)}
+.odel-in{display:block; height:100%; background:var(--white); border:1px solid var(--line);
+  border-radius:var(--r); padding:18px 20px 20px 50px; transition:.16s ease}
+.odel:hover .odel-in{border-color:var(--muted)}
+.odel:has(input:checked) .odel-in{border-color:var(--gold); box-shadow:0 0 0 3px rgba(176,129,47,.14)}
+.odel--pickup .odel-in{border-color:rgba(176,129,47,.5)}
+
+.odel-head{display:flex; flex-wrap:wrap; justify-content:space-between; align-items:baseline;
+  gap:4px 12px; margin-bottom:12px}
+.odel-head b{font:700 17px/1.25 'Cinzel',serif; color:var(--ink)}
+.odel-amt{font:600 15px/1.2 'Archivo',sans-serif; color:var(--gold); white-space:nowrap;
+  font-variant-numeric:tabular-nums}
+.odel-meta{display:grid; gap:4px; font-size:13.5px; line-height:1.5; color:var(--body)}
+.odel-where{color:var(--ink); font-weight:600}
+.odel-note{display:block; margin-top:12px; padding-top:12px; border-top:1px solid var(--line-soft);
+  color:var(--muted); font-size:12.5px}
+
+.ord-confirm{margin-top:16px; background:var(--white); border:1px solid var(--gold);
+  border-radius:var(--r); padding:16px 18px}
+.ord-confirm label{display:flex; gap:12px; align-items:flex-start; cursor:pointer;
+  font-size:14.5px; line-height:1.55; color:var(--ink)}
+.ord-confirm input{flex:0 0 auto; margin:2px 0 0; width:19px; height:19px; accent-color:var(--gold)}
+.ord-confirm b{font-weight:600}
+
+.ord-region{margin-top:16px}
+.ord-region label{display:block; margin-bottom:8px; font-weight:600; color:var(--ink); font-size:14.5px}
+.ord-region select{width:100%; max-width:340px; padding:12px 14px; border-radius:var(--r);
+  border:1px solid var(--line); background:var(--white); color:var(--ink);
+  font:400 15px/1.3 'Archivo',sans-serif}
+.ord-excluded{margin:10px 0 0; font-size:13px; color:var(--body)}
+
+/* ---------- the total and the pay button ---------- */
+
+.ord-sum{background:var(--green); border-radius:var(--r); padding:24px 22px 26px; color:#CFD8D1}
+.ord-lines{display:grid; gap:9px; margin:0; font-size:14px}
+.ord-lines div{display:flex; justify-content:space-between; align-items:baseline; gap:8px 16px}
+.ord-lines dt{color:#BECABF; min-width:0}
+.ord-lines dd{margin:0; color:#FFF; white-space:nowrap; font-variant-numeric:tabular-nums}
+.ord-lines:empty{display:none}
+.ord-total{display:flex; flex-wrap:wrap; justify-content:space-between; align-items:baseline;
+  gap:6px 16px; margin:18px 0 20px; padding-top:16px; border-top:1px solid rgba(255,255,255,.18)}
+.ord-lines:empty + .ord-total{margin-top:0; padding-top:0; border-top:0}
+.ord-total span{font:500 10px/1 'IBM Plex Mono',monospace; letter-spacing:.18em;
+  text-transform:uppercase; color:var(--gold-lift)}
+.ord-total b{font:700 clamp(19px,5.4vw,28px)/1.1 'Archivo',sans-serif; color:#FFF;
+  font-variant-numeric:tabular-nums; text-align:right}
+.ord-total b small{display:block; font:400 12px/1.3 'Archivo',sans-serif; color:#BECABF;
+  letter-spacing:0; margin-top:3px}
+
+.ord-err{margin:0 0 16px; padding:12px 14px; border-radius:var(--r);
+  background:rgba(224,184,81,.16); border:1px solid var(--gold-lift); color:#FBF3E1;
+  font-size:14px; line-height:1.55}
+
+.ord-pay{width:100%; text-align:center}
+.ord-pay:disabled{opacity:.42; cursor:not-allowed}
+.ord-pay:disabled:hover{background:var(--gold); border-color:var(--gold)}
+
+.ord-fine{margin:14px 0 0; font-size:12.5px; line-height:1.6; color:#A6B2A8}
+.ord-fine a{color:var(--gold-lift); text-decoration:underline; text-underline-offset:2px}
+
+.shipping-foot{margin:14px 0 0; font-size:13px; color:var(--muted)}
+
+/* Two across once there is room for it, three for the editions. */
+@media (min-width:620px){
+  .opicks{grid-template-columns:repeat(2,1fr)}
+  .odels{grid-template-columns:repeat(2,1fr)}
+  .odels--one{grid-template-columns:1fr; max-width:420px}
+  .ord-body{padding:26px 24px 28px}
+  .ord-sum{padding:28px 26px 30px}
+}
+@media (min-width:900px){
+  .opicks{grid-template-columns:repeat(3,1fr)}
+  .omats{grid-template-columns:repeat(2,1fr)}
+}

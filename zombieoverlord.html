@@ -18,6 +18,11 @@
 <link rel="icon" type="image/png" href="/images/RWG_Favicon.png?v=2">
 <link rel="apple-touch-icon" href="/images/RWG_AppleTouch.png?v=2">
 <meta property="og:type" content="product">
+<!-- Open Graph product price: the lowest edition. A static value, so it needs
+     a manual edit when con pricing ends. See TASKS T-15. -->
+<meta property="product:price:amount" content="32">
+<meta property="product:price:currency" content="USD">
+<meta property="product:availability" content="in stock">
 <meta property="og:site_name" content="Rising Warrior Games">
 <meta property="og:title" content="Zombie Overlord: Competitive Zombie Deck-Builder | Rising Warrior Games">
 <meta property="og:description" content="You're not surviving the apocalypse, you're running it. A competitive deck-builder for 2-4 players where you set traps, convert survivors into your horde and crush rival Overlords.">
@@ -60,6 +65,194 @@
     "@type": "Organization",
     "name": "Rising Warrior Games",
     "url": "https://risingwarriorgames.com/"
+  },
+  "offers": {
+    "@type": "AggregateOffer",
+    "priceCurrency": "USD",
+    "lowPrice": "32",
+    "highPrice": "60",
+    "offerCount": 3,
+    "availability": "https://schema.org/InStock",
+    "priceValidUntil": "2026-11-14",
+    "seller": {
+      "@type": "Organization",
+      "name": "Rising Warrior Games"
+    },
+    "ineligibleRegion": {
+      "@type": "DefinedRegion",
+      "addressCountry": [
+        "GB", "IM", "MC",
+        "AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE",
+        "GR", "HU", "IE", "IT", "LV", "LT", "LU", "MT", "NL", "PL", "PT",
+        "RO", "SK", "SI", "ES", "SE"
+      ]
+    },
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Core Edition",
+        "price": "32",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "priceValidUntil": "2026-11-14",
+        "url": "https://risingwarriorgames.com/zombieoverlord.html#preorder",
+        "itemCondition": "https://schema.org/NewCondition",
+        "seller": {
+          "@type": "Organization",
+          "name": "Rising Warrior Games"
+        },
+        "shippingDetails": [
+          {
+            "@type": "OfferShippingDetails",
+            "shippingDestination": {
+              "@type": "DefinedRegion",
+              "addressCountry": "US"
+            },
+            "shippingRate": {
+              "@type": "MonetaryAmount",
+              "minValue": "12",
+              "maxValue": "22",
+              "currency": "USD"
+            }
+          },
+          {
+            "@type": "OfferShippingDetails",
+            "shippingDestination": {
+              "@type": "DefinedRegion",
+              "addressCountry": "CA"
+            },
+            "shippingRate": {
+              "@type": "MonetaryAmount",
+              "minValue": "18",
+              "maxValue": "35",
+              "currency": "USD"
+            }
+          }
+        ],
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "applicableCountry": [
+            "US",
+            "CA"
+          ],
+          "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+          "merchantReturnDays": 30,
+          "returnMethod": "https://schema.org/ReturnByMail",
+          "returnFees": "https://schema.org/ReturnFeesCustomerResponsibility",
+          "merchantReturnLink": "https://risingwarriorgames.com/zombieoverlord.html#faq"
+        }
+      },
+      {
+        "@type": "Offer",
+        "name": "Horde Bundle",
+        "description": "The core game, the Misfits Mini Expansion and the Life Point Trackers.",
+        "price": "42",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "priceValidUntil": "2026-11-14",
+        "url": "https://risingwarriorgames.com/zombieoverlord.html#preorder",
+        "itemCondition": "https://schema.org/NewCondition",
+        "seller": {
+          "@type": "Organization",
+          "name": "Rising Warrior Games"
+        },
+        "shippingDetails": [
+          {
+            "@type": "OfferShippingDetails",
+            "shippingDestination": {
+              "@type": "DefinedRegion",
+              "addressCountry": "US"
+            },
+            "shippingRate": {
+              "@type": "MonetaryAmount",
+              "minValue": "12",
+              "maxValue": "22",
+              "currency": "USD"
+            }
+          },
+          {
+            "@type": "OfferShippingDetails",
+            "shippingDestination": {
+              "@type": "DefinedRegion",
+              "addressCountry": "CA"
+            },
+            "shippingRate": {
+              "@type": "MonetaryAmount",
+              "minValue": "18",
+              "maxValue": "35",
+              "currency": "USD"
+            }
+          }
+        ],
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "applicableCountry": [
+            "US",
+            "CA"
+          ],
+          "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+          "merchantReturnDays": 30,
+          "returnMethod": "https://schema.org/ReturnByMail",
+          "returnFees": "https://schema.org/ReturnFeesCustomerResponsibility",
+          "merchantReturnLink": "https://risingwarriorgames.com/zombieoverlord.html#faq"
+        }
+      },
+      {
+        "@type": "Offer",
+        "name": "Overlord Bundle",
+        "description": "The Horde Bundle plus the Board Mat for the middle of the table.",
+        "price": "60",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "priceValidUntil": "2026-11-14",
+        "url": "https://risingwarriorgames.com/zombieoverlord.html#preorder",
+        "itemCondition": "https://schema.org/NewCondition",
+        "seller": {
+          "@type": "Organization",
+          "name": "Rising Warrior Games"
+        },
+        "shippingDetails": [
+          {
+            "@type": "OfferShippingDetails",
+            "shippingDestination": {
+              "@type": "DefinedRegion",
+              "addressCountry": "US"
+            },
+            "shippingRate": {
+              "@type": "MonetaryAmount",
+              "minValue": "18",
+              "maxValue": "22",
+              "currency": "USD"
+            }
+          },
+          {
+            "@type": "OfferShippingDetails",
+            "shippingDestination": {
+              "@type": "DefinedRegion",
+              "addressCountry": "CA"
+            },
+            "shippingRate": {
+              "@type": "MonetaryAmount",
+              "minValue": "23",
+              "maxValue": "35",
+              "currency": "USD"
+            }
+          }
+        ],
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "applicableCountry": [
+            "US",
+            "CA"
+          ],
+          "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+          "merchantReturnDays": 30,
+          "returnMethod": "https://schema.org/ReturnByMail",
+          "returnFees": "https://schema.org/ReturnFeesCustomerResponsibility",
+          "merchantReturnLink": "https://risingwarriorgames.com/zombieoverlord.html#faq"
+        }
+      }
+    ]
   },
   "category": "Board Games > Card Games > Deck-Building Games",
   "numberOfPlayers": {
@@ -201,10 +394,10 @@
     },
     {
       "@type": "Question",
-      "name": "What's the difference between the game and the Horde Bundle?",
+      "name": "What's the difference between the three editions?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Both include the complete 194-card core game and every stretch goal unlocked during the campaign. Core Edition. The game on its own. Horde Bundle. Adds the Misfits Mini Expansion and the Life Point Trackers for less than buying them separately. Playmats are available as add-ons with either one."
+        "text": "All three include the complete 194-card core game and every stretch goal unlocked during the campaign. Core Edition. The game on its own. Horde Bundle. Adds the Misfits Mini Expansion and the Life Point Trackers for less than buying them separately. Overlord Bundle. The Horde Bundle plus the Board Mat, the one that sits in the middle of the table and holds the trap market row, the wasteland row and the action and scavenger cards. Player playmats can be added to any of the three in the order panel."
       }
     },
     {
@@ -233,10 +426,18 @@
     },
     {
       "@type": "Question",
+      "name": "Can I pick it up instead of paying for shipping?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, and it costs nothing. If you are in the Chattanooga area, choose local pickup in the order panel and it will show you the date, the time and the place. Pickup is a required choice at checkout rather than a buried option, so nobody pays for shipping by accident when they could collect in person."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "How much is shipping?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "From $8–$12 in the US, $18–$22 to Canada and $22–$28 to the rest of the world for the game on its own. Full rates by region and order size are listed above. Small add-ons like the dice, mini expansion and holographic cards ship in the same package and don't raise your shipping cost. We ship to the US, Canada and most of the rest of the world. Orders to the UK and the EU are paused while VAT registration is finished."
+        "text": "It depends on your region and on how many playmats are in the order, because shipping is priced on the weight of the box. The rate table above lists every combination, and the order panel shows the exact amount for your order before you pay. Local pickup in Chattanooga is free. The Misfits Mini Expansion and the Life Point Trackers are light and ship in the same package, so they do not change your shipping cost. Playmats do, because they need a larger box. We ship to the US, Canada and most of the rest of the world. Orders to the UK and the EU are paused while VAT registration is finished."
       }
     },
     {
@@ -244,7 +445,7 @@
       "name": "When will my order arrive?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Zombie Overlord is out of the factory and fulfillment of Kickstarter pledges and preorders begins in November 2026. Shipping is charged separately from the item price and confirmed at checkout based on your address and what's in your order."
+        "text": "Zombie Overlord is out of the factory and fulfillment begins in November 2026. Kickstarter pledges and earlier preorders go out alongside orders placed here. If you choose local pickup you collect it on the date shown in the order panel, which is sooner than anything posted."
       }
     },
     {
@@ -268,7 +469,7 @@
       "name": "Where does checkout happen?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Direct ordering through this site is being set up now, and this page is where it will live. Rising Warrior Games is an independent studio in Chattanooga, Tennessee, and fulfills orders directly with regional shipping partners."
+        "text": "On this page, then on Stripe. You choose your edition and delivery here, and the card payment itself happens on Stripe's own secure checkout page. We never see or store your card details. Rising Warrior Games is an independent studio in Chattanooga, Tennessee, and fulfills every order directly."
       }
     },
     {
@@ -335,9 +536,9 @@
             <div><dt>Age</dt><dd>14+</dd></div>
             <div><dt>Cards</dt><dd>194</dd></div>
           </dl>
-          <p class="zo-status">Ordering reopens shortly · fulfillment begins November 2026</p>
+          <p class="zo-status">Ordering open · fulfillment begins November 2026</p>
           <div class="zo-cta" data-loc="hero">
-            <a class="btn" href="/#news">Tell me when it opens</a>
+            <a class="btn" href="#preorder">Order the game</a>
             <a class="btn btn--ghost-l" href="/rules.html">Read the rules</a>
             <span class="note"><a href="https://www.kickstarter.com/projects/zombieoverlord/zombie-overlord" target="_blank" rel="noopener">Funded on Kickstarter in 13 hrs</a> · 196 backers</span>
           </div>
@@ -395,9 +596,9 @@
           <li>Life Point Trackers <small>· four engraved crown dice in a drawstring bag</small></li>
         </ul>
         <div class="horde-acts">
-          <a class="btn" href="/#news">Tell me when it opens</a>
+          <a class="btn" href="#preorder">Order the Horde Bundle</a>
         </div>
-        <p class="horde-meta"><span>Pricing confirmed when ordering reopens</span></p>
+        <p class="horde-meta"><span>Price and shipping shown before you pay</span></p>
       </div>
     </div>
   </section>
@@ -642,7 +843,7 @@
 
     <div class="cta-line" data-loc="after-playthrough">
       <p>Seen enough? Build your horde.</p>
-      <a class="btn btn--sm" href="/#news">Tell me when ordering opens</a>
+      <a class="btn btn--sm" href="#preorder">Order the game</a>
     </div>
   </section>
 
@@ -690,72 +891,39 @@
     <div class="wrap">
       <div class="sec-head">
         <p class="eyebrow mono">Ordering</p>
-        <h2>Ordering reopens shortly</h2>
-        <p>Zombie Overlord is out of the factory, and fulfillment of Kickstarter pledges and preorders begins in November 2026. Direct ordering through this site opens shortly. Join the list and you will hear the moment it does.</p>
-        <p class="acts"><a class="btn" href="/#news">Tell me when ordering opens</a></p>
+        <h2>Order Zombie Overlord</h2>
+        <p>Direct from the studio. Pick an edition, add the playmats you want, then tell us whether we post it to you or you collect it in person in Chattanooga. Fulfillment begins November 2026.</p>
       </div>
-      <div class="eds eds--2" data-loc="store">
-        <div class="ed ed--feat">
-          <div class="ed-img"><img src="images/opt/Horde_Bundle-700.png"
-               srcset="images/opt/Horde_Bundle-400.png 400w, images/opt/Horde_Bundle-700.png 700w"
-               sizes="(max-width:560px) calc(100vw - 48px), (max-width:920px) calc(100vw - 64px), 380px"
-               width="700" height="467" loading="lazy" decoding="async" alt="Horde Bundle: the game, the Misfits Mini Expansion and the Life Point Trackers"></div>
-          <div class="ed-body">
-            <span class="tagbest mono">Best value</span>
-            <h3>Horde Bundle</h3>
-            <p class="ship">US shipping $8–$12 · <a href="#shipping">other regions</a></p>
-            <ul>
-              <li>194-card core game, all stretch goals</li>
-              <li>Misfits Mini Expansion (all 68 Survivors unique)</li>
-              <li>Life Point Trackers</li>
-            </ul>
-            <a class="btn btn--sm" href="/#news">Tell me when ordering opens</a>
-          </div>
-        </div>
-        <div class="ed">
-          <div class="ed-img"><img src="images/opt/Gold_Trim_Thematic_MockUp-700.png"
-               srcset="images/opt/Gold_Trim_Thematic_MockUp-400.png 400w, images/opt/Gold_Trim_Thematic_MockUp-700.png 700w"
-               sizes="(max-width:560px) calc(100vw - 48px), (max-width:920px) calc(100vw - 64px), 380px"
-               width="700" height="467" loading="lazy" decoding="async" alt="Core edition"></div>
-          <div class="ed-body">
-            <h3>Core Edition</h3>
-            <p class="ship">US shipping $8–$12 · <a href="#shipping">other regions</a></p>
-            <ul>
-              <li>194-card core game</li>
-              <li>48 unique characters</li>
-              <li>All stretch goals included</li>
-            </ul>
-            <a class="btn btn--ghost btn--sm" href="/#news">Tell me when ordering opens</a>
-          </div>
+
+      <!-- ORDER PANEL: built by store.js from GET /api/catalog on the
+           checkout service. Every price, MSRP, stock count, shipping amount
+           and date comes down that call, so none of them live in this file.
+           The markup below is the no-JavaScript state, replaced as soon as
+           the script runs. The site holds no Stripe key of any kind: the
+           panel posts item IDs and the service prices the order. -->
+      <div class="order" id="order" data-api="https://rwg-store.vercel.app" data-loc="store">
+        <div class="ord-down">
+          <h3>The order form needs JavaScript</h3>
+          <p>Email <a href="mailto:overlord@risingwarriorgames.com">overlord@risingwarriorgames.com</a>
+             with the edition you want, any playmats, and whether you are shipping or
+             picking up in Chattanooga. We will send a payment link back by hand.</p>
         </div>
       </div>
       <!-- SHIPPING: real rates, shown before checkout rather than after. -->
       <div class="shipping" id="shipping">
-        <h3>Shipping estimates</h3>
-        <p class="shipping-lede">Shipping is charged separately from the item price. The Core Edition and the Horde Bundle both ship at the <b>Game</b> rate. Adding playmats moves an order to the <b>Game + playmats</b> rates.</p>
-        <div class="shipping-scroll">
-          <table>
-            <caption class="vh">Estimated shipping cost in US dollars by region and order contents</caption>
-            <thead>
-              <tr>
-                <th scope="col">Region</th>
-                <th scope="col">Game</th>
-                <th scope="col">Game + 1–2 playmats</th>
-                <th scope="col">Game + 2–4 playmats</th>
-                <th scope="col">Double core (2 games)</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><th scope="row">United States</th><td>$8–$12</td><td>$12–$18</td><td>$16–$24</td><td>$16–$24</td></tr>
-              <tr><th scope="row">Canada</th><td>$18–$22</td><td>$22–$29</td><td>$28–$32</td><td>$28–$32</td></tr>
-              <tr><th scope="row">Rest of world</th><td>$22–$28</td><td>$28–$36</td><td>$37–$42</td><td>$37–$42</td></tr>
-            </tbody>
-          </table>
+        <h3>Shipping rates</h3>
+        <p class="shipping-lede">Shipping is charged separately from the item price and is worked out from the weight of the box, so it depends on your region and how many playmats are in the order. The exact amount appears in the order panel above before you pay. <b>Local pickup in Chattanooga is free.</b></p>
+        <!-- Filled by store.js from the same /api/catalog response that
+             prices the order panel, so the published table and the amount
+             actually charged cannot drift apart. The paragraph below is the
+             no-JavaScript state. -->
+        <div class="shipping-scroll" id="shipping-rates">
+          <p class="shipping-lede">Rates by region are shown in the order panel above once you pick an edition, or email <a href="mailto:overlord@risingwarriorgames.com">overlord@risingwarriorgames.com</a> and we will quote it.</p>
         </div>
         <ul class="shipping-notes">
-          <li>Small add-ons like the dice, the mini expansion and the holographic cards are lightweight and ship in the same package. They do not raise your shipping tier or cost.</li>
-          <li>These are estimated ranges based on current fulfillment quotes. Your final cost depends on your address and the items in your order, and is confirmed at checkout.</li>
-          <li>These rates are lower than the original campaign estimate. Kickstarter still displays the older, higher figure.</li>
+          <li><b>Local pickup is free.</b> If you are in the Chattanooga area you can collect the box in person instead of paying for shipping. The date, time and place are in the order panel above.</li>
+          <li>The Misfits Mini Expansion and the Life Point Trackers are light and ship in the same package. They do not change your shipping cost. Playmats do, because they need a larger box.</li>
+          <li>International orders may attract import duty or tax on arrival, charged by your own country rather than by us.</li>
           <li>Orders to the United Kingdom and the European Union are paused while VAT registration is finished.</li>
         </ul>
       </div>
@@ -770,7 +938,7 @@
         <div class="sec-head">
           <p class="eyebrow mono">Add-ons</p>
           <h2>Not available at retail</h2>
-          <p>These were unlocked during the campaign and stay exclusive to this store. Each one can be added to an order when ordering reopens.</p>
+          <p>These were unlocked during the campaign and stay exclusive to this store. The mini expansion and the Life Point Trackers come with the Horde Bundle, and playmats can be added to any order in the panel above.</p>
         </div>
         <div class="addon-grid" data-loc="add-ons">
           <div class="addon">
@@ -829,14 +997,15 @@
       </details>
 
       <details>
-        <summary>What's the difference between the game and the Horde Bundle?</summary>
+        <summary>What's the difference between the three editions?</summary>
         <div>
-          <p>Both include the complete 194-card core game and every stretch goal unlocked during the campaign.</p>
+          <p>All three include the complete 194-card core game and every stretch goal unlocked during the campaign.</p>
           <ul>
             <li><b>Core Edition.</b> The game on its own.</li>
             <li><b>Horde Bundle.</b> Adds the Misfits Mini Expansion and the Life Point Trackers for less than buying them separately.</li>
+            <li><b>Overlord Bundle.</b> The Horde Bundle plus the Board Mat, the one that sits in the middle of the table and holds the trap market row, the wasteland row and the action and scavenger cards.</li>
           </ul>
-          <p>Playmats are available as <a href="#preorder">add-ons</a> with either one.</p>
+          <p>Player playmats can be added to any of the three in the <a href="#preorder">order panel</a>.</p>
         </div>
       </details>
 
@@ -862,13 +1031,18 @@
       </details>
 
       <details>
+        <summary>Can I pick it up instead of paying for shipping?</summary>
+        <div><p>Yes, and it costs nothing. If you are in the Chattanooga area, choose local pickup in the <a href="#preorder">order panel</a> and it will show you the date, the time and the place. Pickup is a required choice at checkout rather than a buried option, so nobody pays for shipping by accident when they could collect in person.</p></div>
+      </details>
+
+      <details>
         <summary>How much is shipping?</summary>
-        <div><p>From $8–$12 in the US, $18–$22 to Canada and $22–$28 to the rest of the world for the game on its own. <a href="#shipping">Full rates by region and order size</a> are listed above. Small add-ons like the dice, mini expansion and holographic cards ship in the same package and don't raise your shipping cost.</p><p>We ship to the US, Canada and most of the rest of the world. Orders to the UK and the EU are paused while VAT registration is finished.</p></div>
+        <div><p>It depends on your region and on how many playmats are in the order, because shipping is priced on the weight of the box. The <a href="#shipping">rate table above</a> lists every combination, and the <a href="#preorder">order panel</a> shows the exact amount for your order before you pay. Local pickup in Chattanooga is free.</p><p>The Misfits Mini Expansion and the Life Point Trackers are light and ship in the same package, so they do not change your shipping cost. Playmats do, because they need a larger box.</p><p>We ship to the US, Canada and most of the rest of the world. Orders to the UK and the EU are paused while VAT registration is finished.</p></div>
       </details>
 
       <details>
         <summary>When will my order arrive?</summary>
-        <div><p>Zombie Overlord is out of the factory and fulfillment of Kickstarter pledges and preorders begins in November 2026. Shipping is charged separately from the item price and confirmed at checkout based on your address and what's in your order.</p></div>
+        <div><p>Zombie Overlord is out of the factory and fulfillment begins in November 2026. Kickstarter pledges and earlier preorders go out alongside orders placed here.</p><p>If you choose local pickup you collect it on the date shown in the <a href="#preorder">order panel</a>, which is sooner than anything posted.</p></div>
       </details>
 
       <details>
@@ -893,7 +1067,7 @@
 
       <details>
         <summary>Where does checkout happen?</summary>
-        <div><p>Direct ordering through this site is being set up now, and this page is where it will live. Rising Warrior Games is an independent studio in Chattanooga, Tennessee, and fulfills orders directly with regional shipping partners.</p></div>
+        <div><p>On this page, then on Stripe. You choose your edition and delivery here, and the card payment itself happens on Stripe's own secure checkout page. We never see or store your card details.</p><p>Rising Warrior Games is an independent studio in Chattanooga, Tennessee, and fulfills every order directly.</p></div>
       </details>
 
       <details>
@@ -986,5 +1160,6 @@
 })();
 </script>
 <script src="nav.js" defer></script>
+<script src="store.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J8B76D89RC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-J8B76D89RC');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Order confirmed</title>
+<meta name="description" content="Your Zombie Overlord order is confirmed.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="/favicon.ico?v=2" sizes="any">
+<link rel="icon" type="image/png" href="/images/RWG_Favicon.png?v=2">
+<link rel="apple-touch-icon" href="/images/RWG_AppleTouch.png?v=2">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body class="lp">
+
+<header class="lp-top">
+  <img src="/images/opt/RWG_Name_Logo-180.png"
+       srcset="/images/opt/RWG_Name_Logo-180.png 180w, /images/opt/RWG_Name_Logo-270.png 270w"
+       sizes="90px" width="180" height="108" decoding="async" alt="Rising Warrior Games">
+</header>
+
+<main>
+
+  <!-- Stripe returns the buyer here as
+       /order/thanks/?delivery=pickup|ship&session_id=cs_...
+
+       Following the play/thanks/ pattern, the success state is the default
+       markup rather than something the script has to build, so the page is
+       still correct with JavaScript switched off. There are two success
+       states, so both are visible by default and labelled with who they are
+       for; the script below drops whichever one does not apply.
+
+       This page is the one place the pickup date appears as static text,
+       because it has to read correctly with no JavaScript and so cannot come
+       from /api/catalog. It is in a single block marked PICKUP DETAILS
+       below. Change it there and nowhere else. -->
+
+  <section class="lp-sec lp-thanks">
+    <div class="lp-wrap lp-narrow">
+
+      <p class="eyebrow mono">Payment received</p>
+      <h1 id="ord-h1">Your order is confirmed</h1>
+      <p class="lp-lede">Stripe is sending your receipt now. It usually arrives within a minute or two, and it is the only confirmation email you will get for the order itself.</p>
+
+      <div class="lp-req">
+        <b>Nothing in your inbox?</b> Look in spam or promotions, and add
+        <a href="mailto:overlord@risingwarriorgames.com">overlord@risingwarriorgames.com</a>
+        to your contacts so the rest of the emails reach you.
+      </div>
+
+      <!-- ===== PICKUP DETAILS: the only static copy of the pickup date ===== -->
+      <div id="ord-pickup">
+        <h2 id="ord-pickup-h2">If you chose local pickup</h2>
+        <p class="lp-lede"><b>Saturday, November 14, between 4:00 and 6:00 pm</b><br>
+           Drip Coffee, Hixson, Chattanooga</p>
+        <ol class="lp-steps">
+          <li><b>Come in that window.</b> Four to six in the afternoon, that Saturday. Turn up any time inside it.</li>
+          <li><b>Bring your name.</b> Have the Stripe receipt on your phone if you have it, but the name on the order is enough.</li>
+          <li><b>Take it home.</b> Nothing to pay on the day. Shipping was never charged.</li>
+        </ol>
+        <p class="lp-note">Cannot make it after all? Email
+          <a href="mailto:overlord@risingwarriorgames.com">overlord@risingwarriorgames.com</a>
+          and we will either hold it or post it to you instead.</p>
+      </div>
+      <!-- ===== end PICKUP DETAILS ===== -->
+
+      <div id="ord-ship">
+        <h2 id="ord-ship-h2">If you chose shipping</h2>
+        <p class="lp-lede">Your box is packed and posted from Chattanooga. Fulfillment begins in <b>November 2026</b>, alongside the Kickstarter pledges.</p>
+        <ol class="lp-steps">
+          <li><b>Nothing more to do.</b> Your address and shipping came through with the payment.</li>
+          <li><b>You will get a second email when it ships</b>, with tracking, separate from the Stripe receipt.</li>
+          <li><b>Watch for import charges</b> if you are outside the United States. Any duty or tax is charged by your own country on arrival, not by us.</li>
+        </ol>
+        <p class="lp-note">Need to correct the address? Email
+          <a href="mailto:overlord@risingwarriorgames.com">overlord@risingwarriorgames.com</a>
+          before it goes out and we will fix it.</p>
+      </div>
+
+      <p class="lp-note" id="ord-ref" hidden></p>
+
+    </div>
+  </section>
+
+  <section class="lp-sec lp-sec--tint">
+    <div class="lp-wrap lp-narrow">
+      <h2>While you wait</h2>
+      <p>The complete rules are on this site, free to read, so you can learn the game before the box arrives. There is a full playthrough on the game page too.</p>
+      <p class="acts">
+        <a class="btn" href="/rules.html">Read the rules</a>
+        <a class="btn btn--ghost" href="/zombieoverlord.html#playthrough">Watch a game</a>
+      </p>
+      <p class="lp-note">Added something you meant to leave off, or want a second copy? Email
+        <a href="mailto:overlord@risingwarriorgames.com">overlord@risingwarriorgames.com</a>
+        before it ships and we will sort it out so you are not charged shipping twice.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="lp-foot">
+  <div class="lp-wrap">
+    <p>&copy; 2026 Rising Warrior Games, Chattanooga, Tennessee</p>
+    <p>
+      <a href="/privacy.html">Privacy policy</a>
+      <span aria-hidden="true">&middot;</span>
+      <a href="mailto:overlord@risingwarriorgames.com">overlord@risingwarriorgames.com</a>
+    </p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var q        = new URLSearchParams(location.search);
+  var delivery = q.get('delivery');
+  var session  = q.get('session_id');
+
+  var pickup = document.getElementById('ord-pickup');
+  var ship   = document.getElementById('ord-ship');
+
+  /* With a known delivery method, drop the half that does not apply and
+     promote its heading, since it is no longer one of two options. */
+  if (delivery === 'pickup') {
+    ship.hidden = true;
+    document.getElementById('ord-pickup-h2').textContent = 'Picking it up in person';
+    document.getElementById('ord-h1').textContent = 'Confirmed, see you at pickup';
+    document.title = 'Order confirmed, pickup';
+  } else if (delivery === 'ship') {
+    pickup.hidden = true;
+    document.getElementById('ord-ship-h2').textContent = 'On its way to you';
+    document.title = 'Order confirmed, shipping';
+  }
+
+  /* Useful to quote in a support email, and harmless to show: the id alone
+     cannot be used to change or read the order. */
+  if (session) {
+    var ref = document.getElementById('ord-ref');
+    ref.textContent = 'Order reference: ' + session;
+    ref.hidden = false;
+  }
+
+  if (session && typeof gtag === 'function') {
+    gtag('event', 'purchase', {
+      transaction_id: session,
+      delivery_method: delivery || 'unknown'
+    });
+  }
+})();
+</script>
+</body>
+</html>
