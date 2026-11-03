@@ -1106,6 +1106,11 @@ h1,h2,h3,h4{color:var(--ink); margin:0}
 .ord-total b small{display:block; font:400 12px/1.3 'Archivo',sans-serif; color:#BECABF;
   letter-spacing:0; margin-top:3px}
 
+/* Sits directly under the total, because it is a qualifier on that number
+   rather than general fine print. Same contrast as .ord-fine, 6.12:1 on
+   --green, which clears AA at this size. */
+.ord-tax{margin:-10px 0 16px; font-size:12.5px; line-height:1.55; color:#A6B2A8}
+
 .ord-err{margin:0 0 16px; padding:12px 14px; border-radius:var(--r);
   background:rgba(224,184,81,.16); border:1px solid var(--gold-lift); color:#FBF3E1;
   font-size:14px; line-height:1.55}

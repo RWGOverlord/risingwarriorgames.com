@@ -395,6 +395,16 @@
     h += '<div class="ord-sum">';
     h += '<dl class="ord-lines" id="ord-lines"></dl>';
     h += '<p class="ord-total"><span>Total</span><b id="ord-total">Choose an edition</b></p>';
+
+    /* Sales tax. The wording and whether it appears at all come from the
+       service, so the page never states a rate or a jurisdiction and never
+       goes stale when either changes. The total above stays pre-tax: Stripe
+       adds tax on its own checkout page, and this line is what stops the
+       figure reading as final for a buyer who will be charged it. */
+    if (cat.tax && cat.tax.enabled && cat.tax.note) {
+      h += '<p class="ord-tax">' + esc(cat.tax.note) + '</p>';
+    }
+
     h += '<p class="ord-err" id="ord-err" role="alert" hidden></p>';
     h += '<button class="btn ord-pay" id="ord-pay" type="submit" disabled>' + PAY_LABEL + '</button>';
     h += '<p class="ord-fine">Card payment is handled by Stripe on their own secure page. We never see your card details.</p>';
