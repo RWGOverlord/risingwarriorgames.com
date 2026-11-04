@@ -455,7 +455,6 @@ h1,h2,h3,h4{color:var(--ink); margin:0}
   .brand img{height:44px}
   .brand .tag{display:none}
   .hero{padding-top:56px; padding-bottom:48px}
-  .studio-photo{padding:22px}
   .foot-grid{grid-template-columns:1fr}
   .buy{flex-direction:column; align-items:flex-start}
   .step{grid-template-columns:1fr; gap:10px}
@@ -466,11 +465,6 @@ h1,h2,h3,h4{color:var(--ink); margin:0}
   .chapters li{width:100%}
   .chapter{width:100%; justify-content:space-between}
   .shipping{padding:24px 20px}
-  .note-card{grid-template-columns:1fr; gap:18px; padding:26px 22px}
-  .specs-grid{grid-template-columns:1fr; gap:0}
-  .specs-grid div{grid-template-columns:100px 1fr; gap:12px}
-  .artist{grid-template-columns:72px 1fr; gap:14px}
-  .artist img{width:72px; height:72px}
   .flow{gap:9px}
   .flow span{font-size:10px}
 }
@@ -533,6 +527,21 @@ h1,h2,h3,h4{color:var(--ink); margin:0}
 .specs-grid dt{font:500 10px/1.5 'IBM Plex Mono',monospace; letter-spacing:.14em;
   text-transform:uppercase; color:var(--muted)}
 .specs-grid dd{margin:0; font-size:14px; color:var(--body)}
+
+/* These five blocks are declared below the sheet's main @media (max-width)
+   section, so a narrow-screen override of any of them has to live here
+   rather than up there: a media query carries no extra specificity, and an
+   unconditional rule further down the file simply wins. The versions that
+   were up there never applied, which left .specs-grid two columns wide on a
+   phone and pushed the page 52px past the viewport. */
+@media (max-width:560px){
+  .studio-photo{padding:22px}
+  .note-card{grid-template-columns:1fr; gap:18px; padding:26px 22px}
+  .artist{grid-template-columns:72px 1fr; gap:14px}
+  .artist img{width:72px; height:72px}
+  .specs-grid{grid-template-columns:1fr; gap:0}
+  .specs-grid div{grid-template-columns:100px 1fr; gap:12px}
+}
 
 /* ============================================================
    RULES PAGE
