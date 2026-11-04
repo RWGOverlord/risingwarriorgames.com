@@ -966,7 +966,16 @@
       var target = document.getElementById('preorder');
       if (target) {
         window.requestAnimationFrame(function () {
+          /* html{scroll-behavior:smooth} turns this into an animated run down
+             the whole page, which from a QR code is a long lurch past content
+             the buyer never asked to see. A scan is an arrival, not a
+             navigation, so it should land rather than travel. Set on the
+             element and restored, so in-page anchor links keep their easing. */
+          var html = document.documentElement;
+          var prev = html.style.scrollBehavior;
+          html.style.scrollBehavior = 'auto';
           target.scrollIntoView({ block: 'start' });
+          html.style.scrollBehavior = prev;
         });
       }
     }
