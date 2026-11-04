@@ -73,7 +73,7 @@ h1,h2,h3,h4{color:var(--ink); margin:0}
 .eyebrow{color:var(--gold); margin:0 0 18px; display:flex; align-items:center; gap:12px}
 .eyebrow::before{content:""; width:26px; height:1px; background:var(--gold); opacity:.6}
 .sec-head{max-width:620px; margin:0 0 44px}
-.sec-head h2{font:600 clamp(28px,3.6vw,42px)/1.12 'Cinzel',serif; letter-spacing:.005em; margin:0 0 14px}
+.sec-head h2,.sec-head h1{font:600 clamp(28px,3.6vw,42px)/1.12 'Cinzel',serif; letter-spacing:.005em; margin:0 0 14px}
 /* :not(.eyebrow): otherwise this outranks .eyebrow/.mono and the label
    renders at 17px in body grey with no gap above the heading. */
 .sec-head p:not(.eyebrow){margin:0; font-size:17px; color:var(--body)}
@@ -542,6 +542,24 @@ h1,h2,h3,h4{color:var(--ink); margin:0}
   .specs-grid{grid-template-columns:1fr; gap:0}
   .specs-grid div{grid-template-columns:100px 1fr; gap:12px}
 }
+
+/* ============================================================
+   CONVENTION ORDER PAGE (/con/)
+   Reached only by the QR codes on the table. It reuses the game page's
+   chrome and order panel; these rules only strip away what a page with no
+   nav and nothing above the form does not need.
+   ============================================================ */
+/* .nav carries the margin-left:auto that pushes the header right. With no
+   nav, the single button has to claim that space itself. */
+.page-con .chrome-in .btn{margin-left:auto}
+/* No hero above it, so the panel starts near the top of the screen: the
+   whole point of the page is that a scan lands on the form. */
+.page-con .store{padding-top:36px; border-top:0}
+.page-con .sec-head{margin-bottom:32px}
+.con-more{margin:30px 0 0; font-size:14px; color:var(--muted-ink)}
+.con-more a{color:var(--gold); text-decoration:underline; text-underline-offset:2px}
+.foot--slim{padding:30px 0 26px}
+.foot--slim .foot-note{margin-top:0; padding-top:0; border-top:0}
 
 /* ============================================================
    RULES PAGE
