@@ -242,7 +242,15 @@
     }
     h += '<span class="opick-txt">';
     h += '<input type="radio" name="ord-bundle" value="' + esc(b.id) + '"' + (b.available ? '' : ' disabled') + '>';
-    if (copy.tag) h += '<span class="opick-tag mono">' + esc(copy.tag) + '</span>';
+    /* The tag and the Selected chip share one row so the chip costs no
+       vertical space on the two cards that already carry a tag, and never
+       collides with a long edition name. It is in the markup on every
+       available card and revealed by CSS, so switching edition costs no
+       JavaScript and the chip cannot disagree with the radio driving it. */
+    h += '<span class="opick-top">';
+    h += '<span class="opick-tag mono">' + (copy.tag ? esc(copy.tag) : '') + '</span>';
+    if (b.available) h += '<span class="opick-on mono">Selected</span>';
+    h += '</span>';
     h += '<span class="opick-name">' + esc(b.name) + '</span>';
     h += '<span class="opick-price">' + money(b.price_cents);
     if (b.msrp_cents) h += ' <s>' + money(b.msrp_cents) + '</s>';
@@ -368,6 +376,12 @@
 
     showBundleArt = haveArtForAll((cat.bundles || []).map(function (b) { return b.id; }));
     showMatArt = haveArtForAll((cat.addons || []).map(function (a) { return a.id; }));
+
+    /* Filled by deepLink() when a QR code picked the edition. A scanned
+       arrival lands on a form that already has an answer in it, so the panel
+       has to say why: unexplained, a pre-ticked radio reads as a glitch, or
+       is missed altogether and the buyer never learns they can change it. */
+    h += '<p class="ord-scan" id="ord-scan" hidden></p>';
 
     if (cat.promo && cat.promo.label) {
       h += '<p class="ord-promo mono">' + esc(cat.promo.label);
@@ -659,6 +673,17 @@
     zoomPaint();
   }
 
+  /* The name comes from the catalog, not from the query string, so a
+     doctored ?bundle= cannot put text of its own choosing on the page. */
+  function showScan(name) {
+    if (!els.scan) return;
+    if (!name) { els.scan.hidden = true; els.scan.innerHTML = ''; return; }
+    els.scan.hidden = false;
+    els.scan.innerHTML =
+      '<b>' + esc(name) + ' selected</b>' +
+      '<span>That is what the code you scanned points to. Change it below if you want a different edition.</span>';
+  }
+
   function showError(msg) {
     if (!els.err) return;
     if (!msg) { els.err.hidden = true; els.err.textContent = ''; return; }
@@ -678,6 +703,7 @@
     els.lines = document.getElementById('ord-lines');
     els.total = document.getElementById('ord-total');
     els.err = document.getElementById('ord-err');
+    els.scan = document.getElementById('ord-scan');
     els.pay = document.getElementById('ord-pay');
     els.zoom = document.getElementById('ord-zoom');
     els.zoomImg = document.getElementById('zoom-img');
@@ -732,6 +758,9 @@
 
       if (t.name === 'ord-bundle') {
         sel.bundle = t.value;
+        /* Once they have chosen for themselves the scan notice is either
+           redundant or, if they switched edition, untrue. */
+        showScan(null);
         /* A bundle that already contains a mat cannot also have it added,
            and a narrower bundle may allow fewer mats than are ticked. */
         Object.keys(sel.addons).forEach(function (id) {
@@ -915,6 +944,7 @@
         sel.bundle = want;
         var radio = root.querySelector('input[name="ord-bundle"][value="' + want + '"]');
         if (radio) radio.checked = true;
+        showScan(b.name);
         applied = true;
       } else if (b) {
         showError(b.name + ' has sold out. Pick one of the others below.');

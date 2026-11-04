@@ -946,6 +946,14 @@ h1,h2,h3,h4{color:var(--ink); margin:0}
 .ord-down p{margin:0; font-size:14.5px}
 .ord-down a{color:var(--gold); text-decoration:underline; text-underline-offset:2px}
 
+/* Shown only when a QR code chose the edition. It is the first thing in the
+   panel because it explains a form that already has an answer in it, and
+   that explanation is worthless after the buyer has started reading. */
+.ord-scan{margin:0 0 20px; padding:14px 16px; border-radius:var(--r);
+  background:var(--white); border:1px solid var(--line); border-left:3px solid var(--gold)}
+.ord-scan b{display:block; font:700 15px/1.3 'Cinzel',serif; color:var(--green); margin-bottom:4px}
+.ord-scan span{display:block; font-size:13.5px; line-height:1.55; color:var(--body)}
+
 .ord-promo{display:inline-flex; flex-wrap:wrap; align-items:center; gap:0 8px; margin:0 0 22px;
   padding:9px 14px; border-radius:var(--r); background:var(--gold-lift); color:#1A1204;
   font-size:10px; letter-spacing:.14em}
@@ -1000,8 +1008,24 @@ h1,h2,h3,h4{color:var(--ink); margin:0}
 .opick.is-out{cursor:not-allowed}
 .opick.is-out .opick-in{opacity:.5}
 
-.opick-tag{display:block; color:var(--gold); margin-bottom:8px;
+/* min-height holds the row open on the card with no tag, so revealing the
+   chip never changes any card's height and the grid does not reflow when
+   the buyer switches edition. */
+.opick-top{display:flex; align-items:center; justify-content:space-between; gap:10px;
+  margin-bottom:8px; min-height:20px}
+.opick-tag{color:var(--gold); min-width:0;
   font:500 10px/1 'IBM Plex Mono',monospace; letter-spacing:.16em; text-transform:uppercase}
+/* visibility rather than display keeps the box, and also keeps the word out
+   of the accessibility tree until it is true. */
+.opick-on{visibility:hidden; flex:0 0 auto; white-space:nowrap;
+  padding:5px 8px; border-radius:2px; background:var(--green); color:var(--gold-lift);
+  font:500 10px/1 'IBM Plex Mono',monospace; letter-spacing:.14em; text-transform:uppercase}
+.opick:has(input:checked) .opick-on{visibility:visible}
+/* The border and ring below read fine at three cards across, where there is
+   an unselected neighbour to compare against. Under 620px the grid is one
+   column and a border colour tells you nothing, so the chosen card is also
+   washed a faint gold. Every QR scan arrives on a phone. */
+.opick:has(input:checked) .opick-txt{background:#FBF6EB}
 .opick-name{display:block; font:700 18px/1.25 'Cinzel',serif; color:var(--ink); margin-bottom:6px}
 .opick-price{display:block; font:700 26px/1 'Archivo',sans-serif; color:var(--ink);
   font-variant-numeric:tabular-nums}
