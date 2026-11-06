@@ -481,7 +481,12 @@ h1,h2,h3,h4{color:var(--ink); margin:0}
 .proof-src a:hover{color:var(--ink)}
 .zo-cta .note a{color:#B9C6BB; text-decoration:underline; text-underline-offset:2px}
 .zo-cta .note a:hover{color:var(--gold-lift)}
-.watch a{color:var(--gold); text-decoration:underline; text-underline-offset:2px}
+/* :not(.btn) because this section ends in a gold Order button. Without it
+   the rule wins on specificity (0,1,1 against .btn's 0,1,0) and paints the
+   label gold on a gold background: a ratio of 1.0, text invisible until
+   hover lightens the fill behind it. Same guard as .rules a and
+   .post-body a. */
+.watch a:not(.btn){color:var(--gold); text-decoration:underline; text-underline-offset:2px}
 
 /* ---------- launch trailer ---------- */
 .trailer{padding-top:84px; padding-bottom:84px; background:var(--paper);
