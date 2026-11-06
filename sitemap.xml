@@ -41,6 +41,14 @@ layout: null
     <priority>0.8</priority>
   </url>
 
+  <!-- Misfits Mini Expansion swap guide -->
+  <url>
+    <loc>https://risingwarriorgames.com/misfits/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
   <!-- Rulebook -->
   <url>
     <loc>https://risingwarriorgames.com/rulebook.pdf</loc>
