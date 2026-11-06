@@ -64,3 +64,21 @@ figures on `rules.html`. Regenerate with `tools/renderpdf.swift`, then downsize:
 
 `tools/ocr.swift` OCRs those renders via the macOS Vision framework — that is how
 the text on `rules.html` was recovered, since the master carries no text layer.
+
+## Misfits swap guide cards
+
+`/misfits/` shows each base-game card beside the Misfits card that replaces
+it. The images come from the manufacturer print files, which carry bleed.
+`tools/build-misfits.sh` crops the bleed (derived from each file's pixel size,
+see the script header), converts CMYK to sRGB and writes 240 and 480 px JPEGs
+to `images/misfits/`. The print masters are not committed.
+
+    bash tools/build-misfits.sh                       # lists the filenames it expects
+    bash tools/build-misfits.sh /path/to/print-files
+
+The pairings on the page come from Erick's swap sheet, not from the artwork.
+
+The print masters live in `../misfits-print-files/` (next to the repo, not in
+it), under their original names. `rune-zoom-420.jpg` is a hand crop of the
+Mailman swap card's top right corner (84 px square at x 664, y 0 of the
+trimmed card, enlarged to 420).

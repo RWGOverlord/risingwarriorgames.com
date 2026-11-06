@@ -1233,3 +1233,91 @@ h1,h2,h3,h4{color:var(--ink); margin:0}
   .zoom-foot{justify-content:center; text-align:center}
   .zoom-add{width:100%}
 }
+
+/* ---------- Misfits swap guide (/misfits/) ----------
+   Reached mostly by phone, from the QR in the mini expansion. Each pair
+   reads REMOVE (base card) then ADD (Misfits card), side by side even at
+   390px, where each card is still ~140px wide and its name is live text.
+   .mf shares its element with .wrap, so padding is set per side only. */
+.mf{padding-top:56px; padding-bottom:88px}
+.mf-kicker{font:600 clamp(19px,2.4vw,24px)/1.3 'Cinzel',serif; color:var(--gold-lift); margin:0 0 14px}
+.mf h2{font:600 clamp(24px,3vw,32px)/1.15 'Cinzel',serif; color:var(--green); margin:0 0 18px}
+.mf p{margin:0 0 14px; font-size:15.5px}
+.mf b{color:var(--ink); font-weight:600}
+
+.mf-step{scroll-margin-top:100px; padding-bottom:44px; margin-bottom:44px; border-bottom:1px solid var(--line)}
+#all{display:grid; grid-template-columns:1fr 340px; gap:48px; align-items:center}
+.mf-step--mix{max-width:74ch}
+.mf-ready{font:700 18px/1.3 'Cinzel',serif; color:var(--green); margin:22px 0 0 !important}
+
+.mf-rune{margin:0}
+.mf-rune-pair{display:grid; grid-template-columns:1fr 1fr; gap:14px; align-items:center}
+.mf-rune-card{position:relative; display:block}
+.mf-rune-card img{width:100%; border-radius:4.5%/3.2%}
+/* centred on the rune: x 706/743, y 38/1038 of the trimmed card */
+.mf-ring{position:absolute; left:95%; top:3.66%; width:16%; aspect-ratio:1; transform:translate(-50%,-50%);
+  border:3px solid #FFD43B; border-radius:50%; box-shadow:0 0 0 2px rgba(0,0,0,.55)}
+.mf-rune-zoom{display:block; position:relative; border-radius:50%; overflow:hidden; aspect-ratio:1;
+  border:3px solid #FFD43B; box-shadow:0 0 0 1px var(--line), 0 10px 24px rgba(20,32,26,.18)}
+.mf-rune-zoom img{width:100%; height:100%; object-fit:cover}
+.mf-rune figcaption{margin-top:10px; font-size:13.5px; color:var(--muted)}
+
+.mf-warn{background:#FBF4E6; border-color:#EBDDBF; border-left:4px solid var(--gold)}
+.mf-warn h3{font:700 19px/1.25 'Cinzel',serif; color:var(--ink); margin:0 0 8px}
+
+.mf-guide{scroll-margin-top:100px}
+.mf-guide-lede{font-size:17px !important; color:var(--ink)}
+.mf-jump{display:flex; flex-wrap:wrap; gap:10px; margin:22px 0 8px}
+.mf-jump a{display:inline-flex; align-items:center; gap:10px; text-decoration:none;
+  padding:12px 16px; border:1px solid var(--line); border-radius:var(--r); background:var(--white);
+  font:500 11px/1 'IBM Plex Mono',monospace; letter-spacing:.14em; text-transform:uppercase; color:var(--ink);
+  transition:.16s}
+.mf-jump a span{display:grid; place-items:center; min-width:22px; height:22px; border-radius:50%;
+  background:var(--green); color:var(--gold-lift); letter-spacing:0; font-size:11px}
+.mf-jump a:hover{border-color:var(--gold); color:var(--gold)}
+
+/* each collection gets its own accent */
+.mf-group{--acc:var(--green); scroll-margin-top:96px; margin-top:44px}
+.mf-group--holiday{--acc:#8A3324}
+.mf-group--backer{--acc:#7A5A1E}
+.mf-group-head{display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:6px 18px;
+  padding:16px 20px; margin:0 0 16px; background:var(--acc); border-radius:var(--r)}
+.mf-group-head h3{font:700 clamp(19px,2.4vw,24px)/1.2 'Cinzel',serif; color:#fff; margin:0}
+.mf-group-head .mono{margin:0; color:#F1E3C0; font-size:11px}
+
+.mf-pairs{list-style:none; margin:0; padding:0; display:grid; grid-template-columns:1fr 1fr; gap:16px}
+.mf-pair{display:grid; grid-template-columns:1fr 34px 1fr; align-items:center;
+  padding:16px 18px 18px; border:1px solid var(--line); border-radius:var(--r); background:var(--white)}
+.mf-side{min-width:0}
+.mf-tag{display:flex; align-items:baseline; gap:8px; margin:0 0 10px !important; font-size:12px !important; font-weight:600}
+.mf-tag span{color:var(--muted); font-size:9.5px; letter-spacing:.14em; font-weight:500}
+.mf-remove .mf-tag{color:#9A3B2E}
+.mf-add .mf-tag{color:var(--acc)}
+.mf-arrow{align-self:center; justify-self:center; margin-top:24px;
+  font:700 22px/1 'Archivo',sans-serif; color:var(--gold)}
+.mf-card{margin:0}
+/* the printed cards have ~3mm corners on a 63mm card */
+.mf-img{display:block; aspect-ratio:480/670; overflow:hidden; border-radius:4.5%/3.2%;
+  background:var(--paper); border:1px solid var(--line)}
+.mf-img img{width:100%; height:100%; object-fit:cover}
+.mf-card figcaption{margin-top:10px; font:600 15px/1.3 'Archivo',sans-serif; color:var(--ink)}
+.mf-back{margin-top:34px !important; font-size:14px !important}
+.mf-back a{color:var(--gold); text-underline-offset:2px}
+
+@media (max-width:920px){
+  #all{grid-template-columns:1fr 280px; gap:32px}
+  .mf-pairs{grid-template-columns:1fr}
+  .mf-pair{max-width:520px}
+}
+@media (max-width:640px){
+  #all{grid-template-columns:1fr}
+  .mf-rune{max-width:340px}
+}
+@media (max-width:560px){
+  .mf{padding-top:40px; padding-bottom:64px}
+  .mf-pair{grid-template-columns:1fr 26px 1fr; padding:14px 12px 16px}
+  .mf-arrow{font-size:18px}
+  .mf-tag{flex-direction:column; gap:4px}
+  .mf-card figcaption{font-size:14px}
+  .mf-jump a{flex:1 1 100%; justify-content:space-between}
+}
