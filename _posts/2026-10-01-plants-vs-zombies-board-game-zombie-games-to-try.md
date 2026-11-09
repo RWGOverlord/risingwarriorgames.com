@@ -1,23 +1,24 @@
 ---
 layout: post
-title: Plants vs. Zombies Board Game and Other Zombie Games to Try
-h1: "Plants vs. Zombies Is Coming to Tabletop: Here Are Other Zombie Board Games to Try"
-description: Plants vs. Zombies is coming to Kickstarter. Here are other zombie board games to try, from co-op survival to competitive deck-building.
-lede: From lawn defense to all-out zombie warfare, here's what else is on the table.
+title: "Plants vs. Zombies Board Game: Kickstarter Recap and Other Zombie Games to Try"
+h1: "Plants vs. Zombies: The Board Game Is Funded. Here Are Other Zombie Board Games to Try"
+description: Plants vs. Zombies The Board Game raised over $1.7 million on Kickstarter and ships in 2027. Here are other zombie board games to play while you wait.
+lede: The PvZ board game is funded and late pledges are open. Here's what happened, and what else is on the table in the meantime.
+updated: 2026-11-08
 image: /images/opt/Horde_Cover-1020.jpg
 ---
 
-Plants vs. Zombies is making the jump from screens to the tabletop. Mantic Games is bringing [Plants vs. Zombies: The Board Game](https://www.kickstarter.com/projects/manticgames/plants-vs-zombies-the-board-game) to Kickstarter on October 14, 2026, made together with PopCap, the studio behind the original video game. Apparently tabletop gaming still has room for a few more zombies.
+Plants vs. Zombies has made the jump from screens to the tabletop. Mantic Games ran [Plants vs. Zombies: The Board Game](https://www.kickstarter.com/projects/manticgames/plants-vs-zombies-the-board-game) on Kickstarter from October 14 to November 5, 2026, made together with PopCap, the studio behind the original video game. It raised more than $1.7 million from 9,464 backers. Apparently tabletop gaming still had room for a few more zombies.
 
-If the Plants vs. Zombies board game has you wondering what else is out there, zombie board games cover a lot more ground than you might expect. Some have the whole table working together. Some fit in a cup of dice. A few would rather you ruin your friends' evening.
+The catch is the wait: the game isn't due to reach backers until September 2027. If the Plants vs. Zombies board game has you wondering what else is out there in the meantime, zombie board games cover a lot more ground than you might expect. Some have the whole table working together. Some fit in a cup of dice. A few would rather you ruin your friends' evening.
 
-Here's a look at the Plants vs. Zombies board game, followed by other zombie games grouped by how they play.
+Here's a recap of the Plants vs. Zombies board game, followed by other zombie games grouped by how they play.
 
 ## Zombie board games at a glance
 
 | Game | Players | Play time | Style | Status |
 | --- | --- | --- | --- | --- |
-| Plants vs. Zombies: The Board Game | 1–4 | Not announced | Co-op | Kickstarter from Oct 14, 2026 |
+| Plants vs. Zombies: The Board Game | 1–4 | See campaign | Co-op | Late pledges open, due Sep 2027 |
 | Zombie Overlord | 2–4 | 30–40 min | Competitive deck-builder | Shipping from Nov 2026 |
 | Zombie Dice | 2+ | 10–20 min | Competitive push-your-luck | In print |
 | Zombie Fluxx | 2–6 | 10–30 min | Competitive card game | In print |
@@ -30,11 +31,31 @@ Here's a look at the Plants vs. Zombies board game, followed by other zombie gam
 
 The basics carry straight over from the video game. Zombies shuffle toward your house, and you hold them off with plant cards like Peashooters, Sunflowers, Wall-nuts and Cherry Bombs. Tool cards help too: the Shovel moves plants around, and the Lawnmower can clear an entire lane. It's fully cooperative for one to four players, and if a single zombie reaches the house, everyone loses together.
 
-The bigger draw might be the Zen Garden Campaign, a branching series of levels that adds new plants, zombies, tools and mechanics as you go, with difficulty that scales to your group. Backers will be able to pick between a standard edition and a Deluxe Kickstarter Edition with pre-assembled miniatures and extra campaign content. There's also a standalone Night Edition expansion.
+The bigger draw might be the Zen Garden Campaign, a branching series of levels that adds new plants, zombies, tools and mechanics as you go, with difficulty that scales to your group. The miniatures come pre-assembled and unpainted, with plants and zombies molded in different colors so the table stays readable before anyone picks up a brush.
 
-Mantic has plenty of experience turning licenses into tabletop games, including Halo, Hellboy and The Walking Dead. Play time, price and a retail release date haven't been announced yet, so we'll update this once the campaign is live.
+### How the Kickstarter went
 
-If defending your lawn isn't enough zombie chaos for one evening, read on.
+By the time it closed on November 5, it had raised $1,726,578 against a goal of $33,392 (Kickstarter's dollar conversion; the campaign ran in pounds), with 9,464 backers and a "Project We Love" badge from Kickstarter.
+
+Backers unlocked 35 stretch goals. Every backer gets two free mini-expansions, and the Deluxe pledge and above add the unlocked stretch goals on top, such as new challenges, events and tool cards. There's also a Night Expansion, offered only as a deluxe edition during the campaign. Mantic says it might reach retail later but can't promise that yet.
+
+### Plants vs. Zombies board game FAQ
+
+**Can I still back it?** Yes. The campaign is over, but the Kickstarter page is taking late pledges for the rewards that are still available.
+
+**When does the PvZ board game ship?** Mantic's timeline has the pledge manager opening in January 2027, manufacturing starting in May, and the game reaching backers in September 2027.
+
+**Is it co-op or competitive?** Fully cooperative. Everyone defends the same house, and everyone wins or loses together.
+
+**How many players?** One to four, so it works solo too.
+
+**Do the miniatures need painting?** No. They're pre-assembled and color-coded, so the game is playable straight out of the box. A paint set is available as an add-on for anyone who wants one.
+
+**What languages?** English, German, French and Spanish. Backers choose in the pledge manager.
+
+Mantic has plenty of experience turning licenses into tabletop games, including Halo, Hellboy and The Walking Dead.
+
+Until then, if you need some zombie chaos on the table this year, read on.
 
 ## Competitive zombie games
 
@@ -94,6 +115,6 @@ It's been around since 2007, it's still in print, and it leans happily into the 
 
 ## The horde keeps growing
 
-Zombie games clearly aren't going anywhere. Plants vs. Zombies is bringing the most famous lawn in gaming to the tabletop, and the rest of the genre already covers just about everything: quick dice games, family co-ops, miniature-heavy campaigns and games where your friends are the real threat.
+Zombie games clearly aren't going anywhere. Plants vs. Zombies is bringing the most famous lawn in gaming to the tabletop next year, and the rest of the genre already covers just about everything: quick dice games, family co-ops, miniature-heavy campaigns and games where your friends are the real threat.
 
 If competitive deck-building sounds more like your kind of game night, [take a look at Zombie Overlord](/zombieoverlord.html).
